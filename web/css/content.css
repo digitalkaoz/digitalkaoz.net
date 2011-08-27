@@ -1,0 +1,44 @@
+body{
+    background-color: #b19566;
+}
+
+#header, .page_margins, .hlist{
+    background-color: #b19566;    
+}
+
+#main{
+    background-color: #c2ad88;    
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#footer, #footer *{
+    background-color: #4d3f27;
+    color: #c2ad88;
+    border-top-color: #c2ad88;
+}
+
+.hlist, .hlist ul, .hlist ul li{
+    border:none;
+}
+.hlist ul li{
+    margin: 0 10px;
+    background-color: #c2ad88;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.hlist ul li:hover a{
+    background-color: #917649;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.hlist ul li.current{
+    background-color: #4d3f27;
+}
+.hlist ul li.current a{
+    color: #c2ad88;
+}

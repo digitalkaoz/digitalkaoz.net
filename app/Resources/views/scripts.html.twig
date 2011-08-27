@@ -1,0 +1,22 @@
+<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+
+{% javascripts 'js/plugins.js'
+               'js/script.js'
+
+               filter='?yui_js' output='/js/combined.js'
+%}
+    <script defer src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+<!-- Change UA-XXXXX-X to be your site's ID --
+<script>
+      window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+
+      Modernizr.load({
+        load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+      });
+ </script>
+-->
+{% block javascripts %}{% endblock %}

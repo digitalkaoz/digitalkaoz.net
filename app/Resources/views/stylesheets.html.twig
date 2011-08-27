@@ -1,0 +1,11 @@
+{% stylesheets  
+                'css/yaml/core/base.css'
+                'css/basemod.css'
+                'css/content.css'
+                'css/yaml/print/print_draft.css'
+                filter='?yui_css' output='/css/combined.css'
+%}
+    <link rel="stylesheet" href="{{ asset_url }}">
+{% endstylesheets %}
+
+{% block stylesheets %}{% endblock %}        
