@@ -1,0 +1,73 @@
+Hobbys:
+  Reading:
+    active: true
+  Travel:
+    active: true
+    
+Languages:
+  PHP:
+    level: '***'
+    active: true
+  Javascript:
+    level: '**'
+    active: true
+  Groovy:
+    level: '*'
+    active: true
+  Python:
+    level: '*'
+    active: true
+  CSS:
+    level: '**'
+    active: true
+  HTML:
+    level: '**'
+    active: true
+  Java:
+    level: '*'
+    active: true
+    
+Frameworks:
+  Symfony2:
+    level: '**'
+    url: http://symfony.com
+    active: true
+  symfony1.x:
+    level: '***'
+    url: http://symfony-project.org
+    active: true
+  Grails:
+    level: '*'
+    url: http://grails.org
+    active: true
+  ExtJS:
+    level: '***'
+    url: http://sencha.com
+    active: true
+  jQuery:
+    level: '**'
+    url: http://jquery.com
+    active: true
+
+Work:
+  'Spot-Media AG':
+    url: http://spot-media.de
+    period: 01/2009 - 12/2011
+    active: true
+  Pepphone:
+    period: 04/2008 - 12/2008
+    active: true
+  'SuiteNo3':
+    period: 04/2004 - 06/2007
+    active: true
+
+Education:
+  'stralsund':
+    name: Wirtschaftsinformatik FH Stralsund
+    url: http://fh-stralsund.de
+    period: 09/2001 - 03/2008
+    active: true
+  'guetzkow':
+    name: Abitur
+    period: 1999
+    active: true    

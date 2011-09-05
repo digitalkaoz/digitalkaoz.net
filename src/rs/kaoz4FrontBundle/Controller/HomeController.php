@@ -39,11 +39,24 @@ class HomeController extends Controller
     
     /**
      * @Route("/bio", name="bio")
-     * @Template("rskaoz4FrontBundle:Home:index.html.twig")
+     * @Template("rskaoz4FrontBundle:Home:bio.html.twig")
      */
     public function bioAction()
     {
-        return array();
+        $repo = $this->getRepository('Bio');
+        $hobbys = $repo->findByCategory('Hobbys');
+        $languages = $repo->findByCategory('Languages');
+        $frameworks = $repo->findByCategory('Frameworks');
+        $works = $repo->findByCategory('Work');
+        $educations = $repo->findByCategory('Education');        
+        
+        return array(
+            'hobbys' => $hobbys,
+            'languages' => $languages,
+            'frameworks' => $frameworks,
+            'works' => $works,
+            'educations' => $educations
+        );
     }
     
     /**

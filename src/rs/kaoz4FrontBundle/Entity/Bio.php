@@ -5,12 +5,12 @@ namespace rs\kaoz4FrontBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * rs\kaoz4FrontBundle\Entity\Network
+ * rs\kaoz4FrontBundle\Entity\Bio
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="rs\kaoz4FrontBundle\Entity\NetworkRepository")
+ * @ORM\Entity(repositoryClass="rs\kaoz4FrontBundle\Entity\BioRepository")
  */
-class Network
+class Bio
 {
     /**
      * @var integer $id
@@ -29,18 +29,32 @@ class Network
     private $name;
 
     /**
+     * @var string $category
+     *
+     * @ORM\Column(name="category", type="string", length=255)
+     */
+    private $category;
+
+    /**
+     * @var string $level
+     *
+     * @ORM\Column(name="level", type="string", length=255, nullable=true)
+     */
+    private $level;
+
+    /**
      * @var string $url
      *
-     * @ORM\Column(name="url", type="string", length=255)
+     * @ORM\Column(name="url", type="string", length=255, nullable=true)
      */
     private $url;
 
     /**
-     * @var text $desc
+     * @var string $period
      *
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="period", type="string", length=255, nullable=true)
      */
-    private $description;
+    private $period;
 
     /**
      * @var boolean $active
@@ -48,27 +62,21 @@ class Network
      * @ORM\Column(name="active", type="boolean")
      */
     private $active;
-    
-    /**
-     * @var string $logo
-     *
-     * @ORM\Column(name="logo", type="string", length=255, nullable=true)
-     */
-    private $logo;
-    
+
     /**
      * read object data from an array
      * 
      * @param array $data
-     * @return Network 
+     * @return Bio 
      */
     public function fromArray($data)
     {
         $this->setName(array_key_exists('name', $data) ? $data['name'] : null);
         $this->setActive(array_key_exists('active', $data) ? $data['active'] : false);
         $this->setUrl(array_key_exists('url', $data) ? $data['url'] : null);
-        $this->setDescription(array_key_exists('description', $data) ? $data['description'] : null);
-        $this->setLogo(array_key_exists('logo', $data) ? $data['logo'] : null);
+        $this->setLevel(array_key_exists('level', $data) ? $data['level'] : null);
+        $this->setCategory(array_key_exists('category', $data) ? $data['category'] : null);
+        $this->setPeriod(array_key_exists('period', $data) ? $data['period'] : null);
         
         return $this;
     }
@@ -104,6 +112,46 @@ class Network
     }
 
     /**
+     * Set category
+     *
+     * @param string $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+
+    /**
+     * Get category
+     *
+     * @return string 
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Set level
+     *
+     * @param string $level
+     */
+    public function setLevel($level)
+    {
+        $this->level = $level;
+    }
+
+    /**
+     * Get level
+     *
+     * @return string 
+     */
+    public function getLevel()
+    {
+        return $this->level;
+    }
+
+    /**
      * Set url
      *
      * @param string $url
@@ -124,23 +172,23 @@ class Network
     }
 
     /**
-     * Set description
+     * Set period
      *
-     * @param text $desc
+     * @param string $period
      */
-    public function setDescription($desc)
+    public function setPeriod($period)
     {
-        $this->description = $desc;
+        $this->period = $period;
     }
 
     /**
-     * Get description
+     * Get period
      *
-     * @return text 
+     * @return string 
      */
-    public function getDescription()
+    public function getPeriod()
     {
-        return $this->description;
+        return $this->period;
     }
 
     /**
@@ -161,25 +209,5 @@ class Network
     public function getActive()
     {
         return $this->active;
-    }    
-
-    /**
-     * Set logo
-     *
-     * @param string $logo
-     */
-    public function setLogo($logo)
-    {
-        $this->logo = $logo;
-    }
-
-    /**
-     * Get logo
-     *
-     * @return string 
-     */
-    public function getLogo()
-    {
-        return $this->logo;
     }
 }
