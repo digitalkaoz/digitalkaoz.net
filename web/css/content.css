@@ -1,16 +1,16 @@
+@import url(http://fonts.googleapis.com/css?family=Aldrich);
+
 body{
     background-color: #b19566;
+    font-family: 'Aldrich', sans-serif;
 }
 
-#header, .page_margins, .hlist{
+#header, .page_margins, .hlist, #main{
     background-color: #b19566;    
 }
 
 #main{
-    background-color: #c2ad88;    
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+    color: #4d3f27;    
 }
 
 #footer, #footer *{

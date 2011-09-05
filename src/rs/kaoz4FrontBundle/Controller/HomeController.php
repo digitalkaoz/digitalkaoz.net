@@ -29,30 +29,32 @@ class HomeController extends Controller
     }
     
     /**
-     * @Route("/stuff", name="stuff")
+     * @Route("/projects", name="projects")
      * @Template("rskaoz4FrontBundle:Home:index.html.twig")
      */
-    public function stuffAction()
+    public function projectsAction()
     {
         return array();
     }
     
     /**
-     * @Route("/vita", name="vita")
+     * @Route("/bio", name="bio")
      * @Template("rskaoz4FrontBundle:Home:index.html.twig")
      */
-    public function vitaAction()
+    public function bioAction()
     {
         return array();
     }
     
     /**
      * @Route("/networks", name="networks")
-     * @Template("rskaoz4FrontBundle:Home:index.html.twig")
+     * @Template("rskaoz4FrontBundle:Home:networks.html.twig")
      */
     public function networksAction()
     {
-        return array();
+        $networks = $this->getRepository('Network')->findActive();
+        
+        return array('networks' => $networks);
     }        
     
     /**
@@ -88,4 +90,14 @@ class HomeController extends Controller
         return array(); 
     }
     
+    
+    /**
+     * get the entity manager
+     * 
+     * @return mixed
+     */
+    private function getRepository($entity)
+    {
+        return $this->getDoctrine()->getRepository('rskaoz4FrontBundle:'.$entity);
+    }
 }
