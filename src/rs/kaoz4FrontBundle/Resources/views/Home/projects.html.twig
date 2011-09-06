@@ -1,0 +1,15 @@
+{% extends "::base.html.twig" %}
+
+{% block title %} Projects {% endblock %}
+
+{% block body %}
+
+    <h2>Projects</h2>
+
+    {% if projects %}
+          {% for project in projects %}
+            {% include 'rskaoz4FrontBundle:Home:project_section.html.twig' with { 'project': project } %}
+          {% endfor %}
+    {% endif %}
+
+{% endblock %}

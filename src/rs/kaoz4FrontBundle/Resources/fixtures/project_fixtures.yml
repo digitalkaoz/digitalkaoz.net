@@ -1,0 +1,17 @@
+reisen:
+  name:        Tchibo Reisen CMS
+  url:         '#'
+  description: CMS for producing travel
+  abstract:    foo
+  logo:        https://media1.tchibo-content.de/st/0aceee1b/shared/img/lang/de_de/tcm_logo_126.png
+  active:      true
+  
+ideas:
+  name:        Tchibo-Ideas
+  url:         https://tchibo-ideas.de
+  description: tchibo community platform
+  abstract:    foo
+  logo:        https://www.tchibo-ideas.de/images/logo.jpg
+  active:      true
+  
+  

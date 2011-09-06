@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Doctrine\ORM\EntityRepository;
 
 class HomeController extends Controller
 {
@@ -30,11 +31,13 @@ class HomeController extends Controller
     
     /**
      * @Route("/projects", name="projects")
-     * @Template("rskaoz4FrontBundle:Home:index.html.twig")
+     * @Template("rskaoz4FrontBundle:Home:projects.html.twig")
      */
     public function projectsAction()
     {
-        return array();
+        $projects = $this->getRepository('Project')->findActive();
+        
+        return array('projects' => $projects);
     }
     
     /**
@@ -107,7 +110,7 @@ class HomeController extends Controller
     /**
      * get the entity manager
      * 
-     * @return mixed
+     * @return EntityRepository
      */
     private function getRepository($entity)
     {
