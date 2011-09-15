@@ -23,4 +23,15 @@ class ProjectRepository extends EntityRepository
             'active'=>true
         ));
     }    
+    
+    public function findLatest()
+    {
+        return $this
+            ->createQueryBuilder('p')
+            ->orderBy('p.created_at', 'ASC')
+            ->setMaxResults(1)                
+            ->getQuery()
+            ->getSingleResult();
+        
+    }
 }

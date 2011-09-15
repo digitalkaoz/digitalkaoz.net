@@ -3,6 +3,7 @@
 namespace rs\kaoz4FrontBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * rs\kaoz4FrontBundle\Entity\Project
@@ -25,8 +26,15 @@ class Project
      * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Gedmo\Sluggable
      */
     private $name;
+    
+    /**
+     * @Gedmo\Slug
+     * @ORM\Column(name="slug", type="string", length=128, unique=true)
+     */
+    private $slug;    
 
     /**
      * @var string $url
@@ -237,5 +245,25 @@ class Project
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

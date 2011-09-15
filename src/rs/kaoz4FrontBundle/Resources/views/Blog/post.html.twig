@@ -1,5 +1,7 @@
 {% extends "::base.html.twig" %}
 
+{% block title %} {{ post.title }} - Blog {% endblock %}
+
 {% block body %}
     <div>
         <a href="{{ path('post', { 'slug': post.slug }) }}">

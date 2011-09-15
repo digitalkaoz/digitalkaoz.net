@@ -8,7 +8,7 @@
 
     {% if projects %}
           {% for project in projects %}
-            {% include 'rskaoz4FrontBundle:Home:project_section.html.twig' with { 'project': project } %}
+            {% include 'rskaoz4FrontBundle:Projects:short.html.twig' with { 'slug': project.slug, 'full': false } %}
           {% endfor %}
     {% endif %}
 

@@ -19,18 +19,7 @@ class HomeController extends Controller
     {
         return array();
     }
-    
-    /**
-     * @Route("/projects", name="projects")
-     * @Template("rskaoz4FrontBundle:Home:projects.html.twig")
-     */
-    public function projectsAction()
-    {
-        $projects = $this->getRepository('Project')->findActive();
         
-        return array('projects' => $projects);
-    }
-    
     /**
      * @Route("/bio", name="bio")
      * @Template("rskaoz4FrontBundle:Home:bio.html.twig")

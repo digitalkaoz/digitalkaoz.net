@@ -10,41 +10,41 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Doctrine\ORM\EntityRepository;
 
 /**
- * @Route("/blog")
+ * @Route("/projects")
  */
-class BlogController extends Controller
+class ProjectController extends Controller
 {
     /**
-     * @Route("/", name="blog")
-     * @Template("rskaoz4FrontBundle:Blog:index.html.twig")
+     * @Route("/", name="projects")
+     * @Template("rskaoz4FrontBundle:Projects:index.html.twig")
      */
     public function indexAction()
     {
-        $posts = $this->getRepository('Post')->findActive();
+        $projects = $this->getRepository('Project')->findActive();
         
-        return array('posts' => $posts);
+        return array('projects' => $projects);
     }
     
     /**
-     * @Route("/blog/article/{slug}", name="post")
-     * @Template("rskaoz4FrontBundle:Blog:post.html.twig")
+     * @Route("/projects/{slug}", name="project")
+     * @Template("rskaoz4FrontBundle:Projects:project.html.twig")
      */
     public function detailAction($slug)
     {
-        $post = $this->getRepository('Post')->findOneBySlug($slug);
+        $project = $this->getRepository('Project')->findOneBySlug($slug);
                 
-        return array('post' => $post );
+        return array('project' => $project );
     }
     
     /**
-     * @Route("/_latest_post/{full}", name="latest_post")
-     * @Template("rskaoz4FrontBundle:Blog:short.html.twig")
+     * @Route("/_latest_project/{full}", name="latest_project")
+     * @Template("rskaoz4FrontBundle:Projects:short.html.twig")
      */
     public function latestAction($full)
     {
-        $post = $this->getRepository('Post')->findLatest();
+        $project = $this->getRepository('Project')->findLatest();
                 
-        return array('post' => $post, 'full'=>$full );
+        return array('project' => $project, 'full'=>$full );
     }
     
     /**

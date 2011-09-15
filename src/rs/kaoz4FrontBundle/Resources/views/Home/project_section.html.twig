@@ -1,7 +1,0 @@
-<div>
-    {% if project.logo %}
-        <img src="{{ project.logo }}" width="50" alt="{{project.name}}" title="{{project.name}}" />
-    {% endif %}
-    <a href="{{ project.url }}" target="_blank"><strong>{{ project.name|e }}</strong></a>
-    <p>{{ project.description }}</p>
-</div>
