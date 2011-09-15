@@ -1,0 +1,14 @@
+<div>
+    <a href="{{ path('post', { 'slug': post.slug }) }}">
+        {% if post.logo %}
+            <img src="{{ post.logo}}" alt="{{ post.title }}" title="{{ post.title }}" width="50"/>
+        {% endif %}
+        <strong>{{ post.title|e }}</strong>
+    </a>
+
+    {% if full %}
+        <p>{{ post.text }}</p>
+    {% else %}
+        <p>{{ post.abstract }}</p>
+    {% endif %}
+</div>

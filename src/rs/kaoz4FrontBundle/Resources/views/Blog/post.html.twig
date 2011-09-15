@@ -1,0 +1,15 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div>
+        <a href="{{ path('post', { 'slug': post.slug }) }}">
+            {% if post.logo %}
+                <img src="{{ post.logo}}" alt="{{ post.title }}" title="{{ post.title }}" width="50"/>
+            {% endif %}
+            <strong>{{ post.title|e }}</strong>
+        </a>
+
+        <p>{{ post.text }}</p>
+
+    </div>
+{% endblock %}

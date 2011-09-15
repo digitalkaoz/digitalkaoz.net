@@ -50,6 +50,8 @@ doctrine:
     orm:
         auto_generate_proxy_classes: %kernel.debug%
         auto_mapping: true
+        mappings:
+            StofDoctrineExtensionsBundle: false        
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -59,9 +61,15 @@ swiftmailer:
     password:  %mailer_password%
 
 jms_security_extra:
-    secure_controllers:  true
+#    secure_controllers:  true
     secure_all_services: false
 
 knp_menu:
     twig: true
     templating: true
+    
+stof_doctrine_extensions:
+    default_locale: de_DE
+    orm:
+        default:
+            sluggable: true

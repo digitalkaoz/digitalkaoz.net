@@ -21,15 +21,6 @@ class HomeController extends Controller
     }
     
     /**
-     * @Route("/blog", name="blog")
-     * @Template("rskaoz4FrontBundle:Home:index.html.twig")
-     */
-    public function blogAction()
-    {
-        return array();
-    }
-    
-    /**
      * @Route("/projects", name="projects")
      * @Template("rskaoz4FrontBundle:Home:projects.html.twig")
      */

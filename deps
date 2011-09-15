@@ -1,6 +1,6 @@
 [symfony]
     git=http://github.com/symfony/symfony.git
-    version=v2.0.0
+    version=v2.0.1
 
 [twig]
     git=http://github.com/fabpot/Twig.git
@@ -37,6 +37,16 @@
     git=http://github.com/schmittjoh/metadata.git
     version=1.0.0
 
+[knp-menu]
+    git=http://github.com/knplabs/KnpMenu.git
+
+[doctrine-fixtures]
+    git=http://github.com/doctrine/data-fixtures.git
+
+[doctrine-extensions]
+    git=http://github.com/l3pp4rd/DoctrineExtensions.git
+    target=gedmo-doctrine-extensions
+
 [SensioFrameworkExtraBundle]
     git=http://github.com/sensio/SensioFrameworkExtraBundle.git
     target=/bundles/Sensio/Bundle/FrameworkExtraBundle
@@ -58,15 +68,16 @@
     target=/bundles/Symfony/Bundle/AsseticBundle
     version=v1.0.0RC2
 
-[knp-menu]
-    git=https://github.com/knplabs/KnpMenu.git
 [KnpMenuBundle]
-    git=https://github.com/knplabs/KnpMenuBundle.git
-    target=bundles/Knp/Bundle/MenuBundle
+    git=http://github.com/knplabs/KnpMenuBundle.git
+    target=/bundles/Knp/Bundle/MenuBundle
 
-[doctrine-fixtures]
-    git=http://github.com/doctrine/data-fixtures.git
 [DoctrineFixturesBundle]
     git=http://github.com/symfony/DoctrineFixturesBundle.git
     target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
+
+[DoctrineExtensionsBundle]
+    git=http://github.com/stof/StofDoctrineExtensionsBundle.git
+    target=/bundles/Stof/DoctrineExtensionsBundle
+
 

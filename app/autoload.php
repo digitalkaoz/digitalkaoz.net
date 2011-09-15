@@ -14,10 +14,13 @@ $loader->registerNamespaces(array(
     'Monolog'          => __DIR__.'/../vendor/monolog/src',
     'Assetic'          => __DIR__.'/../vendor/assetic/src',
     'Metadata'         => __DIR__.'/../vendor/metadata/src',
-    'Knp\Bundle' => __DIR__.'/../vendor/bundles',
-    'Knp\Menu'   => __DIR__.'/../vendor/knp-menu/src',
+    'Knp\Bundle'       => __DIR__.'/../vendor/bundles',
+    'Knp\Menu'         => __DIR__.'/../vendor/knp-menu/src',
     'Doctrine\\Common\\DataFixtures' => __DIR__.'/../vendor/doctrine-fixtures/lib',
+    'Stof'             => __DIR__.'/../vendor/bundles',
+    'Gedmo'            => __DIR__.'/../vendor/gedmo-doctrine-extensions/lib'
 ));
+
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
     'Twig_'            => __DIR__.'/../vendor/twig/lib',

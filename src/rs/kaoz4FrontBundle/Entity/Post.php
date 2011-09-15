@@ -3,6 +3,7 @@
 namespace rs\kaoz4FrontBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * rs\kaoz4FrontBundle\Entity\Post
@@ -25,9 +26,16 @@ class Post
      * @var string $title
      *
      * @ORM\Column(name="title", type="string", length=255)
+     * @Gedmo\Sluggable
      */
     private $title;
 
+    /**
+     * @Gedmo\Slug
+     * @ORM\Column(name="slug", type="string", length=128, unique=true)
+     */
+    private $slug;    
+    
     /**
      * @var text $abstract
      *
@@ -79,6 +87,11 @@ class Post
         $this->setCreatedAt(array_key_exists('created_at', $data) ? $data['created_at'] : new \DateTime());
         
         return $this;
+    }
+    
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     /**
@@ -209,5 +222,15 @@ class Post
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
     }
 }

@@ -1,0 +1,15 @@
+{% extends "::base.html.twig" %}
+
+{% block title %} Blog {% endblock %}
+
+{% block body %}
+
+    <h2>Blog</h2>
+
+    {% if posts %}
+          {% for post in posts %}
+            {% include 'rskaoz4FrontBundle:Blog:post_short.html.twig' with { 'post': post, 'full': loop.index == 1} %}
+          {% endfor %}
+    {% endif %}
+
+{% endblock %}

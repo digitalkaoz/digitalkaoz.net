@@ -20,7 +20,7 @@ class AppKernel extends Kernel
             
             new rs\kaoz4FrontBundle\rskaoz4FrontBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),            
-            
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle()
             
         );
 

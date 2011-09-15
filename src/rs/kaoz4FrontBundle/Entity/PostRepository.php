@@ -12,4 +12,16 @@ use Doctrine\ORM\EntityRepository;
  */
 class PostRepository extends EntityRepository
 {
+    
+    /**
+     * find all networks by active
+     * 
+     * @return array 
+     */
+    public function findActive()
+    {
+        return $this->findBy(array(
+            'active'=>true
+        ));
+    }    
 }
