@@ -80,4 +80,6 @@
     git=http://github.com/stof/StofDoctrineExtensionsBundle.git
     target=/bundles/Stof/DoctrineExtensionsBundle
 
-
+[LastTweetsBundle]
+    git=http://github.com/knplabs/KnpLastTweetsBundle.git
+    target=/bundles/Knp/Bundle/LastTweetsBundle

@@ -26,7 +26,7 @@ class ProjectController extends Controller
     }
     
     /**
-     * @Route("/projects/{slug}", name="project")
+     * @Route("/{slug}", name="project")
      * @Template("rskaoz4FrontBundle:Projects:project.html.twig")
      */
     public function detailAction($slug)
@@ -37,7 +37,7 @@ class ProjectController extends Controller
     }
     
     /**
-     * @Route("/_latest_project/{full}", name="latest_project")
+     * @Route("/_latest/{full}", name="latest_project")
      * @Template("rskaoz4FrontBundle:Projects:short.html.twig")
      */
     public function latestAction($full)
