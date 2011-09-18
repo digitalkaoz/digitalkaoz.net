@@ -18,7 +18,9 @@ $loader->registerNamespaces(array(
     'Knp\Menu'         => __DIR__.'/../vendor/knp-menu/src',
     'Doctrine\\Common\\DataFixtures' => __DIR__.'/../vendor/doctrine-fixtures/lib',
     'Stof'             => __DIR__.'/../vendor/bundles',
-    'Gedmo'            => __DIR__.'/../vendor/gedmo-doctrine-extensions/lib'
+    'Gedmo'            => __DIR__.'/../vendor/gedmo-doctrine-extensions/lib',
+    'Knp'                       => __DIR__.'/../vendor/bundles',
+    'Zend'                      => __DIR__.'/../vendor',
 ));
 
 $loader->registerPrefixes(array(
