@@ -3,3 +3,5 @@ app/logs/*
 web/bundles/*
 .DS_Store
 nbproject/
+vendor/*
+catalog.xml

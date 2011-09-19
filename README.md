@@ -74,4 +74,10 @@ What's inside?
   ([documentation](https://github.com/knplabs/KnpMenuBundle))
 * **DoctrineFixturesBundle** - load fixtures easily
   ([documentation](http://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html))
+* **KnpLastTweetsBundle** - show latest tweets
+  ([documentation](https://github.com/knplabs/KnpLastTweetsBundle))
+* **KnpZendCacheBundle** - zend caching backend
+  ([documentation](https://github.com/knplabs/KnpZendCacheBundle))
+
+
 Enjoy!
