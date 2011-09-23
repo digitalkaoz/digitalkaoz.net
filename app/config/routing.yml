@@ -7,6 +7,3 @@ rskaoz4FrontBundle:
 _internal:
    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
    prefix:   /_internal
-
-fos_comment:
-    resource: "@FOSCommentBundle/Resources/config/routing.yml"

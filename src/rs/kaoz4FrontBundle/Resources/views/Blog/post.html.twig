@@ -15,7 +15,6 @@
 
     </div>
 
-    <div>
-        {% render "FOSCommentBundle:Thread:show" with {"id": post.slug} %}
-    </div>
+    <div id="disqus_thread"></div>
+    {{ disqus_comments({'disqus_identifier': post.slug })}}
 {% endblock %}

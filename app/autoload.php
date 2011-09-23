@@ -22,9 +22,7 @@ $loader->registerNamespaces(array(
     'Knp'              => __DIR__.'/../vendor/bundles',
     'Zend'             => __DIR__.'/../vendor',
     'CG'               => __DIR__.'/../vendor/cg-library/src',
-    'Buzz'             => __DIR__.'/../vendor/buzz/lib',
-    'Ornicar'          => __DIR__.'/../vendor/bundles',
-    'FOS'              => __DIR__.'/../vendor/bundles',
+    'Virtal\Bundle'    => __DIR__.'/../vendor/bundles',
 ));
 
 $loader->registerPrefixes(array(

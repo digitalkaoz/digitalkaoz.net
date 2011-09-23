@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.ini }
     - { resource: security.yml }
     - { resource: "@rskaoz4FrontBundle/Resources/config/menu.xml" }
+    - { resource: "@rskaoz4FrontBundle/Resources/config/services.xml" }
     
 framework:
     #esi:             ~
@@ -53,6 +54,12 @@ doctrine:
         mappings:
             StofDoctrineExtensionsBundle: false        
 
+stof_doctrine_extensions:
+    default_locale: de_DE
+    orm:
+        default:
+            sluggable: true
+            
 # Swiftmailer Configuration
 swiftmailer:
     transport: %mailer_transport%
@@ -63,17 +70,13 @@ swiftmailer:
 jms_security_extra:
 #    secure_controllers:  true
     secure_all_services: false
+jms_aop:
+    cache_dir: %kernel.cache_dir%/jms_aop            
 
 knp_menu:
     twig: true
     templating: true
     
-stof_doctrine_extensions:
-    default_locale: de_DE
-    orm:
-        default:
-            sluggable: true
-            
 knp_zend_cache:
     templates:
         knp_last_tweets:
@@ -93,20 +96,5 @@ knp_last_tweets:
         options:
             cache_name: knp_last_tweets            
 
-jms_aop:
-    cache_dir: %kernel.cache_dir%/jms_aop            
-
-ornicar_akismet:
-    api_key:        5ac673e25007
-    url:            http://digitalkaoz.net
-    
-fos_comment:
-    db_driver: orm
-    class:
-        model:
-            comment: rs\kaoz4FrontBundle\Entity\Comment
-            thread: rs\kaoz4FrontBundle\Entity\Thread    
-    service:
-        spam_detection:
-            comment: fos_comment.spam_detection.comment.akismet            
-
+virtal_disqus:
+    disqus_shortname: digitalkaoz
