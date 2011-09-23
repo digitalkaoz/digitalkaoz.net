@@ -13,6 +13,11 @@
 $rootDir = dirname(__DIR__);
 $vendorDir = $rootDir.'/vendor';
 
+//define some color codes for readable outputs
+$success = "\033[0;32m%s\033[0m";
+$error = "\033[31;31m%s\033[0m";
+$info = "\033[33;33m%s\033[0m";
+
 array_shift($argv);
 if (!isset($argv[0])) {
     exit(<<<EOF
@@ -66,7 +71,7 @@ if ('install' === $command && file_exists($rootDir.'/deps.lock')) {
 $newversions = array();
 $deps = parse_ini_file($rootDir.'/deps.ini', true, INI_SCANNER_RAW);
 if (false === $deps) {
-    exit("The deps file is not valid ini syntax. Perhaps missing a trailing newline?\n");
+    exit(sprintf($error,"The deps file is not valid ini syntax. Perhaps missing a trailing newline?\n"));
 }
 foreach ($deps as $name => $dep) {
     $dep = array_map('trim', $dep);
@@ -88,7 +93,7 @@ foreach ($deps as $name => $dep) {
         }
     }
 
-    echo "> Installing/Updating $name\n";
+    echo "> Installing/Updating  ".sprintf($success,$name)."\n";
 
     // url
     if (!isset($dep['git'])) {
@@ -99,14 +104,21 @@ foreach ($deps as $name => $dep) {
     if (!is_dir($installDir)) {
         system(sprintf('git clone %s %s', escapeshellarg($url), escapeshellarg($installDir)));
     }
-
+    
+    ob_start();
     system(sprintf('cd %s && git fetch origin && git reset --hard %s', escapeshellarg($installDir), escapeshellarg($rev)));
+    $output = ob_get_clean();
+    
 
     if ('update' === $command) {
         ob_start();
         system(sprintf('cd %s && git log -n 1 --format=%%H', escapeshellarg($installDir)));
-        $newversions[] = trim($name.' '.ob_get_clean());
+        $version = ob_get_clean();
+        $newversions[] = trim($name.' '.$version);
     }
+    
+    $message = substr($version, 0,7);
+    echo str_replace($message, sprintf($info,$message), $output)."\n";
 }
 
 // update?
