@@ -93,4 +93,20 @@ knp_last_tweets:
         options:
             cache_name: knp_last_tweets            
 
-            
+jms_aop:
+    cache_dir: %kernel.cache_dir%/jms_aop            
+
+ornicar_akismet:
+    api_key:        5ac673e25007
+    url:            http://digitalkaoz.net
+    
+fos_comment:
+    db_driver: orm
+    class:
+        model:
+            comment: rs\kaoz4FrontBundle\Entity\Comment
+            thread: rs\kaoz4FrontBundle\Entity\Thread    
+    service:
+        spam_detection:
+            comment: fos_comment.spam_detection.comment.akismet            
+

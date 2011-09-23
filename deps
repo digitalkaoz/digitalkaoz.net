@@ -35,7 +35,7 @@
 
 [metadata]
     git=http://github.com/schmittjoh/metadata.git
-    version=1.0.0
+;    version=1.0.0
 
 [knp-menu]
     git=http://github.com/knplabs/KnpMenu.git
@@ -55,6 +55,12 @@
     git=http://github.com/knplabs/zend-filter.git 
     target=Zend/Filter
 
+[buzz]
+    git=http://github.com/kriswallsmith/Buzz.git
+
+[cg-library]
+    git=https://github.com/schmittjoh/cg-library.git
+
 [SensioFrameworkExtraBundle]
     git=http://github.com/sensio/SensioFrameworkExtraBundle.git
     target=bundles/Sensio/Bundle/FrameworkExtraBundle
@@ -62,6 +68,10 @@
 [JMSSecurityExtraBundle]
     git=http://github.com/schmittjoh/JMSSecurityExtraBundle.git
     target=bundles/JMS/SecurityExtraBundle
+
+[JMSAopBundle]
+    git=http://github.com/schmittjoh/JMSAopBundle.git
+    target=bundles/JMS/AopBundle
 
 [SensioDistributionBundle]
     git=http://github.com/sensio/SensioDistributionBundle.git
@@ -95,3 +105,11 @@
 [ZendCacheBundle]
     git=http://github.com/knplabs/KnpZendCacheBundle.git 
     target=bundles/Knp/Bundle/ZendCacheBundle
+
+[AkismetBundle]
+    git=http://github.com/ornicar/OrnicarAkismetBundle.git
+    target=bundles/Ornicar/AkismetBundle
+
+[FOSCommentBundle]
+    git=git://github.com/FriendsOfSymfony/FOSCommentBundle.git
+    target=bundles/FOS/CommentBundle

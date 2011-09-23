@@ -16,13 +16,15 @@ class AppKernel extends Kernel
             new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
-            
+            new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),            
             new rs\kaoz4FrontBundle\rskaoz4FrontBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),            
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new Knp\Bundle\LastTweetsBundle\KnpLastTweetsBundle(),
-            new Knp\Bundle\ZendCacheBundle\KnpZendCacheBundle()
+            new Knp\Bundle\ZendCacheBundle\KnpZendCacheBundle(),
+            new JMS\AopBundle\JMSAopBundle(),
+            new Ornicar\AkismetBundle\OrnicarAkismetBundle(),
+            new FOS\CommentBundle\FOSCommentBundle(),
             
         );
 

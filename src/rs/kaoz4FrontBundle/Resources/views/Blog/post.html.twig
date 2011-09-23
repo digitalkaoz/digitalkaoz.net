@@ -14,4 +14,8 @@
         <p>{{ post.text }}</p>
 
     </div>
+
+    <div>
+        {% render "FOSCommentBundle:Thread:show" with {"id": post.slug} %}
+    </div>
 {% endblock %}

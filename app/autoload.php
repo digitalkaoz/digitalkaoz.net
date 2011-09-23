@@ -19,8 +19,12 @@ $loader->registerNamespaces(array(
     'Doctrine\\Common\\DataFixtures' => __DIR__.'/../vendor/doctrine-fixtures/lib',
     'Stof'             => __DIR__.'/../vendor/bundles',
     'Gedmo'            => __DIR__.'/../vendor/gedmo-doctrine-extensions/lib',
-    'Knp'                       => __DIR__.'/../vendor/bundles',
-    'Zend'                      => __DIR__.'/../vendor',
+    'Knp'              => __DIR__.'/../vendor/bundles',
+    'Zend'             => __DIR__.'/../vendor',
+    'CG'               => __DIR__.'/../vendor/cg-library/src',
+    'Buzz'             => __DIR__.'/../vendor/buzz/lib',
+    'Ornicar'          => __DIR__.'/../vendor/bundles',
+    'FOS'              => __DIR__.'/../vendor/bundles',
 ));
 
 $loader->registerPrefixes(array(
