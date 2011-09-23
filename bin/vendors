@@ -133,7 +133,9 @@ $interpreter = PHP_OS == 'WINNT' ? 'php.exe' : '';
 system(sprintf('%s %s', $interpreter, escapeshellarg($rootDir.'/vendor/bundles/Sensio/Bundle/DistributionBundle/Resources/bin/build_bootstrap.php')));
 
 // Update assets
+echo ">".sprintf($info,"Updating Assets\n");
 system(sprintf('%s %s assets:install %s', $interpreter, escapeshellarg($rootDir.'/app/console'), escapeshellarg($rootDir.'/web/')));
 
+echo "\n>".sprintf($info,"Clearing Cache\n");
 // Remove the cache
 system(sprintf('%s %s cache:clear --no-warmup', $interpreter, escapeshellarg($rootDir.'/app/console')));
