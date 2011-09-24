@@ -18,13 +18,4 @@
     </services>
     -->
     
-    <parameters>
-        <parameter key="kaoz4.comment_form.class">rs\kaoz4FrontBundle\Form\CommentType</parameter>
-    </parameters>
-    
-    <services>
-        <service id="kaoz4.comment_form" class="%kaoz4.comment_form.class%">
-            <tag name="form.type" alias="kaoz4.comment_form" />
-        </service>
-    </services>
 </container>

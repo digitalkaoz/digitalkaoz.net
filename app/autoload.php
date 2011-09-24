@@ -23,6 +23,7 @@ $loader->registerNamespaces(array(
     'Zend'             => __DIR__.'/../vendor',
     'CG'               => __DIR__.'/../vendor/cg-library/src',
     'Virtal\Bundle'    => __DIR__.'/../vendor/bundles',
+    'Elao'             => __DIR__.'/../vendor/bundles',
 ));
 
 $loader->registerPrefixes(array(

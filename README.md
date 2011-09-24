@@ -63,6 +63,8 @@ What's inside?
   ([documentation](http://symfony.com/doc/2.0/cookbook/assetic/asset_management.html))
 * **JMSSecurityExtraBundle** - Allows security to be added via annotations
   ([documentation](http://symfony.com/doc/current/bundles/JMSSecurityExtraBundle/index.html))
+* **JMSAopBundle** - AOP for symfony2
+  ([documentation](http://github.com/schmittjoh/JMSAopBundle))
 * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
   the web debug toolbar
 * **SensioDistributionBundle** (in dev/test env) - Adds functionality for configuring
@@ -71,13 +73,15 @@ What's inside?
   ([documentation](http://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html))
 * **AcmeDemoBundle** (in dev/test env) - A demo bundle with some example code
 * **KnpMenuBundle** - provides OOP Menus
-  ([documentation](https://github.com/knplabs/KnpMenuBundle))
+  ([documentation](http://github.com/knplabs/KnpMenuBundle))
 * **DoctrineFixturesBundle** - load fixtures easily
   ([documentation](http://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html))
 * **KnpLastTweetsBundle** - show latest tweets
-  ([documentation](https://github.com/knplabs/KnpLastTweetsBundle))
+  ([documentation](http://github.com/knplabs/KnpLastTweetsBundle))
 * **KnpZendCacheBundle** - zend caching backend
-  ([documentation](https://github.com/knplabs/KnpZendCacheBundle))
-
-
+  ([documentation](http://github.com/knplabs/KnpZendCacheBundle))
+* **DisQusBundle** - easily integrate DisQUS plattform
+  ([documentation](http://github.com/virtal/VirtalDisqusBundle))
+* **WebProfilerExtraBundle** - more profiler infos
+  ([documentation](https://github.com/Elao/WebProfilerExtraBundle))
 Enjoy!

@@ -28,3 +28,9 @@ knp_last_tweets:
     
 virtal_disqus:    
     disqus_developer: true
+    
+web_profiler_extra:
+    routing:    true
+    container:  true
+    assetic:    true
+    twig:       true    
