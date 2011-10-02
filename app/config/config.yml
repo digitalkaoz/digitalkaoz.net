@@ -1,5 +1,5 @@
 imports:
-    - { resource: parameters.ini }
+    - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: "@rskaoz4FrontBundle/Resources/config/menu.xml" }
     - { resource: "@rskaoz4FrontBundle/Resources/config/services.xml" }

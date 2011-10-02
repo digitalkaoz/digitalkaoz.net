@@ -24,6 +24,7 @@ $loader->registerNamespaces(array(
     'CG'               => __DIR__.'/../vendor/cg-library/src',
     'Virtal\Bundle'    => __DIR__.'/../vendor/bundles',
     'Elao'             => __DIR__.'/../vendor/bundles',
+    'Smag\Bundle'      => __DIR__.'/../vendor/bundles',
 ));
 
 $loader->registerPrefixes(array(

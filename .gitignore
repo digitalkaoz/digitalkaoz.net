@@ -5,3 +5,4 @@ web/bundles/*
 nbproject/
 vendor/*
 catalog.xml
+app/config/parameters.yml
