@@ -1,14 +1,14 @@
 <?php
 
-namespace rs\kaoz4FrontBundle\Entity;
+namespace rs\kaoz4Bundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * rs\kaoz4FrontBundle\Entity\Network
+ * rs\kaoz4Bundle\Entity\Network
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="rs\kaoz4FrontBundle\Entity\NetworkRepository")
+ * @ORM\Entity(repositoryClass="rs\kaoz4Bundle\Entity\NetworkRepository")
  */
 class Network
 {

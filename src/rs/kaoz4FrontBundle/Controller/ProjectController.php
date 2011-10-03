@@ -54,6 +54,6 @@ class ProjectController extends Controller
      */
     private function getRepository($entity)
     {
-        return $this->getDoctrine()->getRepository('rskaoz4FrontBundle:'.$entity);
+        return $this->getDoctrine()->getRepository('rskaoz4Bundle:'.$entity);
     }
 }

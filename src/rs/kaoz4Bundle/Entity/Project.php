@@ -1,17 +1,17 @@
 <?php
 
-namespace rs\kaoz4FrontBundle\Entity;
+namespace rs\kaoz4Bundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * rs\kaoz4FrontBundle\Entity\Post
+ * rs\kaoz4Bundle\Entity\Project
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="rs\kaoz4FrontBundle\Entity\PostRepository")
+ * @ORM\Entity(repositoryClass="rs\kaoz4Bundle\Entity\ProjectRepository")
  */
-class Post
+class Project
 {
     /**
      * @var integer $id
@@ -23,19 +23,26 @@ class Post
     private $id;
 
     /**
-     * @var string $title
+     * @var string $name
      *
-     * @ORM\Column(name="title", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255)
      * @Gedmo\Sluggable
      */
-    private $title;
-
+    private $name;
+    
     /**
      * @Gedmo\Slug
      * @ORM\Column(name="slug", type="string", length=128, unique=true)
      */
     private $slug;    
-    
+
+    /**
+     * @var string $url
+     *
+     * @ORM\Column(name="url", type="string", length=255, nullable=true)
+     */
+    private $url;
+
     /**
      * @var text $abstract
      *
@@ -44,16 +51,16 @@ class Post
     private $abstract;
 
     /**
-     * @var text $text
+     * @var text $description
      *
-     * @ORM\Column(name="text", type="text")
+     * @ORM\Column(name="description", type="text")
      */
-    private $text;
+    private $description;
 
     /**
      * @var string $logo
      *
-     * @ORM\Column(name="logo", type="string", length=255)
+     * @ORM\Column(name="logo", type="string", length=255, nullable=true)
      */
     private $logo;
 
@@ -79,21 +86,17 @@ class Post
      */
     public function fromArray($data)
     {
-        $this->setTitle(array_key_exists('title', $data) ? $data['title'] : null);
+        $this->setName(array_key_exists('name', $data) ? $data['name'] : null);
         $this->setActive(array_key_exists('active', $data) ? $data['active'] : false);
+        $this->setUrl(array_key_exists('url', $data) ? $data['url'] : null);
+        $this->setDescription(array_key_exists('description', $data) ? $data['description'] : null);
         $this->setLogo(array_key_exists('logo', $data) ? $data['logo'] : null);
-        $this->setText(array_key_exists('text', $data) ? $data['text'] : null);
-        $this->setAbstract(array_key_exists('abstract', $data) ? $data['abstract'] : null);
         $this->setCreatedAt(array_key_exists('created_at', $data) ? $data['created_at'] : new \DateTime());
+        $this->setAbstract(array_key_exists('abstract', $data) ? $data['abstract'] : null);
         
         return $this;
     }
     
-    public function getSlug()
-    {
-        return $this->slug;
-    }
-
     /**
      * Get id
      *
@@ -105,23 +108,43 @@ class Post
     }
 
     /**
-     * Set title
+     * Set name
      *
-     * @param string $title
+     * @param string $name
      */
-    public function setTitle($title)
+    public function setName($name)
     {
-        $this->title = $title;
+        $this->name = $name;
     }
 
     /**
-     * Get title
+     * Get name
      *
      * @return string 
      */
-    public function getTitle()
+    public function getName()
     {
-        return $this->title;
+        return $this->name;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string 
+     */
+    public function getUrl()
+    {
+        return $this->url;
     }
 
     /**
@@ -145,23 +168,23 @@ class Post
     }
 
     /**
-     * Set text
+     * Set description
      *
-     * @param text $text
+     * @param text $description
      */
-    public function setText($text)
+    public function setDescription($description)
     {
-        $this->text = $text;
+        $this->description = $description;
     }
 
     /**
-     * Get text
+     * Get description
      *
      * @return text 
      */
-    public function getText()
+    public function getDescription()
     {
-        return $this->text;
+        return $this->description;
     }
 
     /**
@@ -232,5 +255,15 @@ class Post
     public function setSlug($slug)
     {
         $this->slug = $slug;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

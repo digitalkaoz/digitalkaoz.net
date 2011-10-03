@@ -1,17 +1,17 @@
 <?php
 
-namespace rs\kaoz4FrontBundle\Entity;
+namespace rs\kaoz4Bundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * rs\kaoz4FrontBundle\Entity\Project
+ * rs\kaoz4Bundle\Entity\Post
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="rs\kaoz4FrontBundle\Entity\ProjectRepository")
+ * @ORM\Entity(repositoryClass="rs\kaoz4Bundle\Entity\PostRepository")
  */
-class Project
+class Post
 {
     /**
      * @var integer $id
@@ -23,26 +23,19 @@ class Project
     private $id;
 
     /**
-     * @var string $name
+     * @var string $title
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255)
      * @Gedmo\Sluggable
      */
-    private $name;
-    
+    private $title;
+
     /**
      * @Gedmo\Slug
      * @ORM\Column(name="slug", type="string", length=128, unique=true)
      */
     private $slug;    
-
-    /**
-     * @var string $url
-     *
-     * @ORM\Column(name="url", type="string", length=255, nullable=true)
-     */
-    private $url;
-
+    
     /**
      * @var text $abstract
      *
@@ -51,16 +44,16 @@ class Project
     private $abstract;
 
     /**
-     * @var text $description
+     * @var text $text
      *
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="text", type="text")
      */
-    private $description;
+    private $text;
 
     /**
      * @var string $logo
      *
-     * @ORM\Column(name="logo", type="string", length=255, nullable=true)
+     * @ORM\Column(name="logo", type="string", length=255)
      */
     private $logo;
 
@@ -86,17 +79,21 @@ class Project
      */
     public function fromArray($data)
     {
-        $this->setName(array_key_exists('name', $data) ? $data['name'] : null);
+        $this->setTitle(array_key_exists('title', $data) ? $data['title'] : null);
         $this->setActive(array_key_exists('active', $data) ? $data['active'] : false);
-        $this->setUrl(array_key_exists('url', $data) ? $data['url'] : null);
-        $this->setDescription(array_key_exists('description', $data) ? $data['description'] : null);
         $this->setLogo(array_key_exists('logo', $data) ? $data['logo'] : null);
-        $this->setCreatedAt(array_key_exists('created_at', $data) ? $data['created_at'] : new \DateTime());
+        $this->setText(array_key_exists('text', $data) ? $data['text'] : null);
         $this->setAbstract(array_key_exists('abstract', $data) ? $data['abstract'] : null);
+        $this->setCreatedAt(array_key_exists('created_at', $data) ? $data['created_at'] : new \DateTime());
         
         return $this;
     }
     
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
     /**
      * Get id
      *
@@ -108,43 +105,23 @@ class Project
     }
 
     /**
-     * Set name
+     * Set title
      *
-     * @param string $name
+     * @param string $title
      */
-    public function setName($name)
+    public function setTitle($title)
     {
-        $this->name = $name;
+        $this->title = $title;
     }
 
     /**
-     * Get name
+     * Get title
      *
      * @return string 
      */
-    public function getName()
+    public function getTitle()
     {
-        return $this->name;
-    }
-
-    /**
-     * Set url
-     *
-     * @param string $url
-     */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-    }
-
-    /**
-     * Get url
-     *
-     * @return string 
-     */
-    public function getUrl()
-    {
-        return $this->url;
+        return $this->title;
     }
 
     /**
@@ -168,23 +145,23 @@ class Project
     }
 
     /**
-     * Set description
+     * Set text
      *
-     * @param text $description
+     * @param text $text
      */
-    public function setDescription($description)
+    public function setText($text)
     {
-        $this->description = $description;
+        $this->text = $text;
     }
 
     /**
-     * Get description
+     * Get text
      *
      * @return text 
      */
-    public function getDescription()
+    public function getText()
     {
-        return $this->description;
+        return $this->text;
     }
 
     /**
@@ -255,15 +232,5 @@ class Project
     public function setSlug($slug)
     {
         $this->slug = $slug;
-    }
-
-    /**
-     * Get slug
-     *
-     * @return string 
-     */
-    public function getSlug()
-    {
-        return $this->slug;
     }
 }

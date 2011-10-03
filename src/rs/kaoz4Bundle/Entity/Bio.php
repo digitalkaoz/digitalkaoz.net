@@ -1,14 +1,14 @@
 <?php
 
-namespace rs\kaoz4FrontBundle\Entity;
+namespace rs\kaoz4Bundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * rs\kaoz4FrontBundle\Entity\Bio
+ * rs\kaoz4Bundle\Entity\Bio
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="rs\kaoz4FrontBundle\Entity\BioRepository")
+ * @ORM\Entity(repositoryClass="rs\kaoz4Bundle\Entity\BioRepository")
  */
 class Bio
 {

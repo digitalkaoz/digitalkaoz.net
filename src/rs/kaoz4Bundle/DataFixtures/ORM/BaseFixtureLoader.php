@@ -1,7 +1,7 @@
 <?php
 
 
-namespace rs\kaoz4FrontBundle\DataFixtures\ORM;
+namespace rs\kaoz4Bundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
