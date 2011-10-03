@@ -26,7 +26,8 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new Virtal\Bundle\DisqusBundle\VirtalDisqusBundle(),
             //new Smag\Bundle\DataUriBundle\SmagDataUriBundle(),
-            new Knp\Bundle\ConsoleAutocompleteBundle\KnpConsoleAutocompleteBundle()
+            new Knp\Bundle\ConsoleAutocompleteBundle\KnpConsoleAutocompleteBundle(),
+            new IHQS\ContactBundle\IHQSContactBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

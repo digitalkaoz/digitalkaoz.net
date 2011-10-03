@@ -98,3 +98,19 @@ knp_last_tweets:
 
 virtal_disqus:
     disqus_shortname: digitalkaoz
+
+ihqs_contact:
+        contact:
+            form:
+                type:               ihqs_contact_contact
+                handler:            ihqs_contact.contact.form.handler.default
+                name:               ihqs_contact_contact_form
+                validation_groups:  [Contact]
+        form: ~                                 # (optional) class managing the contact form
+        model: ~                                # (optional) class managing the model
+        connectors:                             # the list of "listeners" (or connectors here)
+            email:                              # connecting the email listener
+                recipients: %contact_recipient% # giving him the recipient(s) email(s)
+            #database:                           # connecting the database listener
+            #    db_driver: orm                  # giving him the database driver
+            #file: ~                             # connecting the file logger listener
