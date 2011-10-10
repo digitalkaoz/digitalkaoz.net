@@ -13,6 +13,11 @@ for Symfony. To do this, execute the following:
 
 If you get any warnings or recommendations, fix these now before moving on.
 
+### b) install node and less
+
+    curl http://npmjs.org/install.sh | sh
+    npm install less -g
+
 ### b) Install the Vendor Libraries
 
 If you downloaded the archive "without vendors" or installed via git, then
@@ -46,6 +51,7 @@ Symfony Application online" link of the ``config.php`` page.
 
 What's inside?
 ---------------
+
 * **FrameworkBundle** - The core Symfony framework bundle
 * **SensioFrameworkExtraBundle** - Adds several enhancements, including template
   and routing annotation capability ([documentation](http://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html))
@@ -83,5 +89,15 @@ What's inside?
 * **DisQusBundle** - easily integrate DisQUS plattform
   ([documentation](http://github.com/virtal/VirtalDisqusBundle))
 * **WebProfilerExtraBundle** - more profiler infos
-  ([documentation](https://github.com/Elao/WebProfilerExtraBundle))
+  ([documentation](http://github.com/Elao/WebProfilerExtraBundle))
+* **DisqusBundle** - simple usage of disqus
+  ([documentation](http://github.com/virtal/VirtalDisqusBundle))
+* **ConsoleAutocompleteBundle** - sf2 autocompletion of tasks
+  ([documentation](http://github.com/knplabs/KnpConsoleAutocompleteBundle))
+* **ContactBundle** - raw contact form bundle
+  ([documentation](http://github.com/ihqs/ContactBundle))
+* **MopaBootstrapBundle** - integrates [twitter-bootstrap](http://twitter.github.com/bootstrap/)
+  ([documentation](http://github.com/phiamo/MopaBootstrapBundle))
+
+  
 Enjoy!
