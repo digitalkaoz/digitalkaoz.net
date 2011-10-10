@@ -6,3 +6,5 @@ nbproject/
 vendor/*
 catalog.xml
 app/config/parameters.yml
+web/css/combined*.css
+web/js/combined*.js

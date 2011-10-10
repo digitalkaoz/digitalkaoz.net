@@ -33,6 +33,8 @@ assetic:
         cssrewrite: ~
         # closure:
         #     jar: %kernel.root_dir%/java/compiler.jar
+        cssembed:
+            jar: %kernel.root_dir%/Resources/java/cssembed-0.4.0.jar
         less: 
             node: /opt/local/bin/node
             node_paths: [ /opt/local/lib/node_modules ]          
