@@ -1,0 +1,47 @@
+{% from 'MopaBootstrapBundle::flash.html.twig' import session_flash %}
+
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> 
+
+<html>
+    <head>        
+        <title>{% block title %}{% endblock %} - DigitalKaoz</title>
+        {% include '::head.html.twig' %}
+        {% block stylesheets %}{% endblock %}  
+    </head>
+    
+<body>
+	<div class="topbar" data-dropdown="dropdown">
+		<div class="topbar-inner">
+			<div class="container">
+				<h3>
+					<a href="http://digitalkaoz.net">Digital.kaoZ</a>
+				</h3>
+                <div id="nav">{% render 'rskaoz4FrontBundle:Home:mainNavigation' with {}, {'standalone': true} %}</div>
+                
+				<form class="pull-right" action="">
+					<input type="text" placeholder="Search">
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="container main">
+		{% block flashes %}
+		    {{ session_flash() }}
+		{% endblock  %}
+        
+        {% block page %}{% endblock %}
+	</div>
+        
+    <footer>{% render 'rskaoz4FrontBundle:Home:footer' with {}, {'standalone': true} %}</footer>
+        
+    {% include '::scripts.html.twig' %}
+    {% block javascripts %}{% endblock %}
+        
+</body>
+</html>
