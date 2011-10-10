@@ -17,5 +17,5 @@ monolog:
             path:  %kernel.logs_dir%/%kernel.environment%.log
             level: debug
 
-ornicar_akismet:
-    throw_exceptions: false
+#ornicar_akismet:
+#    throw_exceptions: false
