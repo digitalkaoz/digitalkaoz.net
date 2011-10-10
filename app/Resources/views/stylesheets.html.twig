@@ -1,12 +1,11 @@
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Aldrich">
 
 {% stylesheets  
-                'css/yaml/core/base.css'
-                'css/basemod.css'
                 'css/content.css'
-                'css/yaml/print/print_draft.css'                
+                '@MopaBootstrapBundle/Resources/bootstrap/lib/bootstrap.less'
+                '@MopaBootstrapBundle/Resources/public/less/paginator.less'
 
-                filter='?yui_css' output='/css/combined.css'
+                filter='less,?yui_css' output='/css/combined.css'
 %}
     <link rel="stylesheet" href="{{ asset_url }}">
 {% endstylesheets %}

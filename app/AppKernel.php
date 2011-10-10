@@ -28,6 +28,7 @@ class AppKernel extends Kernel
             //new Smag\Bundle\DataUriBundle\SmagDataUriBundle(),
             new Knp\Bundle\ConsoleAutocompleteBundle\KnpConsoleAutocompleteBundle(),
             new IHQS\ContactBundle\IHQSContactBundle(),
+            new Mopa\BootstrapBundle\MopaBootstrapBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

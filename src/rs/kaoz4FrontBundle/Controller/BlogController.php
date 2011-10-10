@@ -37,14 +37,14 @@ class BlogController extends Controller
     }
     
     /**
-     * @Route("/_latest_post/{full}", name="latest_post")
-     * @Template("rskaoz4FrontBundle:Blog:short.html.twig")
+     * @Route("/_latest_post", name="latest_post")
+     * @Template("rskaoz4FrontBundle:Blog:latest.html.twig")
      */
-    public function latestAction($full)
+    public function latestAction()
     {
         $post = $this->getRepository('Post')->findLatest();
                 
-        return array('post' => $post, 'full'=>$full );
+        return array('post' => $post );
     }
     
     /**

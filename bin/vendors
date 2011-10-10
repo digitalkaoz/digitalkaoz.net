@@ -115,6 +115,8 @@ foreach ($deps as $name => $dep) {
         system(sprintf('cd %s && git log -n 1 --format=%%H', escapeshellarg($installDir)));
         $version = ob_get_clean();
         $newversions[] = trim($name.' '.$version);
+    }else{
+        $version = '';
     }
     
     $message = substr($version, 0,7);

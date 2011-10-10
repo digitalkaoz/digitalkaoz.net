@@ -26,6 +26,7 @@ $loader->registerNamespaces(array(
     'Elao'             => __DIR__.'/../vendor/bundles',
     'Smag\Bundle'      => __DIR__.'/../vendor/bundles',
     'IHQS'             => __DIR__.'/../vendor/bundles',
+    'Mopa'             => __DIR__.'/../vendor/bundles',
 ));
 
 $loader->registerPrefixes(array(

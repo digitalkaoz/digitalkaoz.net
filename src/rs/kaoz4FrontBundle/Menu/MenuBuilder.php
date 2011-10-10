@@ -26,7 +26,7 @@ class MenuBuilder
         $menu->addChild('Blog', array('route' => 'blog'));
         $menu->addChild('Bio', array('route' => 'bio'));
         $menu->addChild('Projects', array('route' => 'projects'));
-        $menu->addChild('Networks', array('route' => 'networks'));
+        $menu->addChild('Contact', array('route' => 'contact'));
 
         return $menu;
     }

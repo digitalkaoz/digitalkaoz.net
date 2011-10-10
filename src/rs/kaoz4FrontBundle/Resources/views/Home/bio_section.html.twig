@@ -1,26 +1,27 @@
-{% if elements %}
-    <h3>{{ section|e }}</h3>
-        
-    <ul>
-        {% for element in elements %}
-            <li>
-                
-                {% if element.url %}
-                    <a href="{{ element.url }}" target="_blank"><strong>{{ element.name|e }}</strong></a>
-                {% else %}
-                    <strong>{{ element.name|e }}</strong>
-                {% endif %}
-                    
-                {% if element.level %}
-                    <b>{{ element.level }}</b>    
-                {% endif %}
-                
-                {% if element.period %}
-                    <b>{{ element.period }}</b>    
-                {% endif %}
-                
-                    
-            </li>
-        {% endfor %}        
-    </ul>
-{% endif %}
+<div class="row">
+    {% if elements %}
+        <div class="span16">
+            <h3>{{ section|e }}</h3>
+        </div>
+
+        <div class="span16">
+            <ul>
+                {% for element in elements %}
+                    <li>
+                        {% if element.url %}
+                            <a href="{{ element.url }}" target="_blank"><strong>{{ element.name|e }}</strong></a>
+                        {% else %}
+                            <strong>{{ element.name|e }}</strong>
+                        {% endif %}
+                        {% if element.level %}
+                            <b>{{ element.level }}</b>    
+                        {% endif %}
+                        {% if element.period %}
+                            <b>{{ element.period }}</b>    
+                        {% endif %}
+                    </li>
+                {% endfor %}        
+            </ul>
+        </div>
+    {% endif %}
+</div>

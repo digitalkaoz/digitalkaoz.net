@@ -23,7 +23,9 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
-
+    form:
+        resources:
+            - 'MopaBootstrapBundle:Form:fields.html.twig'
 # Assetic Configuration
 assetic:
     debug:          %kernel.debug%
@@ -32,12 +34,15 @@ assetic:
         cssrewrite: ~
         # closure:
         #     jar: %kernel.root_dir%/java/compiler.jar
+        less: 
+            node: /opt/local/bin/node
+            node_paths: [ /opt/local/lib/node_modules ]          
         yui_css:
             jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.6.jar
         yui_js:
             jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.6.jar
-
-# Doctrine Configuration
+    
+# Doctrine Configuration~
 doctrine:
     dbal:
         driver:   %database_driver%
@@ -106,11 +111,22 @@ ihqs_contact:
                 handler:            ihqs_contact.contact.form.handler.default
                 name:               ihqs_contact_contact_form
                 validation_groups:  [Contact]
-        form: ~                                 # (optional) class managing the contact form
-        model: ~                                # (optional) class managing the model
+        #form: ~                                 # (optional) class managing the contact form
+        #model: ~                                # (optional) class managing the model
         connectors:                             # the list of "listeners" (or connectors here)
             email:                              # connecting the email listener
                 recipients: %contact_recipient% # giving him the recipient(s) email(s)
+                event_listener:
+                    class: rs\kaoz4FrontBundle\Connector\Email
             #database:                           # connecting the database listener
             #    db_driver: orm                  # giving him the database driver
             #file: ~                             # connecting the file logger listener
+mopa_bootstrap:
+    form: ~            
+    
+services:
+    acme_hello.menu_renderer:
+        class: rs\kaoz4FrontBundle\Menu\BootstrapRenderer
+        arguments: [%kernel.charset%]
+        tags:
+            - { name: knp_menu.renderer, alias: bootstrap }    

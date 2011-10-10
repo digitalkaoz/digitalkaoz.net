@@ -3,18 +3,24 @@
 {% block title %} {{ post.title }} - Blog {% endblock %}
 
 {% block body %}
-    <div>
-        <a href="{{ path('post', { 'slug': post.slug }) }}">
-            {% if post.logo %}
-                <img src="{{ post.logo}}" alt="{{ post.title }}" title="{{ post.title }}" width="50"/>
-            {% endif %}
+    <div class="row">
+        {% if post.logo %}
+            <img src="{{ post.logo}}" alt="{{ post.title }}" title="{{ post.title }}" class="span2"/>
+        {% else %}
+            <div class="span2"></div>
+        {% endif %}
+        
+        <div class="span14 offset2">
             <strong>{{ post.title|e }}</strong>
-        </a>
+        </div>
 
-        <p>{{ post.text }}</p>
+        <div class="span16">
+            <p>{{ post.text }}</p>
+        </div>
 
     </div>
 
-    <div id="disqus_thread"></div>
+    <div id="disqus_thread" class="span14 offset1"></div>
     {{ disqus_comments({'disqus_identifier': post.slug })}}
+    
 {% endblock %}

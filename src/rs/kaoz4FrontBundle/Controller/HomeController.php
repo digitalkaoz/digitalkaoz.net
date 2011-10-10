@@ -43,11 +43,16 @@ class HomeController extends Controller
     }
     
     /**
-     * @Route("/networks", name="networks")
-     * @Template("rskaoz4FrontBundle:Home:networks.html.twig")
+     * @Route("/contact", name="contact")
+     * @Template("rskaoz4FrontBundle:Home:contact.html.twig")
      */
-    public function networksAction()
+    public function contactAction()
     {
+        if('POST' == $this->getRequest()->getMethod())
+        {            
+            //return $this->redirect($this->getRequest()->getUri());
+        }
+        
         $networks = $this->getRepository('Network')->findActive();
         
         return array('networks' => $networks);

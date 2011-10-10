@@ -1,14 +1,20 @@
-<div>
-    <a href="{{ path('post', { 'slug': post.slug }) }}">
-        {% if post.logo %}
-            <img src="{{ post.logo}}" alt="{{ post.title }}" title="{{ post.title }}" width="50"/>
-        {% endif %}
-        <strong>{{ post.title|e }}</strong>
-    </a>
+<div class="row">
+    <div class="span16">
+        <div class="span8">
+            <a href="{{ path('post', { 'slug': post.slug }) }}">
+                {% if post.logo %}
+                    <img src="{{ post.logo}}" alt="{{ post.title }}" title="{{ post.title }}" width="50"/>
+                {% endif %}
+                <strong>{{ post.title|e }}</strong>
+            </a>
+        </div>
 
-    {% if full %}
-        <p>{{ post.text }}</p>
-    {% else %}
-        <p>{{ post.abstract }}</p>
-    {% endif %}
+        <div class="span15 offset1">
+            {% if full %}
+                    <p>{{ post.text }}</p>
+            {% else %}
+                <p>{{ post.abstract }}</p>
+            {% endif %}
+        </div>
+    </div>
 </div>
