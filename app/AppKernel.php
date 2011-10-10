@@ -25,7 +25,6 @@ class AppKernel extends Kernel
             new Knp\Bundle\ZendCacheBundle\KnpZendCacheBundle(),
             new JMS\AopBundle\JMSAopBundle(),
             new Virtal\Bundle\DisqusBundle\VirtalDisqusBundle(),
-            //new Smag\Bundle\DataUriBundle\SmagDataUriBundle(),
             new Knp\Bundle\ConsoleAutocompleteBundle\KnpConsoleAutocompleteBundle(),
             new IHQS\ContactBundle\IHQSContactBundle(),
             new Mopa\BootstrapBundle\MopaBootstrapBundle(),
