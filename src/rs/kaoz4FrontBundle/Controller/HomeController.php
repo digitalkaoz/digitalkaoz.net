@@ -48,14 +48,25 @@ class HomeController extends Controller
      */
     public function contactAction()
     {
-        if('POST' == $this->getRequest()->getMethod())
-        {            
-            //return $this->redirect($this->getRequest()->getUri());
+        $form = $this->get('ihqs_contact.contact.form');
+
+        if ('POST' == $this->getRequest()->getMethod()) {
+            $contact = $this->get('ihqs_contact.contact_manager')->createContact();
+            $formHandler = $this->get('ihqs_contact.contact.form.handler');
+
+            if ($formHandler->process($contact)) {
+                $this->get('session')->setFlash('success', 'Your contact request was successfully sent');
+                return $this->redirect($this->getRequest()->getUri());
+            } else {
+                $this->get('session')->setFlash('error', 'Your contact request could not be processed');
+            }
         }
-        
-        $networks = $this->getRepository('Network')->findActive();
-        
-        return array('networks' => $networks);
+
+        return array(
+            'form' => $form->createview(),
+        );
+
+        return array();
     }        
     
     /**

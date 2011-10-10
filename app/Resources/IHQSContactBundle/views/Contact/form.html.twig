@@ -1,6 +1,4 @@
-<form class="contact-form" action="" {{ form_enctype(form) }} method="post">
+<form class="contact-form form-stacked" action="" {{ form_enctype(form) }} method="post">
     {{ form_widget(form) }}
-    <div>
-        <input type="submit" class="btn primary" value="{% trans %}Submit contact form{% endtrans %}" />
-    </div>
+    <input type="submit" class="btn primary" value="{% trans %}Submit contact form{% endtrans %}" />
 </form>

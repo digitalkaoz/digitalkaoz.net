@@ -13,7 +13,7 @@ framework:
     form:            true
     csrf_protection: true
     validation:      { enable_annotations: true }
-    templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
+    templating:      { engines: ['twig'] }
     session:
         default_locale: %locale%
         auto_start:     true
@@ -110,15 +110,9 @@ ihqs_contact:
                 handler:            ihqs_contact.contact.form.handler.default
                 name:               ihqs_contact_contact_form
                 validation_groups:  [Contact]
-        #form: ~                                 # (optional) class managing the contact form
-        #model: ~                                # (optional) class managing the model
         connectors:                             # the list of "listeners" (or connectors here)
             email:                              # connecting the email listener
                 recipients: %contact_recipient% # giving him the recipient(s) email(s)
-                event_listener:
-                    class: rs\kaoz4FrontBundle\Connector\Email
-            #database:                           # connecting the database listener
-            #    db_driver: orm                  # giving him the database driver
-            #file: ~                             # connecting the file logger listener
+                
 mopa_bootstrap:
     form: ~            

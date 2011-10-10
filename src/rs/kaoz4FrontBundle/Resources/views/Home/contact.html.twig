@@ -1,11 +1,14 @@
 {% extends "::base2col.html.twig" %}
 
-{% block title %} Networks {% endblock %}
+{% block title %} Contact {% endblock %}
 
 {% block body %}
 
     <div class="row">
-        {% render "IHQSContactBundle:Contact:form" %}
+        <form class="contact-form form-stacked" action="" {{ form_enctype(form) }} method="post">
+            {{ form_widget(form) }}
+            <input type="submit" class="btn primary" value="{% trans %}Submit contact form{% endtrans %}" />
+        </form>
     </div>
     
 {% endblock %}
