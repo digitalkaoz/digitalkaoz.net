@@ -1,8 +1,7 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
-    - { resource: "@rskaoz4FrontBundle/Resources/config/menu.xml" }
-    - { resource: "@rskaoz4FrontBundle/Resources/config/services.xml" }
+    - { resource: "@rskaoz4FrontBundle/Resources/config/services.yml" }
     
 framework:
     #esi:             ~
@@ -123,10 +122,3 @@ ihqs_contact:
             #file: ~                             # connecting the file logger listener
 mopa_bootstrap:
     form: ~            
-    
-services:
-    acme_hello.menu_renderer:
-        class: rs\kaoz4FrontBundle\Menu\BootstrapRenderer
-        arguments: [%kernel.charset%]
-        tags:
-            - { name: knp_menu.renderer, alias: bootstrap }    

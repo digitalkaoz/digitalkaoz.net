@@ -1,0 +1,20 @@
+services:
+  
+    kaoz4.menu_renderer:
+        class: rs\kaoz4FrontBundle\Menu\BootstrapRenderer
+        arguments: [%kernel.charset%]
+        tags:
+            - { name: knp_menu.renderer, alias: bootstrap }    
+            
+    kaoz4.menu_builder:
+        class: rs\kaoz4FrontBundle\Menu\MenuBuilder
+        arguments: ["@knp_menu.factory"]
+
+    kaoz4.menu.main:
+        class: Knp\Menu\MenuItem
+        factory_service: kaoz4.menu_builder
+        factory_method: createMainMenu
+        arguments: ["@request"]
+        scope: request
+        tags:
+            - { name: knp_menu.menu, alias: main }
