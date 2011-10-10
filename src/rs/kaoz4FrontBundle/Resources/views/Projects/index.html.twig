@@ -1,14 +1,10 @@
-{% extends "::base.html.twig" %}
+{% extends "::base2col.html.twig" %}
 
 {% block title %} Projects {% endblock %}
 
 {% block body %}
 
-    <div class="row">
-        <div class="span16">
-            <h2>Projects</h2>
-        </div>
-    </div>
+    <h2>Projects</h2>
 
     {% if projects %}
           {% for project in projects %}

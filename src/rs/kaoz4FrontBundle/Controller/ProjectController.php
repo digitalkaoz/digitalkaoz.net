@@ -37,14 +37,14 @@ class ProjectController extends Controller
     }
     
     /**
-     * @Route("/_latest/{full}", name="latest_project")
-     * @Template("rskaoz4FrontBundle:Projects:short.html.twig")
+     * @Route("/_latest_project", name="latest_project")
+     * @Template("rskaoz4FrontBundle:Projects:latest.html.twig")
      */
-    public function latestAction($full)
+    public function latestAction()
     {
         $project = $this->getRepository('Project')->findLatest();
                 
-        return array('project' => $project, 'full'=>$full );
+        return array('project' => $project );
     }
     
     /**

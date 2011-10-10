@@ -1,4 +1,4 @@
-{% extends "::base.html.twig" %}
+{% extends "::base1col.html.twig" %}
 
 {% block title %} Home {% endblock %}
 
@@ -13,7 +13,6 @@
   </div>
 </div>
 
-
 <div class="row">
     <div class="span16">
         <h3>Blog</h3>
@@ -23,7 +22,7 @@
 
 <div class="row">
     <div class="span8">
-        {% render 'rskaoz4FrontBundle:Project:latest' with {'full': false}, {'standalone': true} %}
+        {% render 'rskaoz4FrontBundle:Project:latest' with {}, {'standalone': true} %}
     </div>
     <div class="span8">
         {% render "KnpLastTweetsBundle:Twitter:lastTweets" with {'username': 'digitalkaoz'}, {'standalone': true} %}

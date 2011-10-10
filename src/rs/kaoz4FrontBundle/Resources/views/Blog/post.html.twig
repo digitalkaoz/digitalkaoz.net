@@ -1,8 +1,9 @@
-{% extends "::base.html.twig" %}
+{% extends "::base2col.html.twig" %}
 
 {% block title %} {{ post.title }} - Blog {% endblock %}
 
 {% block body %}
+
     <div class="row">
         {% if post.logo %}
             <img src="{{ post.logo}}" alt="{{ post.title }}" title="{{ post.title }}" class="span2"/>
@@ -10,17 +11,17 @@
             <div class="span2"></div>
         {% endif %}
         
-        <div class="span14 offset2">
+        <div class="span10 offset2">
             <strong>{{ post.title|e }}</strong>
         </div>
 
-        <div class="span16">
+        <div class="span10">
             <p>{{ post.text }}</p>
         </div>
 
     </div>
 
-    <div id="disqus_thread" class="span14 offset1"></div>
+    <div id="disqus_thread" class="span10"></div>
     {{ disqus_comments({'disqus_identifier': post.slug })}}
     
 {% endblock %}

@@ -1,0 +1,53 @@
+{% from 'MopaBootstrapBundle::flash.html.twig' import session_flash %}
+
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> 
+
+<html>
+    <head>        
+        <title>{% block title %}{% endblock %} - DigitalKaoz</title>
+        {% include '::head.html.twig' %}
+        {% block stylesheets %}{% endblock %}  
+    </head>
+    
+<body>
+	<div class="topbar" data-dropdown="dropdown">
+		<div class="topbar-inner">
+			<div class="container">
+				<h3>
+					<a href="http://digitalkaoz.net">Digital.kaoZ</a>
+				</h3>
+                <div id="nav">{% render 'rskaoz4FrontBundle:Home:mainNavigation' with {}, {'standalone': true} %}</div>
+                
+				<form class="pull-right" action="">
+					<input type="text" placeholder="Search">
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="container main">
+		{% block flashes %}
+		    {{ session_flash() }}
+		{% endblock  %}
+            
+        <div class="row">
+            <div class="span12">
+                {% block body %}{% endblock %}            
+            </div>
+
+            <div class="span4">{% block sidebar %}{% endblock %}Lorem ipsum dolizzle sure amizzle, consectetuer adipiscing sizzle. Nullizzle we gonna chung velizzle, funky fresh volutpizzle, suscipit boom shackalack, gravida vel, crazy. Pellentesque shizzlin dizzle tortizzle. Sizzle eros. Shut the shizzle up owned dolor boofron ma nizzle hizzle brizzle. Maurizzle pellentesque nibh izzle turpis. Bling bling izzle tortizzle. Its fo rizzle eleifend rhoncizzle bow wow wow. In shizzlin dizzle platea dictumst. Tellivizzle dapibus. Curabitizzle izzle urna, pretium we gonna chung, mattizzle i'm in the shizzle, you son of a bizzle its fo rizzle, nunc. Own yo' suscipizzle. Integizzle semper bow wow wow sizzle funky fresh.</div>
+        </div>
+	</div>
+        
+    <footer>{% render 'rskaoz4FrontBundle:Home:footer' with {}, {'standalone': true} %}</footer>
+        
+    {% include '::scripts.html.twig' %}
+    {% block javascripts %}{% endblock %}
+        
+</body>
+</html>
