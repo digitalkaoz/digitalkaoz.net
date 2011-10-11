@@ -74,10 +74,19 @@ class Project
     /**
      * @var datetime $created_at
      *
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(name="created_at", type="datetime", nullable=true)
      */
     private $created_at;
 
+    /**
+     * @var datetime $updated_at
+     *
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
+     */
+    private $updated_at;
+    
     /**
      * read object data from an array
      * 
@@ -91,7 +100,6 @@ class Project
         $this->setUrl(array_key_exists('url', $data) ? $data['url'] : null);
         $this->setDescription(array_key_exists('description', $data) ? $data['description'] : null);
         $this->setLogo(array_key_exists('logo', $data) ? $data['logo'] : null);
-        $this->setCreatedAt(array_key_exists('created_at', $data) ? $data['created_at'] : new \DateTime());
         $this->setAbstract(array_key_exists('abstract', $data) ? $data['abstract'] : null);
         
         return $this;
@@ -228,16 +236,6 @@ class Project
     }
 
     /**
-     * Set created_at
-     *
-     * @param datetime $createdAt
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->created_at = $createdAt;
-    }
-
-    /**
      * Get created_at
      *
      * @return datetime 
@@ -246,16 +244,16 @@ class Project
     {
         return $this->created_at;
     }
-
+    
     /**
-     * Set slug
+     * Get created_at
      *
-     * @param string $slug
+     * @return datetime 
      */
-    public function setSlug($slug)
+    public function getUpdatedAt()
     {
-        $this->slug = $slug;
-    }
+        return $this->updated_at;
+    }    
 
     /**
      * Get slug

@@ -26,7 +26,7 @@ class ProjectController extends Controller
     }
     
     /**
-     * @Route("/{slug}", name="project")
+     * @Route("/detail/{slug}", name="project")
      * @Template("rskaoz4FrontBundle:Projects:project.html.twig")
      */
     public function detailAction($slug)

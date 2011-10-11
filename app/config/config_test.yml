@@ -12,3 +12,7 @@ web_profiler:
 
 swiftmailer:
     disable_delivery: true
+
+mink:
+    base_url:   http://kaoz4/app_dev.php
+    default_session:    symfony

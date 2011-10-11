@@ -67,10 +67,19 @@ class Post
     /**
      * @var datetime $created_at
      *
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(name="created_at", type="datetime", nullable=true)
      */
     private $created_at;
 
+    /**
+     * @var datetime $updated_at
+     *
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
+     */
+    private $updated_at;
+    
     /**
      * read object data from an array
      * 
@@ -84,16 +93,10 @@ class Post
         $this->setLogo(array_key_exists('logo', $data) ? $data['logo'] : null);
         $this->setText(array_key_exists('text', $data) ? $data['text'] : null);
         $this->setAbstract(array_key_exists('abstract', $data) ? $data['abstract'] : null);
-        $this->setCreatedAt(array_key_exists('created_at', $data) ? $data['created_at'] : new \DateTime());
         
         return $this;
     }
     
-    public function getSlug()
-    {
-        return $this->slug;
-    }
-
     /**
      * Get id
      *
@@ -203,17 +206,7 @@ class Post
     {
         return $this->active;
     }
-
-    /**
-     * Set created_at
-     *
-     * @param datetime $createdAt
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->created_at = $createdAt;
-    }
-
+    
     /**
      * Get created_at
      *
@@ -223,14 +216,25 @@ class Post
     {
         return $this->created_at;
     }
+    
+    /**
+     * Get created_at
+     *
+     * @return datetime 
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }    
 
     /**
-     * Set slug
+     * Get slug
      *
-     * @param string $slug
+     * @return string 
      */
-    public function setSlug($slug)
+    public function getSlug()
     {
-        $this->slug = $slug;
+        return $this->slug;
     }
+
 }

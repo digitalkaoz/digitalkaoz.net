@@ -18,7 +18,7 @@ If you get any warnings or recommendations, fix these now before moving on.
     curl http://npmjs.org/install.sh | sh
     npm install less -g
 
-### b) Install the Vendor Libraries
+### c) Install the Vendor Libraries
 
 If you downloaded the archive "without vendors" or installed via git, then
 you need to download all of the necessary vendor libraries. If you're not
@@ -31,7 +31,7 @@ Note that you **must** have git installed and be able to execute the `git`
 command to execute this script. If you don't have git available, either install
 it or download Symfony with the vendor libraries already included.
 
-### c) Access the Application via the Browser
+### d) Access the Application via the Browser
 
 Congratulations! You're now ready to use Symfony. If you've unzipped Symfony
 in the web root of your computer, then you should be able to access the
@@ -45,7 +45,7 @@ link to load up your first Symfony page.
 You can also use a web-based configurator by clicking on the "Configure your
 Symfony Application online" link of the ``config.php`` page.
 
-### d) Load Fixtures
+### e) Load Fixtures
 
     app/console doctrine:fixtures:load
 

@@ -39,6 +39,11 @@ class AppKernel extends Kernel
             $bundles[] = new Elao\WebProfilerExtraBundle\WebProfilerExtraBundle();
         }
 
+        if ('test' == $this->getEnvironment()) {
+            $bundles[] = new Behat\MinkBundle\MinkBundle();
+            $bundles[] = new Behat\BehatBundle\BehatBundle();
+        }
+        
         return $bundles;
     }
 

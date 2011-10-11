@@ -26,7 +26,7 @@ class BlogController extends Controller
     }
     
     /**
-     * @Route("/blog/article/{slug}", name="post")
+     * @Route("/article/{slug}", name="post")
      * @Template("rskaoz4FrontBundle:Blog:post.html.twig")
      */
     public function detailAction($slug)
@@ -56,4 +56,6 @@ class BlogController extends Controller
     {
         return $this->getDoctrine()->getRepository('rskaoz4Bundle:'.$entity);
     }
+    
+        
 }
