@@ -34,3 +34,6 @@ web_profiler_extra:
     container:  true
     assetic:    true
     twig:       true    
+
+ornicar_akismet:
+    service:        ornicar_akismet.akismet_stub    

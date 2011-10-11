@@ -26,7 +26,7 @@ $loader->registerNamespaces(array(
     'Elao'             => __DIR__.'/../vendor/bundles',
     'IHQS'             => __DIR__.'/../vendor/bundles',
     'Mopa'             => __DIR__.'/../vendor/bundles',
-    
+    'Ornicar'          => __DIR__.'/../vendor/bundles',
     'Behat\Mink'       => __DIR__.'/../vendor/behat/mink/src',
     'Behat\Gherkin'    => __DIR__.'/../vendor/behat/gherkin/src',
     'Behat\Behat'      => __DIR__.'/../vendor/behat/behat/src',    

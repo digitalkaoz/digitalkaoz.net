@@ -28,6 +28,7 @@ class AppKernel extends Kernel
             new Knp\Bundle\ConsoleAutocompleteBundle\KnpConsoleAutocompleteBundle(),
             new IHQS\ContactBundle\IHQSContactBundle(),
             new Mopa\BootstrapBundle\MopaBootstrapBundle(),
+            new Ornicar\AkismetBundle\OrnicarAkismetBundle(),            
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -106,16 +106,22 @@ knp_last_tweets:
 virtal_disqus:
     disqus_shortname: digitalkaoz
 
+ornicar_akismet:
+    api_key:        %akismet_key%
+    url:            http://digitalkaoz.net
+    
 ihqs_contact:
-        contact:
-            form:
-                type:               ihqs_contact_contact
-                handler:            ihqs_contact.contact.form.handler.default
-                name:               ihqs_contact_contact_form
-                validation_groups:  [Contact]
-        connectors:                             # the list of "listeners" (or connectors here)
-            email:                              # connecting the email listener
-                recipients: %contact_recipient% # giving him the recipient(s) email(s)
+    spam_detector: 
+        service:                ornicar_akismet
+    contact:
+        form:
+            type:               ihqs_contact_contact
+            handler:            ihqs_contact.contact.form.handler.default
+            name:               ihqs_contact_contact_form
+            validation_groups:  [Contact]
+    connectors:                             # the list of "listeners" (or connectors here)
+        email:                              # connecting the email listener
+            recipients: %contact_recipient% # giving him the recipient(s) email(s)
                 
 mopa_bootstrap:
-    form: ~            
+    form: ~    
