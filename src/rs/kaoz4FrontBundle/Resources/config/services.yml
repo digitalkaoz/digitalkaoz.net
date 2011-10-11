@@ -1,3 +1,7 @@
+parameters:
+    kaoz4.github_fetcher.zend_cache.class: rs\kaoz4FrontBundle\Github\ZendCacheFetcher
+    kaoz4.github_fetcher.zend_cache.cache_name: knp_last_tweets
+
 services:
   
     kaoz4.menu_renderer:
@@ -18,3 +22,13 @@ services:
         scope: request
         tags:
             - { name: knp_menu.menu, alias: main }
+            
+    kaoz4.github.api:
+        class: Github_Client
+
+    kaoz4.github_fetcher.zend_cache:
+        class: %kaoz4.github_fetcher.zend_cache.class%
+        arguments:
+            - '@kaoz4.github.api'
+            - '@knp_zend_cache.manager'
+            - %kaoz4.github_fetcher.zend_cache.cache_name%

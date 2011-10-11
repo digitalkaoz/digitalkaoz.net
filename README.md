@@ -96,8 +96,11 @@ What's inside?
   ([documentation](http://github.com/knplabs/KnpConsoleAutocompleteBundle))
 * **ContactBundle** - raw contact form bundle
   ([documentation](http://github.com/ihqs/ContactBundle))
-* **MopaBootstrapBundle** - integrates [twitter-bootstrap](http://twitter.github.com/bootstrap/)
+* **BootstrapBundle** - integrates [twitter-bootstrap](http://twitter.github.com/bootstrap/)
   ([documentation](http://github.com/phiamo/MopaBootstrapBundle))
-
+* **AkismetBundle** - integrates akisment spam detection
+  ([documentation](http://github.com/ornicar/OrnicarAkismetBundle))
+* **MinkBundle** - browser abstraction
+  ([documentation](http://github.com/Behat/MinkBundle))
   
 Enjoy!

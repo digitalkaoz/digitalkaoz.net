@@ -102,6 +102,22 @@ class HomeController extends Controller
         return array(); 
     }
     
+    /**
+     * @Route("/_sidebar")
+     * @Method("GET")
+     * @Cache(smaxage="60")
+     * @Template()
+     */
+    public function sidebarAction()
+    {
+        $networks = $this->getRepository('Network')->findActive();        
+        $repos = $this->get('kaoz4.github_fetcher.zend_cache')->fetch('digitalkaoz');
+        
+        return array(
+            'networks'=>$networks,
+            'repos'=>$repos
+        ); 
+    }
     
     /**
      * get the entity manager

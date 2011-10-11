@@ -1,0 +1,33 @@
+{% if networks %}
+    <div class="alert-message block-message info">    
+        <h3>Networks</h3>
+        <ul class="unstyled">
+          {% for network in networks %}
+                <li>
+                    <a href="{{ network.url }}">
+                        {% if network.logo %}
+                            <img src="{{ network.logo}}" alt="{{ network.name }}" title="{{ network.name }}" width="16"/>
+                        {% endif %}
+                        <strong>{{ network.name|e }}</strong>
+                    </a>
+                    <span>{{ network.description }}</span>
+                </li>
+          {% endfor %}
+        </ul>                
+    </div>
+{% endif %}
+
+{% if repos %}
+    <div class="alert-message block-message info">    
+        <h3>Github Projects</h3>
+        <ul class="unstyled">
+          {% for repo in repos %}
+                <li>
+                    <a href="{{ repo.url }}">
+                        <strong>{{ repo.name|e }}</strong>
+                    </a>
+                </li>
+          {% endfor %}
+        </ul>                
+    </div>
+{% endif %}
