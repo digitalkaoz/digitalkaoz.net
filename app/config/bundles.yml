@@ -1,0 +1,34 @@
+all:
+    - Symfony\Bundle\FrameworkBundle\FrameworkBundle
+    - Symfony\Bundle\SecurityBundle\SecurityBundle
+    - Symfony\Bundle\TwigBundle\TwigBundle
+    - Symfony\Bundle\MonologBundle\MonologBundle
+    - Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle
+    - Symfony\Bundle\DoctrineBundle\DoctrineBundle
+    - Symfony\Bundle\AsseticBundle\AsseticBundle
+    - Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle
+    - JMS\SecurityExtraBundle\JMSSecurityExtraBundle            
+    - rs\kaoz4Bundle\rskaoz4Bundle
+    - rs\kaoz4FrontBundle\rskaoz4FrontBundle
+    - Knp\Bundle\MenuBundle\KnpMenuBundle            
+    - Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle
+    - Knp\Bundle\LastTweetsBundle\KnpLastTweetsBundle
+    - Knp\Bundle\ZendCacheBundle\KnpZendCacheBundle
+    - JMS\AopBundle\JMSAopBundle
+    - Virtal\Bundle\DisqusBundle\VirtalDisqusBundle
+    - Knp\Bundle\ConsoleAutocompleteBundle\KnpConsoleAutocompleteBundle
+    - IHQS\ContactBundle\IHQSContactBundle
+    - Mopa\BootstrapBundle\MopaBootstrapBundle
+    - Ornicar\AkismetBundle\OrnicarAkismetBundle
+    - rs\ProjectUtilitiesBundle\rsProjectUtilitiesBundle
+
+dev:
+    - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle
+    - Sensio\Bundle\DistributionBundle\SensioDistributionBundle
+    - Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle
+    - Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle
+    - Elao\WebProfilerExtraBundle\WebProfilerExtraBundle
+
+test:    
+    - Behat\MinkBundle\MinkBundle
+    - Behat\BehatBundle\BehatBundle

@@ -2,50 +2,13 @@
 
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use rs\ProjectUtilitiesBundle\Project\BundleLoader;
 
 class AppKernel extends Kernel
 {
     public function registerBundles()
     {
-        $bundles = array(
-            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-            new Symfony\Bundle\SecurityBundle\SecurityBundle(),
-            new Symfony\Bundle\TwigBundle\TwigBundle(),
-            new Symfony\Bundle\MonologBundle\MonologBundle(),
-            new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
-            new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
-            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
-            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),            
-            new rs\kaoz4Bundle\rskaoz4Bundle(),
-            new rs\kaoz4FrontBundle\rskaoz4FrontBundle(),
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),            
-            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
-            new Knp\Bundle\LastTweetsBundle\KnpLastTweetsBundle(),
-            new Knp\Bundle\ZendCacheBundle\KnpZendCacheBundle(),
-            new JMS\AopBundle\JMSAopBundle(),
-            new Virtal\Bundle\DisqusBundle\VirtalDisqusBundle(),
-            new Knp\Bundle\ConsoleAutocompleteBundle\KnpConsoleAutocompleteBundle(),
-            new IHQS\ContactBundle\IHQSContactBundle(),
-            new Mopa\BootstrapBundle\MopaBootstrapBundle(),
-            new Ornicar\AkismetBundle\OrnicarAkismetBundle(),            
-        );
-
-        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
-            #$bundles[] = new Acme\DemoBundle\AcmeDemoBundle();
-            $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
-            $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
-            $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
-            $bundles[] = new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle();
-            $bundles[] = new Elao\WebProfilerExtraBundle\WebProfilerExtraBundle();
-        }
-
-        if ('test' == $this->getEnvironment()) {
-            $bundles[] = new Behat\MinkBundle\MinkBundle();
-            $bundles[] = new Behat\BehatBundle\BehatBundle();
-        }
-        
-        return $bundles;
+        return BundleLoader::create($this)->loadFromFile($this->getRootDir().'/config/bundles.yml');
     }
 
     public function registerContainerConfiguration(LoaderInterface $loader)

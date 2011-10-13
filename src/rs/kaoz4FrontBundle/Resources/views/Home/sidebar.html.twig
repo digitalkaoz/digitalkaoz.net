@@ -4,7 +4,7 @@
         <ul class="unstyled">
           {% for network in networks %}
                 <li>
-                    <a href="{{ network.url }}">
+                    <a href="{{ network.url }}" target="blank">
                         {% if network.logo %}
                             <img src="{{ network.logo}}" alt="{{ network.name }}" title="{{ network.name }}" width="16"/>
                         {% endif %}
@@ -23,7 +23,7 @@
         <ul class="unstyled">
           {% for repo in repos %}
                 <li>
-                    <a href="{{ repo.url }}">
+                    <a href="{{ repo.url }}" target="blank">
                         <strong>{{ repo.name|e }}</strong>
                     </a>
                 </li>
