@@ -9,3 +9,19 @@ h1 *{
     color:#fff;
     
 }
+
+/** sprite: mysprite; sprite-image: url('../img/mysprite.png'); sprite-layout: vertical */
+          
+#web {
+  width: 17px; height: 17px;
+  background-repeat: no-repeat;
+  background-image: url(../img/ME.JPG); /** sprite-ref: mysprite; */
+}
+
+/** sprite: mysprite; sprite-image: url('../img/mysprite.png'); sprite-layout: vertical */
+          
+#foo {
+  width: 17px; height: 17px;
+  background-repeat: no-repeat;
+  background-image: url(/img/ME.JPG); /** sprite-ref: mysprite; */
+}

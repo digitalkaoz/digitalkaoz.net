@@ -1,0 +1,9 @@
+/**
+ * A test for loading images from absolute urls.
+ */
+
+div.web {
+  width: 17px;
+  height: 17px;
+  background-image: url(/img/web.gif); /** sprite-ref: test */
+}

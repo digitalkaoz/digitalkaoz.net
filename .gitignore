@@ -7,4 +7,6 @@ vendor/*
 catalog.xml
 app/config/parameters.yml
 web/css/combined*.css
+web/css/*-sprite.css
 web/js/combined*.js
+web/img/*sprite.png

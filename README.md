@@ -102,5 +102,7 @@ What's inside?
   ([documentation](http://github.com/ornicar/OrnicarAkismetBundle))
 * **MinkBundle** - browser abstraction
   ([documentation](http://github.com/Behat/MinkBundle))
+* **ProjectUtilitiesBundle** - some RAD tools
+  ([documentation](http://github.com/digitalkaoz/ProjectUtilitiesBundle))
   
 Enjoy!

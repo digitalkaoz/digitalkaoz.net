@@ -1,0 +1,5 @@
+Usage: smartsprites [CSS-FILES ...] [--css-file-encoding VAL] [--css-file-suffix VAL] [--css-files FILES ...] [--document-root-dir-path DIR] [--log-level [INFO | IE6NOTICE | DEPRECATION | WARN | ERROR | STATUS]] [--output-dir-path DIR] [--root-dir-path DIR] [--sprite-png-depth [AUTO | INDEXED | DIRECT]] [--sprite-png-ie6]
+
+Please see http://csssprites.org for detailed option descriptions.
+
+Option "--output-dir-path" takes an operand
