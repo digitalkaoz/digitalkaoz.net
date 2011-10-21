@@ -10,3 +10,4 @@ web/css/combined*.css
 web/css/*-sprite.css
 web/js/combined*.js
 web/img/*sprite.png
+web/coverage
