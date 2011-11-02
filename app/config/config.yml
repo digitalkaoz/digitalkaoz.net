@@ -36,8 +36,8 @@ assetic:
         cssembed:
             jar: %kernel.root_dir%/Resources/java/cssembed-0.4.0.jar
         less: 
-            node: /opt/local/bin/node
-            node_paths: [ /opt/local/lib/node_modules ]          
+            node: %node_path%
+            node_paths: [ %node_modules_path% ]          
         yui_css:
             jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.6.jar
         yui_js:
