@@ -31,8 +31,8 @@ assetic:
     use_controller: false
     filters:
         cssrewrite: ~
-        smartsprites: 
-            path: %kernel.root_dir%/Resources/java/smartsprites-0.2.8
+#        smartsprites: 
+#            path: %kernel.root_dir%/Resources/java/smartsprites-0.2.8
         cssembed:
             jar: %kernel.root_dir%/Resources/java/cssembed-0.4.0.jar
         less: 
