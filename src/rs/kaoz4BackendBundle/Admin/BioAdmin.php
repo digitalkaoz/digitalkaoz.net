@@ -48,12 +48,11 @@ class BioAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name')
-            //->add('author')
-            ->add('active')
             ->add('category')
             ->add('level')
-            ->add('url')
+            ->add('active')
             ->add('period')
+            ->add('url','string',array('template'=>'rskaoz4BackendBundle:Admin:list_link.html.twig'))
             //->add('tags')
             //->add('commentsEnabled')
         ;

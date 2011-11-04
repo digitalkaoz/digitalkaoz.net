@@ -45,11 +45,10 @@ class NetworkAdmin extends Admin
     public function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('active')
+            ->add('logo','string',array('template'=>'rskaoz4BackendBundle:Admin:list_image.html.twig'))
             ->addIdentifier('name')
-            ->add('url')
-            ->add('logo')
-            ->add('description')
+            ->add('active')
+            ->add('url','string',array('template'=>'rskaoz4BackendBundle:Admin:list_link.html.twig'))
         ;
     }
 

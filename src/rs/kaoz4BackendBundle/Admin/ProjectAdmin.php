@@ -46,11 +46,10 @@ class ProjectAdmin extends Admin
     public function configureListFields(ListMapper $listMapper)
     {
         $listMapper
+            ->add('logo','string',array('template'=>'rskaoz4BackendBundle:Admin:list_image.html.twig'))
             ->addIdentifier('name')
-            //->add('author')
             ->add('active')
             ->add('abstract')
-            ->add('logo')
             //->add('commentsEnabled')
         ;
     }
