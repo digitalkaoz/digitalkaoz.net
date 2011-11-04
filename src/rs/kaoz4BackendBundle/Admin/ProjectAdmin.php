@@ -60,10 +60,6 @@ class ProjectAdmin extends Admin
         $datagridMapper
             ->add('name')
             ->add('active')
-            ->add('abstract')
-            ->add('description')
-            ->add('url')
-            ->add('logo')
             //->add('tags', null, array('filter_field_options' => array('expanded' => true, 'multiple' => true)))
         ;
     }

@@ -64,9 +64,6 @@ class BioAdmin extends Admin
         $datagridMapper
             ->add('name')
             ->add('category')
-            ->add('level')
-            ->add('url')
-            ->add('period')
             ->add('active')
             //->add('tags', null, array('filter_field_options' => array('expanded' => true, 'multiple' => true)))
         ;

@@ -17,7 +17,6 @@ class NetworkAdmin extends Admin
             ->add('name')
             ->add('url')
             ->add('logo')
-            ->add('abstract')
             ->add('description')
         ;
     }
@@ -29,7 +28,6 @@ class NetworkAdmin extends Admin
                 ->add('name')
                 ->add('url')
                 ->add('logo')
-                ->add('abstract')
                 ->add('description')
                 ->add('active', null, array('required' => false))
                 //->add('author', 'sonata_type_model', array(), array('edit' => 'list'))
@@ -51,7 +49,6 @@ class NetworkAdmin extends Admin
             ->addIdentifier('name')
             ->add('url')
             ->add('logo')
-            ->add('abstract')
             ->add('description')
         ;
     }
@@ -61,10 +58,6 @@ class NetworkAdmin extends Admin
         $datagridMapper
             ->add('active')
             ->add('name')
-            ->add('url')
-            ->add('logo')
-            ->add('abstract')
-            ->add('description')
             //->add('tags', null, array('filter_field_options' => array('expanded' => true, 'multiple' => true)))
         ;
     }
