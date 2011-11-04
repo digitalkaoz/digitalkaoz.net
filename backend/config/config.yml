@@ -1,7 +1,7 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
-#    - { resource: "@rskaoz4FrontBundle/Resources/config/services.yml" }
+    - { resource: "@rskaoz4BackendBundle/Resources/config/services.xml" }
     
 framework:
     #esi:             ~

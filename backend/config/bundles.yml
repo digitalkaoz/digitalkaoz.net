@@ -18,6 +18,7 @@ all:
     - Sonata\AdminBundle\SonataAdminBundle
     - Sonata\jQueryBundle\SonatajQueryBundle
     - Knp\Bundle\MenuBundle\KnpMenuBundle
+    - rs\kaoz4BackendBundle\rskaoz4BackendBundle
 
 dev:
     - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle

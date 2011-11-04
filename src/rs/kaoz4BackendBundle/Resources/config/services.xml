@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+  <parameters>
+      
+    <parameter key="kaoz4.admin.post.admin">rs\kaoz4BackendBundle\Admin\PostAdmin</parameter>
+    <parameter key="kaoz4.admin.post.entity">rs\kaoz4Bundle\Entity\Post</parameter>
+    <parameter key="kaoz4.admin.post.controller">rskaoz4BackendBundle:Post</parameter>
+    
+    <parameter key="kaoz4.admin.bio.admin">rs\kaoz4BackendBundle\Admin\BioAdmin</parameter>
+    <parameter key="kaoz4.admin.bio.entity">rs\kaoz4Bundle\Entity\Bio</parameter>
+    <parameter key="kaoz4.admin.bio.controller">rskaoz4BackendBundle:Bio</parameter>
+
+    <parameter key="kaoz4.admin.project.admin">rs\kaoz4BackendBundle\Admin\ProjectAdmin</parameter>
+    <parameter key="kaoz4.admin.project.entity">rs\kaoz4Bundle\Entity\Project</parameter>
+    <parameter key="kaoz4.admin.project.controller">rskaoz4BackendBundle:Project</parameter>
+    
+    <parameter key="kaoz4.admin.network.admin">rs\kaoz4BackendBundle\Admin\NetworkAdmin</parameter>
+    <parameter key="kaoz4.admin.network.entity">rs\kaoz4Bundle\Entity\Network</parameter>
+    <parameter key="kaoz4.admin.network.controller">rskaoz4BackendBundle:Network</parameter>
+    
+  </parameters>
+
+  <services>
+      
+    <service id="kaoz4.admin.post" class="%kaoz4.admin.post.admin%">
+      <tag name="sonata.admin" manager_type="orm" group="Blog" label="Post"/>
+      <argument />
+      <argument>%kaoz4.admin.post.entity%</argument>
+      <argument>%kaoz4.admin.post.controller%</argument>
+    </service>
+    
+    <service id="kaoz4.admin.bio" class="%kaoz4.admin.bio.admin%">
+      <tag name="sonata.admin" manager_type="orm" group="Bio" label="Bio"/>
+      <argument />
+      <argument>%kaoz4.admin.bio.entity%</argument>
+      <argument>%kaoz4.admin.bio.controller%</argument>
+    </service>
+    
+    <service id="kaoz4.admin.project" class="%kaoz4.admin.project.admin%">
+      <tag name="sonata.admin" manager_type="orm" group="Project" label="Project"/>
+      <argument />
+      <argument>%kaoz4.admin.project.entity%</argument>
+      <argument>%kaoz4.admin.project.controller%</argument>
+    </service>
+
+    <service id="kaoz4.admin.network" class="%kaoz4.admin.network.admin%">
+      <tag name="sonata.admin" manager_type="orm" group="Network" label="Network"/>
+      <argument />
+      <argument>%kaoz4.admin.network.entity%</argument>
+      <argument>%kaoz4.admin.network.controller%</argument>
+    </service>
+    
+  </services>
+  
+</container>
