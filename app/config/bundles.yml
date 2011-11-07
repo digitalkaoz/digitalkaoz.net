@@ -28,9 +28,11 @@ dev:
     - Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle
     - Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle
     - Elao\WebProfilerExtraBundle\WebProfilerExtraBundle
+#    - Nelmio\EsiDebugBundle\NelmioEsiDebugBundle
 
 test:    
     - Behat\MinkBundle\MinkBundle
     - Behat\BehatBundle\BehatBundle
     - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle
     - Elao\WebProfilerExtraBundle\WebProfilerExtraBundle
+#    - Nelmio\EsiDebugBundle\NelmioEsiDebugBundle

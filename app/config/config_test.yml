@@ -16,3 +16,7 @@ swiftmailer:
 mink:
     base_url:   http://kaoz4/app_dev.php
     default_session:    symfony
+
+    
+#nelmio_esi_debug:
+#    enabled: false    

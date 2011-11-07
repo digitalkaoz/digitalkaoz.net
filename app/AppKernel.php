@@ -8,7 +8,13 @@ class AppKernel extends Kernel
 {
     public function registerBundles()
     {
-        return BundleLoader::create($this)->loadFromFile($this->getRootDir().'/config/bundles.yml');
+        $bundles = BundleLoader::create($this)->loadFromFile($this->getRootDir().'/config/bundles.yml');
+        
+/*        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+            $bundles[] = new JMS\DebuggingBundle\JMSDebuggingBundle($this);
+        }
+  */      
+        return $bundles;
     }
 
     public function registerContainerConfiguration(LoaderInterface $loader)

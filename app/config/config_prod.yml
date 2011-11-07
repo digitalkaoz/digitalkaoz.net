@@ -19,3 +19,7 @@ monolog:
 
 ornicar_akismet:
     throw_exceptions: false
+    
+    
+nelmio_esi_debug:
+    enabled: true
