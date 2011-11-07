@@ -1,0 +1,34 @@
+all:
+    - Symfony\Bundle\FrameworkBundle\FrameworkBundle
+    - Symfony\Bundle\SecurityBundle\SecurityBundle
+    - Symfony\Bundle\TwigBundle\TwigBundle
+    - Symfony\Bundle\MonologBundle\MonologBundle
+    - Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle
+    - Symfony\Bundle\DoctrineBundle\DoctrineBundle
+    - Symfony\Bundle\AsseticBundle\AsseticBundle
+    - Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle
+    - JMS\SecurityExtraBundle\JMSSecurityExtraBundle            
+    - rs\kaoz4Bundle\rskaoz4Bundle
+    - Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle
+    - JMS\AopBundle\JMSAopBundle
+    - Knp\Bundle\ConsoleAutocompleteBundle\KnpConsoleAutocompleteBundle
+    - Mopa\BootstrapBundle\MopaBootstrapBundle
+    - rs\ProjectUtilitiesBundle\rsProjectUtilitiesBundle
+    - Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle
+    - Sonata\AdminBundle\SonataAdminBundle
+    - Sonata\jQueryBundle\SonatajQueryBundle
+    - Knp\Bundle\MenuBundle\KnpMenuBundle
+    - rs\kaoz4BackendBundle\rskaoz4BackendBundle
+
+dev:
+    - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle
+    - Sensio\Bundle\DistributionBundle\SensioDistributionBundle
+    - Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle
+    - Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle
+    - Elao\WebProfilerExtraBundle\WebProfilerExtraBundle
+
+test:    
+    - Behat\MinkBundle\MinkBundle
+    - Behat\BehatBundle\BehatBundle
+    - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle
+    - Elao\WebProfilerExtraBundle\WebProfilerExtraBundle

@@ -1,7 +1,7 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
-    - { resource: "@rskaoz4FrontBundle/Resources/config/services.yml" }
+    - { resource: "@rskaoz4BackendBundle/Resources/config/services.xml" }
     
 framework:
     #esi:             ~
@@ -25,6 +25,7 @@ twig:
     form:
         resources:
             - 'MopaBootstrapBundle:Form:fields.html.twig'
+            
 # Assetic Configuration
 assetic:
     debug:          %kernel.debug%
@@ -79,49 +80,8 @@ jms_security_extra:
     secure_all_services: false
 jms_aop:
     cache_dir: %kernel.cache_dir%/jms_aop            
-
-knp_menu:
-    twig: true
-    templating: true
-    
-knp_zend_cache:
-    templates:
-        knp_last_tweets:
-            frontend:
-                name: Core
-                options:
-                    lifetime: 300
-                    automatic_serialization: true
-            backend:
-                name: File
-                options:
-                    cache_dir: %kernel.root_dir%/cache/%kernel.environment%
-
-knp_last_tweets:
-    fetcher:
-        driver: zend_cache
-        options:
-            cache_name: knp_last_tweets            
-
-virtal_disqus:
-    disqus_shortname: digitalkaoz
-
-ornicar_akismet:
-    api_key:        %akismet_key%
-    url:            http://digitalkaoz.net
-    
-ihqs_contact:
-    spam_detector: 
-        service:                ornicar_akismet
-    contact:
-        form:
-            type:               ihqs_contact_contact
-            handler:            ihqs_contact.contact.form.handler.default
-            name:               ihqs_contact_contact_form
-            validation_groups:  [Contact]
-    connectors:                             # the list of "listeners" (or connectors here)
-        email:                              # connecting the email listener
-            recipients: %contact_recipient% # giving him the recipient(s) email(s)
                 
 mopa_bootstrap:
     form: ~    
+    
+    

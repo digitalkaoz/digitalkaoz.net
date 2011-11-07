@@ -1,5 +1,8 @@
 app/cache/*
 app/logs/*
+backend/cache/*
+backend/logs/*
+backend/config/parameters.yml
 web/bundles/*
 .DS_Store
 nbproject/
@@ -11,3 +14,4 @@ web/css/*-sprite.css
 web/js/combined*.js
 web/img/*sprite.png
 web/coverage
+src/rs/ProjectUtilitiesBundle
