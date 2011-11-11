@@ -42,6 +42,7 @@ $loader->registerNamespaces(array(
     'Behat\BehatBundle'=> __DIR__.'/../vendor/bundles',
     'Nelmio'           => __DIR__.'/../vendor/bundles',
     'FOQ'              => __DIR__.'/../vendor/bundles',
+    'FOS'              => __DIR__.'/../vendor/bundles',
 ));
 
 $loader->registerPrefixes(array(

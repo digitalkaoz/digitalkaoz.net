@@ -3,6 +3,7 @@
 namespace rs\kaoz4Bundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * rs\kaoz4Bundle\Entity\Bio
@@ -25,6 +26,8 @@ class Bio
      * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\MaxLength(255)
      */
     private $name;
 

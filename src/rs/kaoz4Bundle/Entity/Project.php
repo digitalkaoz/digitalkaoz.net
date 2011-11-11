@@ -4,6 +4,7 @@ namespace rs\kaoz4Bundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * rs\kaoz4Bundle\Entity\Project
@@ -27,6 +28,8 @@ class Project
      *
      * @ORM\Column(name="name", type="string", length=255)
      * @Gedmo\Sluggable
+     * @Assert\NotBlank()
+     * @Assert\MaxLength(255)
      */
     private $name;
     
@@ -40,6 +43,8 @@ class Project
      * @var string $url
      *
      * @ORM\Column(name="url", type="string", length=255, nullable=true)
+     * @Assert\Url()
+     * @Assert\MaxLength(255)
      */
     private $url;
 
@@ -54,6 +59,7 @@ class Project
      * @var text $description
      *
      * @ORM\Column(name="description", type="text")
+     * @Assert\NotBlank()
      */
     private $description;
 

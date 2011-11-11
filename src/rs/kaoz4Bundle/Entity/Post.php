@@ -4,6 +4,7 @@ namespace rs\kaoz4Bundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * rs\kaoz4Bundle\Entity\Post
@@ -27,6 +28,8 @@ class Post
      *
      * @ORM\Column(name="title", type="string", length=255)
      * @Gedmo\Sluggable
+     * @Assert\NotBlank()
+     * @Assert\MaxLength(255)
      */
     private $title;
 
@@ -47,6 +50,7 @@ class Post
      * @var text $text
      *
      * @ORM\Column(name="text", type="text")
+     * @Assert\NotBlank()
      */
     private $text;
 

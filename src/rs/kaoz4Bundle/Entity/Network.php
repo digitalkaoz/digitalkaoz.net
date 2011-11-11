@@ -3,6 +3,7 @@
 namespace rs\kaoz4Bundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * rs\kaoz4Bundle\Entity\Network
@@ -25,6 +26,8 @@ class Network
      * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\MaxLength(255)
      */
     private $name;
 
@@ -32,6 +35,9 @@ class Network
      * @var string $url
      *
      * @ORM\Column(name="url", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Url()
+     * @Assert\MaxLength(255)
      */
     private $url;
 
@@ -39,6 +45,7 @@ class Network
      * @var text $desc
      *
      * @ORM\Column(name="description", type="text")
+     * @Assert\NotBlank()
      */
     private $description;
 
@@ -53,6 +60,8 @@ class Network
      * @var string $logo
      *
      * @ORM\Column(name="logo", type="string", length=255, nullable=true)
+     * @Assert\Image()
+     * @Assert\MaxLength(255)
      */
     private $logo;
     

@@ -114,3 +114,13 @@ foq_elastica:
                         model: rs\kaoz4Bundle\Entity\Project
                         provider:                
                           query_builder_method: createIsActiveQueryBuilder
+sonata_admin:
+    #security_handler: sonata.admin.security.handler.noop
+
+    title:      Digital.Kaoz.net
+    title_logo: /bundles/sonataadmin/logo_title.png
+    
+fos_user:
+    db_driver: orm
+    firewall_name: secured_area
+    user_class: rs\kaoz4Bundle\Entity\User

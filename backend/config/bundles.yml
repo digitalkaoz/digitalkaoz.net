@@ -16,10 +16,12 @@ all:
     - rs\ProjectUtilitiesBundle\rsProjectUtilitiesBundle
     - Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle
     - Sonata\AdminBundle\SonataAdminBundle
+    - Sonata\UserBundle\SonataUserBundle
     - Sonata\jQueryBundle\SonatajQueryBundle
     - Knp\Bundle\MenuBundle\KnpMenuBundle
     - rs\kaoz4BackendBundle\rskaoz4BackendBundle
     - FOQ\ElasticaBundle\FOQElasticaBundle
+    - FOS\UserBundle\FOSUserBundle
 
 dev:
     - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle

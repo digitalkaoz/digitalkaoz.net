@@ -22,6 +22,7 @@ all:
     - Ornicar\AkismetBundle\OrnicarAkismetBundle
     - rs\ProjectUtilitiesBundle\rsProjectUtilitiesBundle
     - FOQ\ElasticaBundle\FOQElasticaBundle
+    - FOS\UserBundle\FOSUserBundle
 
 dev:
     - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle
