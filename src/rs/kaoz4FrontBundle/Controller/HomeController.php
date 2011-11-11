@@ -101,6 +101,21 @@ class HomeController extends Controller
     {
         return array(); 
     }
+
+    /**
+     * @Route("/search", name="search")
+     * @Method("GET")
+     * @Cache(smaxage="60")
+     * @Template("rskaoz4FrontBundle:Home:search.html.twig")
+     */
+    public function searchAction()
+    {
+        $query = $this->getRequest()->get('q');
+        $index = $this->container->get('foq_elastica.index.website');
+        $results = $index->search($query);
+        
+        return array('results' => $results); 
+    }
     
     /**
      * @Route("/_sidebar")

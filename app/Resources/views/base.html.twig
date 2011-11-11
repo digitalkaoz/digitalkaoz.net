@@ -16,7 +16,7 @@
     </head>
     
     <body>
-        {% render 'rskaoz4FrontBundle:Home:header' with {}, {'standalone': true} %}
+        {% render 'rskaoz4FrontBundle:Home:header' with { 'q': app.request.get('q') }, {'standalone': true} %}
 
         <div class="container main">
             {% block flashes %}

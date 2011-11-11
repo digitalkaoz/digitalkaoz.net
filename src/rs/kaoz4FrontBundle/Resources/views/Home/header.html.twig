@@ -1,13 +1,13 @@
 <div class="topbar" data-dropdown="dropdown">
     <div class="topbar-inner">
         <div class="container">
-            <h1 class="pull-left">
+            <h2 class="pull-left">
                 <a href="http://digitalkaoz.net">Digital.kaoZ</a>
-            </h1>
+            </h2>
             <div id="nav" class="span8">{% render 'rskaoz4FrontBundle:Home:mainNavigation' with {}, {'standalone': true} %}</div>
 
-            <form class="pull-right" action="">
-                <input type="text" placeholder="Search">
+            <form class="pull-right" action="{{ path('search') }}" method="GET">
+                <input type="text" name="q" value="{{ app.request.get('q') }}" placeholder="Search" />
             </form>
         </div>
     </div>

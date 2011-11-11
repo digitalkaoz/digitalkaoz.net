@@ -1,0 +1,16 @@
+{% extends "::base2col.html.twig" %}
+
+{% block title %} Search {% endblock %}
+
+{% block body %}
+
+    <h2>Search Results</h2>
+
+    {% for result in results %}
+        {% include 'rskaoz4FrontBundle:Home:search_result.html.twig' with { 'result': result } %}
+    {% else %}
+        <p>no results found</p>
+    {% endfor %}
+        
+    
+{% endblock %}

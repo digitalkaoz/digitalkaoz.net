@@ -125,3 +125,35 @@ ihqs_contact:
                 
 mopa_bootstrap:
     form: ~    
+    
+foq_elastica:
+    clients:
+        default: { host: localhost, port: 9200 }
+    indexes:
+        website:
+            client: default   
+            types:
+                post:
+                    mappings:
+                        title: { boost: 5 }
+                        abstract: { boost: 3 }
+                        text: { boost: 3 }
+                        slug: ~
+                    doctrine:
+                        driver: orm
+                        model: rs\kaoz4Bundle\Entity\Post
+                        provider:                
+                          query_builder_method: createIsActiveQueryBuilder
+
+                project:
+                    mappings:
+                        name: { boost: 5 }
+                        abstract: { boost: 3 }
+                        description: { boost: 3 }
+                        slug: ~
+                    doctrine:
+                        driver: orm
+                        model: rs\kaoz4Bundle\Entity\Project
+                        provider:                
+                          query_builder_method: createIsActiveQueryBuilder
+            

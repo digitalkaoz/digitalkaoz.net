@@ -35,4 +35,9 @@ class PostRepository extends EntityRepository
             ->getSingleResult();
         
     }
+    
+    public function createIsActiveQueryBuilder()
+    {
+        return $this->createQueryBuilder('p')->where('p.active=1');
+    }
 }

@@ -21,6 +21,7 @@ all:
     - Mopa\BootstrapBundle\MopaBootstrapBundle
     - Ornicar\AkismetBundle\OrnicarAkismetBundle
     - rs\ProjectUtilitiesBundle\rsProjectUtilitiesBundle
+    - FOQ\ElasticaBundle\FOQElasticaBundle
 
 dev:
     - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle

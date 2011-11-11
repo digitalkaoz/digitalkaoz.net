@@ -41,12 +41,14 @@ $loader->registerNamespaces(array(
     
     'Behat\MinkBundle' => __DIR__.'/../vendor/bundles', 
     'Behat\BehatBundle'=> __DIR__.'/../vendor/bundles',
+    'FOQ'              => __DIR__.'/../vendor/bundles',
 ));
 
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
     'Twig_'            => __DIR__.'/../vendor/twig/lib',
     'Github_'          => __DIR__.'/../vendor/github/lib',
+    'Elastica'         => __DIR__.'/../vendor/elastica/lib'
 ));
 
 // intl
