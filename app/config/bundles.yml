@@ -1,13 +1,13 @@
 all:
     - Symfony\Bundle\FrameworkBundle\FrameworkBundle
-    - Symfony\Bundle\SecurityBundle\SecurityBundle
+#    - Symfony\Bundle\SecurityBundle\SecurityBundle
     - Symfony\Bundle\TwigBundle\TwigBundle
     - Symfony\Bundle\MonologBundle\MonologBundle
     - Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle
     - Symfony\Bundle\DoctrineBundle\DoctrineBundle
     - Symfony\Bundle\AsseticBundle\AsseticBundle
     - Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle
-    - JMS\SecurityExtraBundle\JMSSecurityExtraBundle            
+#    - JMS\SecurityExtraBundle\JMSSecurityExtraBundle            
     - rs\kaoz4Bundle\rskaoz4Bundle
     - rs\kaoz4FrontBundle\rskaoz4FrontBundle
     - Knp\Bundle\MenuBundle\KnpMenuBundle            
@@ -22,7 +22,7 @@ all:
     - Ornicar\AkismetBundle\OrnicarAkismetBundle
     - rs\ProjectUtilitiesBundle\rsProjectUtilitiesBundle
     - FOQ\ElasticaBundle\FOQElasticaBundle
-    - FOS\UserBundle\FOSUserBundle
+#    - FOS\UserBundle\FOSUserBundle
 
 dev:
     - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle

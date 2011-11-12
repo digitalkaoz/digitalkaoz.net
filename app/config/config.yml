@@ -1,6 +1,6 @@
 imports:
     - { resource: parameters.yml }
-    - { resource: security.yml }
+#    - { resource: security.yml }
     - { resource: "@rskaoz4FrontBundle/Resources/config/services.yml" }
     
 framework:
@@ -74,11 +74,11 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
 
-jms_security_extra:
+#jms_security_extra:
 #    secure_controllers:  true
-    secure_all_services: false
-jms_aop:
-    cache_dir: %kernel.cache_dir%/jms_aop            
+#    secure_all_services: false
+#jms_aop:
+#    cache_dir: %kernel.cache_dir%/jms_aop            
 
 knp_menu:
     twig: true
@@ -156,4 +156,7 @@ foq_elastica:
                         model: rs\kaoz4Bundle\Entity\Project
                         provider:                
                           query_builder_method: createIsActiveQueryBuilder
-            
+#fos_user:
+#    db_driver: orm
+#    firewall_name: secured_area
+#    user_class: rs\kaoz4Bundle\Entity\User            
