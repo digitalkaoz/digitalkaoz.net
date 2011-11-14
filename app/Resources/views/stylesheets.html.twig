@@ -3,11 +3,10 @@
 {% stylesheets  
                 '@MopaBootstrapBundle/Resources/bootstrap/lib/bootstrap.less'
                 '@MopaBootstrapBundle/Resources/public/less/paginator.less'
-                'js/syntaxhighlighter/styles/shCore.css'
-                'js/syntaxhighlighter/styles/shThemeRDark.css'
+                'js/libs/prettify/prettify.css'
                 'css/content.css'
 
-                filter='less, ?yui_css, ?cssembed' output='css/combined.css'
+                filter='less, ?yui_css, ?cssembed' output='css/combined/combined_frontend.css'
 %}
     <link rel="stylesheet" href="{{ asset_url }}">
 {% endstylesheets %}

@@ -1,20 +1,18 @@
 <div class="row">
-    <div class="span11">
-        <div class="span8">
-            <a href="{{ path('post', { 'slug': post.slug }) }}">
-                {% if post.logo %}
-                    <img src="{{ post.logo}}" alt="{{ post.title }}" title="{{ post.title }}" width="50"/>
-                {% endif %}
-                <strong>{{ post.title|e }}</strong>
-            </a>
-        </div>
-
-        <div class="span10 offset1">
-            {% if full %}
-                    <p>{{ post.text|raw }}</p>
-            {% else %}
-                <p>{{ post.abstract|raw }}</p>
+    <div class="span8">
+        <a href="{{ path('post', { 'slug': post.slug }) }}">
+            {% if post.logo %}
+                <img src="{{ post.logo}}" alt="{{ post.title }}" title="{{ post.title }}" width="50"/>
             {% endif %}
-        </div>
+            <strong>{{ post.title|e }}</strong>
+        </a>
+    </div>
+
+    <div class="span12">
+        {% if full %}
+                <p>{{ post.text|raw }}</p>
+        {% else %}
+            <p>{{ post.abstract|raw }}</p>
+        {% endif %}
     </div>
 </div>

@@ -1,17 +1,15 @@
 <div class="row">
-    <div class="span11">
     
-        <div class="span8">
+    <div class="span8">
         <a href="{{ path('project', { 'slug': project.slug }) }}">
             {% if project.logo %}
                 <img src="{{ project.logo}}" alt="{{ project.name }}" title="{{ project.name }}" width="50"/>
             {% endif %}
             <strong>{{ project.name|e }}</strong>
         </a>
-        </div>
-        
-        <div class="span10 offset1">
-            <p>{{ project.description|raw }}</p>
-        </div>
+    </div>
+
+    <div class="span12">
+        <p>{{ project.description|raw }}</p>
     </div>
 </div>

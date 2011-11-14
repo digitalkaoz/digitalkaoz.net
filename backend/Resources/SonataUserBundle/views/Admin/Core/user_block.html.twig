@@ -1,1 +1,1 @@
-{% block user_block %}{% if app.user %}{{ app.user }} - <a href="{{ url('fos_user_security_logout') }}">logout</a> {% endif %}{% endblock %}
+{% block user_block %}{% if app.user %} <span class="label">{{ app.user }}</span> - <a class="btn info" href="{{ url('fos_user_security_logout') }}">logout</a> {% endif %}{% endblock %}
