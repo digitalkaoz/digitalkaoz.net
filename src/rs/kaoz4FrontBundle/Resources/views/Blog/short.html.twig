@@ -11,9 +11,9 @@
 
         <div class="span10 offset1">
             {% if full %}
-                    <p>{{ post.text }}</p>
+                    <p>{{ post.text|raw }}</p>
             {% else %}
-                <p>{{ post.abstract }}</p>
+                <p>{{ post.abstract|raw }}</p>
             {% endif %}
         </div>
     </div>
