@@ -5,7 +5,7 @@ namespace rs\kaoz4Bundle\DataFixtures\ORM;
 class LoadBioData extends BaseFixtureLoader
 {
     protected $file = '/../../Resources/fixtures/bio_fixtures.yml';
-    protected $orderno = 2;
+    protected $orderno = 3;
     protected $cls = 'rs\kaoz4Bundle\Entity\Bio';
     
     public function load($manager)

@@ -1,0 +1,22 @@
+admin:
+  username:    admin
+  email:       seroscho@googlemail.com
+  enabled:     true
+  roles:       [ROLE_SUPER_ADMIN, ROLE_USER] 
+  password:    admin
+
+foo:
+  username:    foo
+  email:       foo@bar.de
+  enabled:     true
+  roles:       [ROLE_USER] 
+  password:    foo
+  expired:     true
+  
+bar:
+  username:    bar
+  email:       bar@foo.de
+  enabled:     false
+  locked:      true
+  roles:       [ROLE_SUPER_ADMIN, ROLE_USER] 
+  password:    bar    

@@ -2,7 +2,13 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: "@rskaoz4BackendBundle/Resources/config/services.xml" }
-    
+
+
+parameters:
+    sonata.user.admin.groupname: Credentials
+    sonata.user.admin.user.entity: rs\kaoz4Bundle\Entity\User
+    sonata.user.admin.user.class: rs\kaoz4BackendBundle\Admin\UserAdmin
+
 framework:
     #esi:             ~
     esi: { enabled: true }    
@@ -116,7 +122,6 @@ foq_elastica:
                           query_builder_method: createIsActiveQueryBuilder
 sonata_admin:
     #security_handler: sonata.admin.security.handler.noop
-
     title:      Digital.Kaoz.net
     title_logo: /bundles/sonataadmin/logo_title.png
     

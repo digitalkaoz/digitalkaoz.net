@@ -36,4 +36,25 @@ class User extends BaseUser
         parent::__construct();
         // your own logic
     }    
+    
+    
+    /**
+     * read object data from an array
+     * 
+     * @param array $data
+     * @return Network 
+     */
+    public function fromArray($data)
+    {
+        $this->setUsername(array_key_exists('username', $data) ? $data['username'] : null);
+        $this->setEmail(array_key_exists('email', $data) ? $data['email'] : false);
+        $this->setEnabled(array_key_exists('enabled', $data) ? $data['enabled'] : null);
+        $this->setPlainPassword(array_key_exists('password', $data) ? $data['password'] : null);
+        $this->setRoles(array_key_exists('roles', $data) ? $data['roles'] : null);
+        $this->setAlgorithm(array_key_exists('algorith', $data) ? $data['algoritm'] : 'sha512');
+        $this->setLocked(array_key_exists('locked', $data) ? $data['locked'] : false);
+        $this->setExpired(array_key_exists('expired', $data) ? $data['expired'] : null);
+        
+        return $this;
+    }    
 }

@@ -8,20 +8,20 @@ all:
     - Symfony\Bundle\AsseticBundle\AsseticBundle
     - Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle
     - JMS\SecurityExtraBundle\JMSSecurityExtraBundle            
-    - rs\kaoz4Bundle\rskaoz4Bundle
-    - Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle
     - JMS\AopBundle\JMSAopBundle
     - Knp\Bundle\ConsoleAutocompleteBundle\KnpConsoleAutocompleteBundle
-    - Mopa\BootstrapBundle\MopaBootstrapBundle
-    - rs\ProjectUtilitiesBundle\rsProjectUtilitiesBundle
+    - Knp\Bundle\MenuBundle\KnpMenuBundle
     - Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle
     - Sonata\AdminBundle\SonataAdminBundle
     - Sonata\UserBundle\SonataUserBundle
     - Sonata\jQueryBundle\SonatajQueryBundle
-    - Knp\Bundle\MenuBundle\KnpMenuBundle
-    - rs\kaoz4BackendBundle\rskaoz4BackendBundle
+    - Mopa\BootstrapBundle\MopaBootstrapBundle
     - FOQ\ElasticaBundle\FOQElasticaBundle
+    - Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle
     - FOS\UserBundle\FOSUserBundle
+    - rs\ProjectUtilitiesBundle\rsProjectUtilitiesBundle
+    - rs\kaoz4Bundle\rskaoz4Bundle
+    - rs\kaoz4BackendBundle\rskaoz4BackendBundle
 
 dev:
     - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle
