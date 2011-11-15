@@ -6,7 +6,7 @@ php:
 
 env:
   - SYMFONY_VERSION=v2.0.5
-  - SYMFONY_VERSION=origin/master
+#  - SYMFONY_VERSION=origin/master
 
 before_script:
   - export TIMETRAP=false
