@@ -1,0 +1,18 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     localhost
+    database_port: 
+    database_name:     foo
+    database_user:     bar
+    database_password: bazz
+    mailer_transport:  mail
+    mailer_host:       localhost
+    mailer_user: 
+    mailer_password: 
+    locale:            de
+    secret:            1234567890abcde
+    akismet_key:       123456
+    contact_recipient: seroscho@googlemail.com
+    node_path:         /usr/local/bin/node
+    node_modules_path: /usr/local/lib/node_modules
+

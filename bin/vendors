@@ -139,7 +139,7 @@ if ('update' === $command) {
 }
 
 
-if($offset && $offset+$size < count(parse_ini_file($rootDir.'/deps.ini', true, INI_SCANNER_RAW)))
+if(isset($offset) && $offset+$size < count(parse_ini_file($rootDir.'/deps.ini', true, INI_SCANNER_RAW)))
 {
     exit;
 }
