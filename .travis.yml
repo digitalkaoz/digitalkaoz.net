@@ -9,7 +9,9 @@ env:
   - SYMFONY_VERSION=origin/master
 
 before_script:
+  - export TIMETRAP=false
   - php bin/vendors install
+  - export TIMETRAP=true
   - app/console
   - cd app
 
