@@ -9,8 +9,9 @@ env:
   - SYMFONY_VERSION=origin/master
 
 before_script:
-  - bin/vendors install
+  - php bin/vendors install
   - app/console
+  - cd app
 
 notifications:
   email:
