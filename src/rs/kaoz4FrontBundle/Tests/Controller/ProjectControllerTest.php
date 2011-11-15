@@ -2,9 +2,9 @@
 
 namespace rs\kaoz4FrontBundle\Tests;
 
-use Behat\MinkBundle\Test\MinkTestCase;
+use rs\kaoz4FrontBundle\Test\BaseControllerTest;
 
-class ProjectControllerTest extends MinkTestCase
+class ProjectControllerTest extends BaseControllerTest
 {
     protected $base;
 

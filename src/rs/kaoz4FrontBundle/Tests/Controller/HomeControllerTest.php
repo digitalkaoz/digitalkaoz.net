@@ -2,19 +2,10 @@
 
 namespace rs\kaoz4FrontBundle\Tests\Controller;
 
-use Behat\MinkBundle\Test\MinkTestCase;
+use rs\kaoz4FrontBundle\Test\BaseControllerTest;
 
-class HomeControllerTest extends MinkTestCase
+class HomeControllerTest extends BaseControllerTest
 {
-    protected $base;
-
-    protected function setUp()
-    {
-        $this->base = $this->getKernel()
-            ->getContainer()
-            ->getParameter('behat.mink.base_url');
-    }
-
     public function testIndex()
     {
         $session = $this->getSession('symfony');
@@ -74,6 +65,6 @@ class HomeControllerTest extends MinkTestCase
 
     private function getBios()
     {
-        return $this->getKernel()->getContainer()->get('doctrine')->getRepository('rskaoz4Bundle:Bio')->findActive();
+        return $this->getDoctrine()->getRepository('rskaoz4Bundle:Bio')->findActive();
     }    
 }

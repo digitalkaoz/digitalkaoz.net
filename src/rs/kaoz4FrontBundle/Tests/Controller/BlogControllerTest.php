@@ -2,19 +2,10 @@
 
 namespace rs\kaoz4FrontBundle\Tests;
 
-use Behat\MinkBundle\Test\MinkTestCase;
+use rs\kaoz4FrontBundle\Test\BaseControllerTest;
 
-class BlogControllerTest extends MinkTestCase
+class BlogControllerTest extends BaseControllerTest
 {
-    protected $base;
-
-    protected function setUp()
-    {
-        $this->base = $this->getKernel()
-            ->getContainer()
-            ->getParameter('behat.mink.base_url');
-    }
-
     public function testIndex()
     {
         $session = $this->getSession('symfony');
@@ -44,6 +35,6 @@ class BlogControllerTest extends MinkTestCase
     
     private function getPosts()
     {
-        return $this->getKernel()->getContainer()->get('doctrine')->getRepository('rskaoz4Bundle:Post')->findActive();
-    }
+        return $this->getDoctrine()->getRepository('rskaoz4Bundle:Post')->findActive();
+    }    
 }

@@ -17,6 +17,11 @@ mink:
     base_url:   http://kaoz4/app_dev.php
     default_session:    symfony
 
+doctrine:
+    dbal:
+        driver: pdo_sqlite        
+        path: ':memory:'
+        memory: true
     
 #nelmio_esi_debug:
 #    enabled: false    

@@ -10,7 +10,7 @@ env:
 
 before_script:
   - bin/vendors install
-  #- backend/console doctrine:fixtures:load
+  - app/console
 
 notifications:
   email:
