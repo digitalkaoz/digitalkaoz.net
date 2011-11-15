@@ -1,4 +1,4 @@
-DigitalKaoz.net [![Build Status](https://secure.travis-ci.org/digitalkaoz/digitalkaoz.net.png)](http://travis-ci.org/digitalkaoz/digitalkaoz.net)
+DigitalKaoz.net [![Build Status](https://secure.travis-ci.org/digitalkaoz/digitalkaoz.net.png)](http://travis-ci.org/#!/digitalkaoz/digitalkaoz.net)
 ========================
 
 1) Installation
