@@ -9,7 +9,7 @@ env:
 #  - SYMFONY_VERSION=origin/master
 
 before_script:
-  - cp app/config/parameters.example.yml app/config/parameter.yml
+  - cp app/config/parameters.example.yml app/config/parameters.yml
   - bin/vendors install 10 0
   - bin/vendors install 10 10
   - bin/vendors install 10 20
