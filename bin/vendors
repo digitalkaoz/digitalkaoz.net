@@ -138,6 +138,12 @@ if ('update' === $command) {
     file_put_contents($rootDir.'/deps.lock', implode("\n", $newversions));
 }
 
+
+if($offset && $offset+$size < count(parse_ini_file($rootDir.'/deps.ini', true, INI_SCANNER_RAW)))
+{
+    exit;
+}
+
 // php on windows can't use the shebang line from system()
 $interpreter = PHP_OS == 'WINNT' ? 'php.exe' : '';
 
