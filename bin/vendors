@@ -73,6 +73,16 @@ $deps = parse_ini_file($rootDir.'/deps.ini', true, INI_SCANNER_RAW);
 if (false === $deps) {
     exit(sprintf($error,"The deps file is not valid ini syntax. Perhaps missing a trailing newline?\n"));
 }
+
+//slice processing
+if($argv)
+{
+    $size = array_shift($argv);
+    $offset = array_shift($argv);
+    
+    $deps = array_slice($deps, $offset, $size);
+}
+
 foreach ($deps as $name => $dep) {
     $dep = array_map('trim', $dep);
 

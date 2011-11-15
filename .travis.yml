@@ -9,9 +9,11 @@ env:
 #  - SYMFONY_VERSION=origin/master
 
 before_script:
-#  - export TIMETRAP=false
-  - php bin/vendors install
-#  - export TIMETRAP=true
+  - bin/vendors install 10 0
+  - bin/vendors install 10 10
+  - bin/vendors install 10 20
+  - bin/vendors install 10 30
+  - bin/vendors install 10 40
   - app/console
   - cd app
 
