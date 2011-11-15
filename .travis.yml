@@ -1,0 +1,18 @@
+language: php
+
+php:
+  - 5.3
+  - 5.4
+
+env:
+  - SYMFONY_VERSION=v2.0.5
+  - SYMFONY_VERSION=origin/master
+
+before_script:
+  - bin/vendors install
+  #- backend/console doctrine:fixtures:load
+
+notifications:
+  email:
+    - seroscho@googlemail.com
+
