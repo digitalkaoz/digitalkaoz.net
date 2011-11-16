@@ -11,7 +11,7 @@ class HomeControllerTest extends BaseControllerTest
         $session = $this->getSession('symfony');
         $session->visit($this->base.'/');
         
-        if(!$session->getStatusCode() == 200)
+        if(!$session->getStatusCode() != 200)
         {
             var_dump($session->getPage()->getContent());
         }
