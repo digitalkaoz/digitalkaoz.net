@@ -6,6 +6,7 @@ php:
 
 env:
   - SYMFONY_VERSION=v2.0.5
+  - DB=sqlite
 #  - SYMFONY_VERSION=origin/master
 
 before_script:
@@ -14,7 +15,8 @@ before_script:
   - bin/vendors install 10 10
   - bin/vendors install 10 20
   - bin/vendors install 10 30
-  - bin/vendors install 10 40  
+  - bin/vendors install 10 40 
+  - ln -s ../../../../bootstrap/ ./vendor/bundles/Mopa/BootstrapBundle/Resources/
 
 script: "sh -c 'cd app; phpunit'"
   
