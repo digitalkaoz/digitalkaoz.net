@@ -6,8 +6,6 @@ php:
 
 env:
   - SYMFONY_VERSION=v2.0.5
-  - DB=sqlite
-#  - SYMFONY_VERSION=origin/master
 
 before_script:
   - cp app/config/parameters.example.yml app/config/parameters.yml
