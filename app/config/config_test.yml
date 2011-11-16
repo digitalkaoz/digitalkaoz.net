@@ -20,8 +20,9 @@ mink:
 doctrine:
     dbal:
         driver: pdo_sqlite        
-        path: ':memory:'
-        memory: true
+        #path: ':memory:'
+        path: %kernel.cache_dir%/test.db
+        #memory: true
     
 #nelmio_esi_debug:
 #    enabled: false    

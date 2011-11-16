@@ -37,7 +37,7 @@ class ProjectControllerTest extends BaseControllerTest
             $session->visit($this->base.'/projects/detail/'.$project->getSlug());
             
             $this->assertEquals($session->getStatusCode(), 200);            
-            $this->assertEquals($session->getPage()->find('css','h2')->getText(),$project->getName());
+            $this->assertEquals($session->getPage()->find('css','.main h2')->getText(),$project->getName());
             $this->assertTrue($session->getPage()->has('css','#disqus_thread'));
         }        
     }

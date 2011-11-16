@@ -28,7 +28,7 @@ class BlogControllerTest extends BaseControllerTest
             $session->visit($this->base.'/blog/article/'.$post->getSlug());
             
             $this->assertEquals($session->getStatusCode(), 200);            
-            $this->assertEquals($session->getPage()->find('css','h2')->getText(),$post->getTitle());
+            $this->assertEquals($session->getPage()->find('css','.main h2')->getText(),$post->getTitle());
             $this->assertTrue($session->getPage()->has('css','#disqus_thread'));
         }        
     }

@@ -11,7 +11,7 @@ class HomeControllerTest extends BaseControllerTest
         $session = $this->getSession('symfony');
         $session->visit($this->base.'/');
         
-        $this->assertEquals($session->getStatusCode(),200);
+        $this->assertEquals($session->getStatusCode(),200);        
         $this->assertTrue($session->getPage()->hasContent('Blog'));
     }
 
@@ -21,7 +21,7 @@ class HomeControllerTest extends BaseControllerTest
         $session->visit($this->base.'/bio');
         
         $this->assertEquals($session->getStatusCode(),200);
-        $this->assertEquals($session->getPage()->find('css','h2')->getText(),'Bio');
+        $this->assertEquals($session->getPage()->find('css','.main h2')->getText(),'Bio');
 
         $hs = $session->getPage()->findAll('css','h3');
         $categorys = array();
@@ -45,7 +45,7 @@ class HomeControllerTest extends BaseControllerTest
         $session->visit($this->base.'/contact');
         
         $this->assertEquals($session->getStatusCode(),200);
-        $this->assertEquals($session->getPage()->find('css','h2')->getText(),'Contact');
+        $this->assertEquals($session->getPage()->find('css','.main h2')->getText(),'Contact');
         
         $session->getPage()->fillField('ihqs_contact_contact_form[senderName]','foo');
         $session->getPage()->fillField('ihqs_contact_contact_form[subject]','foo');
