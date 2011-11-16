@@ -11,6 +11,11 @@ class HomeControllerTest extends BaseControllerTest
         $session = $this->getSession('symfony');
         $session->visit($this->base.'/');
         
+        if(!$session->getStatusCode() == 200)
+        {
+            var_dump($session->getPage()->getContent());
+        }
+        
         $this->assertEquals($session->getStatusCode(),200);        
         $this->assertTrue($session->getPage()->hasContent('Blog'));
     }
