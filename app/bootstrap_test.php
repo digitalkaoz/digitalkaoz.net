@@ -15,7 +15,7 @@ runConsole($app,"cache:warmup");
 function runConsole($app, $command, array $options = array())
 {
     $options["-e"] = "test";
-    $options["-q"] = null;
+    //$options["-q"] = null;
     $options = array_merge($options, array('command' => $command));
     return $app->run(new \Symfony\Component\Console\Input\ArrayInput($options));
 }    
