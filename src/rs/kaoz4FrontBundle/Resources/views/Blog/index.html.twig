@@ -6,10 +6,15 @@
 
     <h2>Blog</h2>
 
-    {% if posts %}
-          {% for post in posts %}
+    {% if paginator %}
+        {% for post in paginator %}
             {% include 'rskaoz4FrontBundle:Blog:short.html.twig' with { 'post': post, 'full': loop.index == 1} %}
-          {% endfor %}
-    {% endif %}
+        {% endfor %}
 
+        <div class="navigation">
+            {{ paginator.render()|raw }}
+        </div>
+    
+    {% endif %}
+    
 {% endblock %}

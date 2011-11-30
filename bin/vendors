@@ -152,10 +152,12 @@ system(sprintf('%s %s', $interpreter, escapeshellarg($rootDir.'/vendor/bundles/S
 
 // Update assets
 echo ">".sprintf($info,"Updating Assets\n");
-system(sprintf('%s %s assets:install %s', $interpreter, escapeshellarg($rootDir.'/app/console'), escapeshellarg($rootDir.'/web/')));
+system(sprintf('%s %s assets:install %s --symlink', $interpreter, escapeshellarg($rootDir.'/app/console'), escapeshellarg($rootDir.'/web/')));
 
 // Update assets
 echo ">".sprintf($info,"Updating Assets\n");
+system('rm -rf '.$rootDir.'/vendor/bundles/Mopa/BootstrapBundle/Resources/bootstrap');
+system('ln -sf ../../../../bootstrap/ '.$rootDir.'/vendor/bundles/Mopa/BootstrapBundle/Resources/');
 system(sprintf('%s %s assetic:dump', $interpreter, escapeshellarg($rootDir.'/app/console')));
 
 echo "\n>".sprintf($info,"Clearing Cache\n");

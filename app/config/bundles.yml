@@ -22,6 +22,7 @@ all:
     - Ornicar\AkismetBundle\OrnicarAkismetBundle
     - rs\ProjectUtilitiesBundle\rsProjectUtilitiesBundle
     - FOQ\ElasticaBundle\FOQElasticaBundle
+    - Knp\Bundle\PaginatorBundle\KnpPaginatorBundle
 #    - FOS\UserBundle\FOSUserBundle
 
 dev:

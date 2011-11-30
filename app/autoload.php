@@ -30,6 +30,8 @@ $loader->registerNamespaces(array(
     'Behat\Mink'       => __DIR__.'/../vendor/behat/mink/src',
     'Behat\Gherkin'    => __DIR__.'/../vendor/behat/gherkin/src',
     'Behat\Behat'      => __DIR__.'/../vendor/behat/behat/src',    
+    'Knp\\Component'   => __DIR__.'/../vendor/knp-components/src',
+    'Knp\\Bundle'      => __DIR__.'/../vendor/bundles',
     
     // if you want to use GoutteDriver
     'Goutte'           => __DIR__.'/../vendor/goutte/src',

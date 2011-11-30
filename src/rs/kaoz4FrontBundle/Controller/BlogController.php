@@ -22,7 +22,14 @@ class BlogController extends Controller
     {
         $posts = $this->getRepository('Post')->findActive();
         
-        return array('posts' => $posts);
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $this->getRepository('Post')->createIsActiveQueryBuilder()->getQuery(),
+            $this->get('request')->query->get('page', 1),
+            10
+        );
+        
+        return array('paginator' => $pagination);
     }
     
     /**
