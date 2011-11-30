@@ -11,9 +11,7 @@
             {% include 'rskaoz4FrontBundle:Blog:short.html.twig' with { 'post': post, 'full': loop.index == 1} %}
         {% endfor %}
 
-        <div class="navigation">
-            {{ paginator.render()|raw }}
-        </div>
+        {{ paginator.render()|raw }}
     
     {% endif %}
     
