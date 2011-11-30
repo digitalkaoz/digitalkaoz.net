@@ -30,6 +30,25 @@ class ZendCacheFetcher
         
         if ($forceRefresh || false === ($repos = $cache->load($cacheId))) {
             $repos = $this->fetcher->getRepoApi()->getUserRepos('digitalkaoz');
+            
+            foreach($repos as $key=>$repo)
+            {
+                if($repo['fork'])
+                {
+                    unset($repos[$key]);
+                }                    
+            }
+            
+            usort($repos, function($a, $b){
+                $a = $a['created_at'];
+                $b = $b['created_at'];
+                
+                if(strtotime($a) == strtotime($b)){
+                    return 0;
+                }
+                
+                return strtotime($a) < strtotime($b) ? 1 : -1;
+            });
 
             $cache->save($repos, $cacheId);
         }
