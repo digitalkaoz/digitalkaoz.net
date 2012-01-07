@@ -1,0 +1,68 @@
+{
+    "name" : "digitalkaoz.net",
+    "type" : "webpage",
+    "target-dir" : "vendor/",
+    "homepage" : "http://digitalkaoz.net",    
+
+    "require": {
+        "php":                                  ">=5.3.2",
+        "symfony/symfony":                      ">=2.0.7,<2.1.0-dev",
+        "symfony/assetic-bundle":               "*",
+        "doctrine/orm":                         "2.1.*",
+        "doctrine/doctrine-fixtures-bundle":    "<=2.1.0",
+        "doctrine/data-fixtures":               "*",
+        "twig/extensions":                      "*",
+        "sensio/generator-bundle":              "2.0.*",
+        "sensio/framework-extra-bundle":        "2.0.*",
+        "sensio/distribution-bundle":           "2.0.*",
+        "jms/security-extra-bundle":            "1.0.*",
+        "jms/aop-bundle":                       "1.0.0",
+        "friendsofsymfony/user-bundle":         "1.1.0",
+        "sonata/doctrine-orm-admin-bundle":     "*",
+        "sonata/user-bundle":                   "*",
+        "behat/mink-bundle":                    "*",
+        "behat/behat-bundle":                   "*",
+        "kriswallsmith/buzz":                   "*",
+        "mopa/bootstrap-bundle":                "*",
+        "knplabs/knp-menu-bundle":              "*",
+        "stof/doctrine-extensions-bundle":      "*",
+        "knplabs/knp-paginator-bundle":         "*",
+        "knplabs/knp-last-tweets-bundle":       "*"
+
+    },
+
+    "autoload": {
+        "psr-0": {
+            "rs": "src/"
+        }
+    },
+
+    "repositories": {
+        "sonata": {
+            "vcs": {
+                "url": "git://github.com/sonata-project/SonataDoctrineORMAdminBundle.git"
+            }
+        },
+        "stof": {
+            "vcs": {
+                "url": "git://github.com/stof/StofDoctrineExtensionsBundle.git"
+            }
+        },
+        "knplabs": {
+            "vcs": {
+                "url": "git://github.com/KnpLabs/KnpPaginatorBundle.git"
+            }
+        },
+        "knplabs2":{
+            "vcs": {
+                "url": "git://github.com/KnpLabs/knp-components.git"
+            }
+        },
+        "knplabs3":{
+            "vcs": {
+                "url": "git://github.com/KnpLabs/KnpLastTweetsBundle.git"
+            }
+        }
+    }
+}
+

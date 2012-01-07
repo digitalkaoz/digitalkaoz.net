@@ -139,7 +139,7 @@ foq_elastica:
                         abstract: { boost: 3 }
                         text: { boost: 3 }
                         slug: ~
-                    doctrine:
+                    persistence:
                         driver: orm
                         model: rs\kaoz4Bundle\Entity\Post
                         provider:                
@@ -151,7 +151,7 @@ foq_elastica:
                         abstract: { boost: 3 }
                         description: { boost: 3 }
                         slug: ~
-                    doctrine:
+                    persistence:
                         driver: orm
                         model: rs\kaoz4Bundle\Entity\Project
                         provider:                

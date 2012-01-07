@@ -61,6 +61,7 @@ if (!function_exists('intl_get_error_code')) {
     $loader->registerPrefixFallbacks(array(__DIR__.'/../vendor/symfony/src/Symfony/Component/Locale/Resources/stubs'));
 }
 
+
 $loader->registerNamespaceFallbacks(array(
     __DIR__.'/../src',
 ));

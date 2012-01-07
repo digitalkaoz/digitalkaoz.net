@@ -16,7 +16,6 @@ all:
     - Knp\Bundle\ZendCacheBundle\KnpZendCacheBundle
     - JMS\AopBundle\JMSAopBundle
     - Virtal\Bundle\DisqusBundle\VirtalDisqusBundle
-    - Knp\Bundle\ConsoleAutocompleteBundle\KnpConsoleAutocompleteBundle
     - IHQS\ContactBundle\IHQSContactBundle
     - Mopa\BootstrapBundle\MopaBootstrapBundle
     - Ornicar\AkismetBundle\OrnicarAkismetBundle

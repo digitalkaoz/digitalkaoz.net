@@ -156,8 +156,6 @@ system(sprintf('%s %s assets:install %s --symlink', $interpreter, escapeshellarg
 
 // Update assets
 echo ">".sprintf($info,"Updating Assets\n");
-system('rm -rf '.$rootDir.'/vendor/bundles/Mopa/BootstrapBundle/Resources/bootstrap');
-system('ln -sf ../../../../bootstrap/ '.$rootDir.'/vendor/bundles/Mopa/BootstrapBundle/Resources/');
 system(sprintf('%s %s assetic:dump', $interpreter, escapeshellarg($rootDir.'/app/console')));
 
 echo "\n>".sprintf($info,"Clearing Cache\n");
