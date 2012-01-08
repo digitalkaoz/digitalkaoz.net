@@ -22,7 +22,7 @@ all:
     - rs\ProjectUtilitiesBundle\rsProjectUtilitiesBundle
     - FOQ\ElasticaBundle\FOQElasticaBundle
     - Knp\Bundle\PaginatorBundle\KnpPaginatorBundle
-#    - FOS\UserBundle\FOSUserBundle
+    - Blage\ConnectBundle\BlageConnectBundle
 
 dev:
     - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle
@@ -30,7 +30,6 @@ dev:
     - Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle
     - Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle
     - Elao\WebProfilerExtraBundle\WebProfilerExtraBundle
-#    - Nelmio\EsiDebugBundle\NelmioEsiDebugBundle
 
 test:    
     - Behat\MinkBundle\MinkBundle
@@ -38,4 +37,3 @@ test:
     - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle
     - Elao\WebProfilerExtraBundle\WebProfilerExtraBundle
     - Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle
-#    - Nelmio\EsiDebugBundle\NelmioEsiDebugBundle

@@ -45,6 +45,7 @@ $loader->registerNamespaces(array(
     'Nelmio'           => __DIR__.'/../vendor/bundles',
     'FOQ'              => __DIR__.'/../vendor/bundles',
     'FOS'              => __DIR__.'/../vendor/bundles',
+    'Blage'            => __DIR__.'/../vendor/bundles',
 ));
 
 $loader->registerPrefixes(array(

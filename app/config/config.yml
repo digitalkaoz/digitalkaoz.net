@@ -125,7 +125,10 @@ ihqs_contact:
                 
 mopa_bootstrap:
     form: ~    
-    
+
+blage_connect:
+    profile_name: digitalkaoz
+
 foq_elastica:
     clients:
         default: { host: localhost, port: 9200 }
