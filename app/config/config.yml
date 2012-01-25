@@ -103,8 +103,8 @@ knp_last_tweets:
         options:
             cache_name: knp_last_tweets            
 
-virtal_disqus:
-    disqus_shortname: digitalkaoz
+knp_disqus:
+    api_key: sMyTGRuFIGDwszWATZlLk0yhS0vIXjhm
 
 ornicar_akismet:
     api_key:        %akismet_key%

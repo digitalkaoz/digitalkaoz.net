@@ -6,62 +6,244 @@
 
     "require": {
         "php":                                  ">=5.3.2",
-        "symfony/symfony":                      ">=2.0.7,<2.1.0-dev",
+        "symfony/symfony":                      ">=2.0.9,<2.1.0-dev",
         "symfony/assetic-bundle":               "*",
+        "symfony/security-bundle":              ">=2.0.9,<2.1.0-dev",
         "doctrine/orm":                         "2.1.*",
-        "doctrine/doctrine-fixtures-bundle":    "<=2.1.0",
         "doctrine/data-fixtures":               "*",
+        "doctrine/doctrine-fixtures-bundle":    ">=2.0.1,<2.1.0-dev",
         "twig/extensions":                      "*",
         "sensio/generator-bundle":              "2.0.*",
         "sensio/framework-extra-bundle":        "2.0.*",
         "sensio/distribution-bundle":           "2.0.*",
-        "jms/security-extra-bundle":            "1.0.*",
+        "jms/security-extra-bundle":            ">=1.1.0",
         "jms/aop-bundle":                       "1.0.0",
-        "friendsofsymfony/user-bundle":         "1.1.0",
         "sonata/doctrine-orm-admin-bundle":     "*",
         "sonata/user-bundle":                   "*",
         "behat/mink-bundle":                    "*",
+        "behat/mink":                           "*",
         "behat/behat-bundle":                   "*",
-        "kriswallsmith/buzz":                   "*",
-        "mopa/bootstrap-bundle":                "*",
         "knplabs/knp-menu-bundle":              "*",
-        "stof/doctrine-extensions-bundle":      "*",
         "knplabs/knp-paginator-bundle":         "*",
-        "knplabs/knp-last-tweets-bundle":       "*"
+        "knplabs/knp-last-tweets-bundle":       "*",
+        "ruflin/Elastica":                      "*",
+        "ornicar/github-api":                   "*",
+        "kriswallsmith/buzz":                   "*",
+        "friendsofsymfony/user-bundle":         "1.1.0",
+        "mopa/bootstrap-bundle":                "*",
+        "stof/doctrine-extensions-bundle":      "*",
 
+        "ornicar/akismet-bundle":               "*",
+        "knplabs/knp-zend-cache-bundle":        "*",
+        "knplabs/knp-disqus-bundle":            "*",
+        "ihqs/contact-bundle":                  "*",
+        "blage/connect-bundle":                 "*",
+        "foq/elastica-bundle":                  "*",
+        "twitter/bootstrap":                    "*",
+        "elao/profile-extra-bundle":            "*"
+
+    },
+
+    "repositories" : {
+        "knplabs-disqus-bundle": {
+            "package": {
+                "name": "knplabs/knp-disqus-bundle",
+                "version": "master-dev",
+                "dist": {
+                    "url": "https://github.com/KnpLabs/KnpDisqusBundle/zipball/master",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "git://github.com/KnpLabs/KnpDisqusBundle.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "require": {
+                    "zendframework/zend-cache": "*",
+                    "zendframework/zend-filter": "*"
+                },
+                "autoload": {
+                    "psr-0": { "Knp\\Bundle\\DisqusBundle": "" }
+                },
+                "target-dir": "Knp/Bundle/DisqusBundle"
+            }
+        },
+        "knp-zend-cache-bundle": {
+            "package": {
+                "name": "knplabs/knp-zend-cache-bundle",
+                "version": "master-dev",
+                "dist": {
+                    "url": "https://github.com/KnpLabs/KnpZendCacheBundle/zipball/master",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "git://github.com/KnpLabs/KnpZendCacheBundle.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "require": {
+                    "zendframework/zend-cache": "*",
+                    "zendframework/zend-filter": "*"
+                },
+                "autoload": {
+                    "psr-0": { "Knp\\Bundle\\ZendCacheBundle": "" }
+                },
+                "target-dir": "Knp/Bundle/ZendCacheBundle"
+            }
+        },
+        "zendframework-zend-cache": {
+            "package": {
+                "name": "zendframework/zend-cache",
+                "version": "master-dev",
+                "dist": {
+                    "url": "https://github.com/KnpLabs/zend-cache/zipball/master",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "git://github.com/KnpLabs/zend-cache.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "autoload": {
+                    "psr-0": { "Zend\\Cache": "" }
+                },
+                "target-dir": "Zend/Cache"
+            }
+        },
+        "zendframework-zend-filter": {
+            "package": {
+                "name": "zendframework/zend-filter",
+                "version": "master-dev",
+                "dist": {
+                    "url": "https://github.com/KnpLabs/zend-filter/zipball/master",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "git://github.com/KnpLabs/zend-filter.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "autoload": {
+                    "psr-0": { "Zend\\Filter": "" }
+                },
+                "target-dir": "Zend/Filter"
+            }
+        },
+        "ornicar-aksimet-bundle": {
+            "package": {
+                "name": "ornicar/akismet-bundle",
+                "version": "master-dev",
+                "dist": {
+                    "url": "https://github.com/ornicar/OrnicarAkismetBundle/zipball/master",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "git://github.com/ornicar/OrnicarAkismetBundle.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "autoload": {
+                    "psr-0": { "Ornicar\\AkismetBundle": "" }
+                },
+                "target-dir": "Ornicar/AkismetBundle"
+            }
+        },
+        "ihqs-contact-bundle": {
+            "package": {
+                "name": "ihqs/contact-bundle",
+                "version": "master-dev",
+                "dist": {
+                    "url": "https://github.com/ihqs/ContactBundle/zipball/master",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "git://github.com/ihqs/ContactBundle.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "autoload": {
+                    "psr-0": { "IHQS\\ContactBundle": "" }
+                },
+                "target-dir": "IHQS/ContactBundle"
+            }
+        },
+        "blage-connect-bundle": {
+            "package": {
+                "name": "blage/connect-bundle",
+                "version": "master-dev",
+                "dist": {
+                    "url": "https://github.com/digitalkaoz/BlageConnectBundle/zipball/readme_travis_composer",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "git://github.com/digitalkaoz/BlageConnectBundle.git",
+                    "type": "git",
+                    "reference": "readme_travis_composer"
+                },
+                "autoload": {
+                    "psr-0": { "Blage\\ConnectBundle": "" }
+                },
+                "target-dir": "Blage/ConnectBundle"
+            }
+        },
+        "foq-elastica-bundle": {
+            "package": {
+                "name": "foq/elastica-bundle",
+                "version": "master-dev",
+                "dist": {
+                    "url": "https://github.com/Exercise/FOQElasticaBundle/zipball/master",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "git://github.com/Exercise/FOQElasticaBundle.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "autoload": {
+                    "psr-0": { "FOQ\\ElasticaBundle": "" }
+                },
+                "target-dir": "FOQ/ElasticaBundle"
+            }
+        },
+        "elao-profiler-bundle": {
+            "package": {
+                "name": "elao/profile-extra-bundle",
+                "version": "master-dev",
+                "dist": {
+                    "url": "https://github.com/Elao/WebProfilerExtraBundle/zipball/master",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "git://github.com/Elao/WebProfilerExtraBundle.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "autoload": {
+                    "psr-0": { "Elao\\WebProfilerExtraBundle": "" }
+                },
+                "target-dir": "Elao/WebProfilerExtraBundle"
+            }
+        },
+        "twitter-bootstrap": {
+            "package": {
+                "name": "twitter/bootstrap",
+                "version": "master-dev",
+                "dist": {
+                    "url": "https://github.com/twitter/bootstrap/zipball/master",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "git://github.com/twitter/bootstrap.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
     },
 
     "autoload": {
         "psr-0": {
             "rs": "src/"
-        }
-    },
-
-    "repositories": {
-        "sonata": {
-            "vcs": {
-                "url": "git://github.com/sonata-project/SonataDoctrineORMAdminBundle.git"
-            }
-        },
-        "stof": {
-            "vcs": {
-                "url": "git://github.com/stof/StofDoctrineExtensionsBundle.git"
-            }
-        },
-        "knplabs": {
-            "vcs": {
-                "url": "git://github.com/KnpLabs/KnpPaginatorBundle.git"
-            }
-        },
-        "knplabs2":{
-            "vcs": {
-                "url": "git://github.com/KnpLabs/knp-components.git"
-            }
-        },
-        "knplabs3":{
-            "vcs": {
-                "url": "git://github.com/KnpLabs/KnpLastTweetsBundle.git"
-            }
         }
     }
 }

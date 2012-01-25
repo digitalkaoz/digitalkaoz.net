@@ -21,7 +21,8 @@
 
     </div>
 
-    <div id="disqus_thread" class="span10"></div>
-    {{ disqus_comments({'disqus_identifier': post.slug })}}
+    <div id="disqus_thread" class="span10">
+        {{ knp_disqus_render('blog', {'identifier': post.slug, 'limit': 100}) }}
+    </div>
     
 {% endblock %}

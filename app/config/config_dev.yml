@@ -25,18 +25,15 @@ assetic:
 knp_last_tweets:
     fetcher:
         driver: array
-    
-virtal_disqus:    
-    disqus_developer: true
-    
+
 web_profiler_extra:
     routing:    true
     container:  true
     assetic:    true
-    twig:       true    
+    twig:       true
 
 ornicar_akismet:
-    service:        ornicar_akismet.akismet_stub    
+    service:        ornicar_akismet.akismet_stub
     
 #nelmio_esi_debug:
 #    enabled: true

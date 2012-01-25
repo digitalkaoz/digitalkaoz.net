@@ -1,4 +1,0 @@
-#!/bin/bash
-
-sudo rm -rf app/cache/* && sudo rm -rf app/logs/*
-sudo rm -rf backend/cache/* && sudo rm -rf backend/logs/*

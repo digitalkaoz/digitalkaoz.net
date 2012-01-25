@@ -20,8 +20,8 @@
             <p>{{ project.description|raw }}</p>
         </div>
             
-        <div id="disqus_thread" class="span10"></div>
-        {{ disqus_comments({'disqus_identifier': project.slug })}}
-            
+        <div id="disqus_thread" class="span10">
+            {{ knp_disqus_render('projects', {'identifier': project.slug, 'limit': 100}) }}
+        </div>
     </div>
 {% endblock %}

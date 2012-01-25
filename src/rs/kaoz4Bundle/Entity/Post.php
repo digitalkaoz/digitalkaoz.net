@@ -27,14 +27,13 @@ class Post
      * @var string $title
      *
      * @ORM\Column(name="title", type="string", length=255)
-     * @Gedmo\Sluggable
      * @Assert\NotBlank()
      * @Assert\MaxLength(255)
      */
     private $title;
 
     /**
-     * @Gedmo\Slug
+     * @Gedmo\Slug(fields={"title"})
      * @ORM\Column(name="slug", type="string", length=128, unique=true)
      */
     private $slug;    

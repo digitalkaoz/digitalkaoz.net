@@ -27,14 +27,13 @@ class Project
      * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255)
-     * @Gedmo\Sluggable
      * @Assert\NotBlank()
      * @Assert\MaxLength(255)
      */
     private $name;
     
     /**
-     * @Gedmo\Slug
+     * @Gedmo\Slug(fields={"name"})
      * @ORM\Column(name="slug", type="string", length=128, unique=true)
      */
     private $slug;    
