@@ -18,14 +18,9 @@ If you get any warnings or recommendations, fix these now before moving on.
     curl http://npmjs.org/install.sh | sh
     npm install less -g
 
-### c) Install the Vendor Libraries
+### c) Install the Vendor Libraries using Composer
 
-If you downloaded the archive "without vendors" or installed via git, then
-you need to download all of the necessary vendor libraries. If you're not
-sure if you need to do this, check to see if you have a ``vendor/`` directory.
-If you don't, or if that directory is empty, run the following:
-
-    php bin/vendors install
+    php bin/vendors.php
 
 Note that you **must** have git installed and be able to execute the `git`
 command to execute this script. If you don't have git available, either install
