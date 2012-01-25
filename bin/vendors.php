@@ -10,7 +10,7 @@ $composer = $rootDir.'/composer.phar';
 if(file_exists($composer)){
     system(sprintf('php %s', $composer.' self-update'));
 }else{
-    system(sprintf('curl %s | php', 'http://getcomposer.org/installer'));
+    system(sprintf('curl %s | php -d=phar.readonly=Off -d=phar.require_hash=Off', 'http://getcomposer.org/installer'));
 }
 system(sprintf('php %s', $composer.' update'));
 
