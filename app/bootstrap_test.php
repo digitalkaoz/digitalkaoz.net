@@ -10,6 +10,7 @@ $app->setAutoExit(false);
 runConsole($app,"doctrine:schema:drop", array("--force" => true));
 runConsole($app,"doctrine:schema:create");
 runConsole($app,"doctrine:fixtures:load");    
+runConsole($app,"foq:elastica:populate");
 runConsole($app,"cache:warmup");
 
 function runConsole($app, $command, array $options = array())

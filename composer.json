@@ -40,7 +40,8 @@
         "blage/connect-bundle":                 "*",
         "foq/elastica-bundle":                  "*",
         "twitter/bootstrap":                    "*",
-        "elao/profile-extra-bundle":            "*"
+        "elao/profile-extra-bundle":            "*",
+        "elastic/search":                       "*"
 
     },
 
@@ -189,15 +190,15 @@
         "foq-elastica-bundle": {
             "package": {
                 "name": "foq/elastica-bundle",
-                "version": "master-dev",
+                "version": "2.0",
                 "dist": {
-                    "url": "https://github.com/Exercise/FOQElasticaBundle/zipball/master",
+                    "url": "https://github.com/Exercise/FOQElasticaBundle/zipball/2.0",
                     "type": "zip"
                 },
                 "source": {
                     "url": "git://github.com/Exercise/FOQElasticaBundle.git",
                     "type": "git",
-                    "reference": "master"
+                    "reference": "branches/2.0"
                 },
                 "autoload": {
                     "psr-0": { "FOQ\\ElasticaBundle": "" }
@@ -237,6 +238,22 @@
                     "type": "git",
                     "reference": "master"
                 }
+            }
+        },
+        "elastic-search": {
+            "package": {
+                "name": "elastic/search",
+                "version": "0.18.7",
+                "dist": {
+                    "url": "https://github.com/downloads/elasticsearch/elasticsearch/elasticsearch-0.18.7.zip",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "https://github.com/elasticsearch/elasticsearch.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "bin": ["bin/elasticsearch"]
             }
         }
     },
