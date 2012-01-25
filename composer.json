@@ -172,13 +172,13 @@
                 "name": "blage/connect-bundle",
                 "version": "master-dev",
                 "dist": {
-                    "url": "https://github.com/digitalkaoz/BlageConnectBundle/zipball/readme_travis_composer",
+                    "url": "https://github.com/digitalkaoz/BlageConnectBundle/zipball/zend_cache",
                     "type": "zip"
                 },
                 "source": {
                     "url": "git://github.com/digitalkaoz/BlageConnectBundle.git",
                     "type": "git",
-                    "reference": "readme_travis_composer"
+                    "reference": "branches/zend_cache"
                 },
                 "autoload": {
                     "psr-0": { "Blage\\ConnectBundle": "" }

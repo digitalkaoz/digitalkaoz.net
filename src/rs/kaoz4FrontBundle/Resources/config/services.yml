@@ -1,6 +1,6 @@
 parameters:
     kaoz4.github_fetcher.zend_cache.class: rs\kaoz4FrontBundle\Github\ZendCacheFetcher
-    kaoz4.github_fetcher.zend_cache.cache_name: knp_last_tweets
+    kaoz4.github_fetcher.zend_cache.cache_name: github
 
 services:
   

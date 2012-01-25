@@ -96,6 +96,26 @@ knp_zend_cache:
                 name: File
                 options:
                     cache_dir: %kernel.root_dir%/cache/%kernel.environment%
+        sensio_connect:
+            frontend:
+                name: Core
+                options:
+                    lifetime: 300
+                    automatic_serialization: true
+            backend:
+                name: File
+                options:
+                    cache_dir: %kernel.root_dir%/cache/%kernel.environment%
+        github:
+            frontend:
+                name: Core
+                options:
+                    lifetime: 300
+                    automatic_serialization: true
+            backend:
+                name: File
+                options:
+                    cache_dir: %kernel.root_dir%/cache/%kernel.environment%
 
 knp_last_tweets:
     fetcher:
