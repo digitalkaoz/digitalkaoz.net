@@ -22,7 +22,6 @@ class MenuBuilder
         $menu = $this->factory->createItem('root');
         $menu->setCurrentUri($request->getRequestUri());
 
-        $menu->addChild('Home', array('route' => 'home'));
         $menu->addChild('Blog', array('route' => 'blog'));
         $menu->addChild('Bio', array('route' => 'bio'));
         $menu->addChild('Projects', array('route' => 'projects'));
