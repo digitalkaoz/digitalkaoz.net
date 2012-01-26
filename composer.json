@@ -37,7 +37,7 @@
         "knplabs/knp-zend-cache-bundle":        "*",
         "knplabs/knp-disqus-bundle":            "*",
         "ihqs/contact-bundle":                  "*",
-        "blage/connect-bundle":                 "*",
+        "monofone/connect-bundle":              "*",
         "foq/elastica-bundle":                  "*",
         "twitter/bootstrap":                    "*",
         "elao/profile-extra-bundle":            "*",
@@ -169,22 +169,8 @@
             }
         },
         "blage-connect-bundle": {
-            "package": {
-                "name": "blage/connect-bundle",
-                "version": "master-dev",
-                "dist": {
-                    "url": "https://github.com/digitalkaoz/BlageConnectBundle/zipball/zend_cache",
-                    "type": "zip"
-                },
-                "source": {
-                    "url": "git://github.com/digitalkaoz/BlageConnectBundle.git",
-                    "type": "git",
-                    "reference": "branches/zend_cache"
-                },
-                "autoload": {
-                    "psr-0": { "Blage\\ConnectBundle": "" }
-                },
-                "target-dir": "Blage/ConnectBundle"
+            "vcs": {
+                "url": "git://github.com/digitalkaoz/BlageConnectBundle.git"
             }
         },
         "foq-elastica-bundle": {
