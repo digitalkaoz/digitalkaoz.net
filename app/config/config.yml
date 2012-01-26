@@ -2,7 +2,8 @@ imports:
     - { resource: parameters.yml }
 #    - { resource: security.yml }
     - { resource: "@rskaoz4FrontBundle/Resources/config/services.yml" }
-    
+    - { resource: "@rskaoz4Bundle/Resources/config/services.yml" }
+
 framework:
     #esi:             ~
     esi: { enabled: true }    
@@ -147,7 +148,8 @@ mopa_bootstrap:
     form: ~    
 
 blage_connect:
-    profile_name: digitalkaoz
+    profile_name: %sensio_profile%
+
 
 foq_elastica:
     clients:
@@ -179,7 +181,9 @@ foq_elastica:
                         model: rs\kaoz4Bundle\Entity\Project
                         provider:                
                           query_builder_method: createIsActiveQueryBuilder
-#fos_user:
-#    db_driver: orm
-#    firewall_name: secured_area
-#    user_class: rs\kaoz4Bundle\Entity\User            
+                github:
+                    mappings:
+                        name: { boost: 5 }
+                        url:  ~
+                        language: ~
+                        description: { boost: 3}

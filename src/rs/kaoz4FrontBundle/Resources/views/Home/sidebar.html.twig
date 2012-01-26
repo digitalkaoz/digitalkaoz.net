@@ -4,13 +4,12 @@
         <ul class="unstyled">
           {% for network in networks %}
                 <li>
-                    <a href="{{ network.url }}" target="blank">
+                    <a href="{{ network.url }}" target="_blank">
                         {% if network.logo %}
-                            <img src="{{ network.logo}}" alt="{{ network.name }}" title="{{ network.name }}" width="16"/>
+                            <img src="{{ network.logo}}" alt="{{ network.name }}" title="{{ network.name }}" width="40"/>
                         {% endif %}
-                        <strong>{{ network.name|e }}</strong>
+                        <span>{{ network.description }}</span>
                     </a>
-                    <span>{{ network.description }}</span>
                 </li>
           {% endfor %}
         </ul>                
@@ -19,6 +18,8 @@
 
 <div class="alert-message block-message info">
     <h3>Sensio Badges</h3>
+    {% render 'BlageConnectBundle:Connect:ownSensioProfile' %}
+
     {% render 'BlageConnectBundle:Connect:ownSensioBadge' %}
 </div>
 

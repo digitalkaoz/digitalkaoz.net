@@ -1,6 +1,6 @@
 <?php
 
-namespace rs\kaoz4FrontBundle\Github;
+namespace rs\kaoz4Bundle\Github;
 
 use Zend\Cache\Manager as CacheManager;
 use \Github_Client;

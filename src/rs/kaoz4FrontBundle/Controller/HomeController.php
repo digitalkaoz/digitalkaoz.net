@@ -126,7 +126,7 @@ class HomeController extends Controller
     public function sidebarAction()
     {
         $networks = $this->getRepository('Network')->findActive();        
-        $repos = $this->get('kaoz4.github_fetcher.zend_cache')->fetch('digitalkaoz');
+        $repos = $this->get('kaoz4.github.fetcher.zend_cache')->fetch('digitalkaoz');
         
         return array(
             'networks'=>$networks,

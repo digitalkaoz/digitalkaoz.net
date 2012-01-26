@@ -12,7 +12,8 @@ parameters:
     locale:            de
     secret:            1234567890abcde
     akismet_key:       123456
-    contact_recipient: seroscho@googlemail.com
+    contact_recipient: root@localhost
     node_path:         /usr/local/bin/node
     node_modules_path: /usr/local/lib/node_modules
+    sensio_profile:    user
 

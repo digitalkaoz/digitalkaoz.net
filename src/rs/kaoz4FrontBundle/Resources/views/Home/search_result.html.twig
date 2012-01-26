@@ -1,13 +1,10 @@
 <div class="span12">
     
     <b>{{result.getType|capitalize}} ({{ "%d"|format(result.getScore * 100)}} %)</b>
-    <a href="{{ path(result.getType, { 'slug': result.__get('slug') }) }}">{{ result.__get('title') ?  result.__get('title') : result.__get('name')}}</a>
-    
-    {#% for ex in result.getSource %}
-        <p>{{ex}}</p>
-    {% endfor %#}
-    {#% for key,data in result.getData %}
-    <p><b>{{key}}</b> : {{data}}</p>    
-    {% endfor %#}
-    
+
+    {% if result.getType == 'github' %}}
+        <a href="{{ result.__get('url') }}" target="blank">{{ result.__get('name') }}</a>
+    {% else %}
+        <a href="{{ path(result.getType, { 'slug': result.__get('slug') }) }}">{{ result.__get('title') ?  result.__get('title') : result.__get('name')}}</a>
+    {% endif %}
 </div>

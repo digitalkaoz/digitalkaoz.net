@@ -1,22 +1,22 @@
 github: 
   name:        Github
   url:         http://github.com/digitalkaoz
-  description: my github account
-  logo:        http://octodex.github.com/images/original.jpg
+  description: Github
+  logo:        /img/logo_github.png
   active:      true
   
 twitter:
-  name:        Twitter
-  url:         https://twitter.com/digitalkaoz
-  description: my twitter account
-  logo:        http://www.avatter.de/wordpress/wp-content/uploads/2011/05/icon_twitter.png
+  name:        twitter
+  url:         http://twitter.com/digitalkaoz
+  description: twitter
+  logo:        /img/logo_twitter.png
   active:      true
   
-facebook:
-  name:        Facebook
-  url:         https://facebook.com/robert.schoenthal
-  description: my facebook
-  logo:        http://www.elcario.de/wp-content/uploads/2010/01/facebook_logo.png
+knpbundles:
+  name:        KnpBundles
+  url:         http://knpbundles.com/digitalkaoz/profile
+  description: KnpBundles
+  logo:        /img/logo_knplabs.png
   active:      true
   
   

@@ -50,9 +50,9 @@ abstract class BaseFixtureLoader extends AbstractFixture implements OrderedFixtu
             $cls = $this->cls;            
             $object = new $cls();
             $object->fromArray($data);
-            
+
             $this->addReference($this->getRefname().'-'.$name, $object);
-            
+
             $manager->persist($object);
             $manager->flush();
         }

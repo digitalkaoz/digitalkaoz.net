@@ -1,6 +1,6 @@
 <?php
 
-namespace rs\kaoz4FrontBundle\Command;
+namespace rs\kaoz4Bundle\Command;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
@@ -46,14 +46,14 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $github = $this->getContainer()->get('kaoz4.github_fetcher.zend_cache');
+        $github = $this->getContainer()->get('kaoz4.github.fetcher.zend_cache');
        
         $username = $input->getArgument('username');
         
         $output->writeln('Fetching the github repos of <info>'.$username.'</info>');
 
         try {
-            $repos = $github->forceFetch($username, true);
+            $github->forceFetch($username, true);
         } catch (\Exception $e) {
             $output->writeln('<error>Unable to fetch github: '.$e->getMessage().'</error>');
         }
