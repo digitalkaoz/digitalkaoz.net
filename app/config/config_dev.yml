@@ -15,9 +15,6 @@ monolog:
             type:  stream
             path:  %kernel.logs_dir%/%kernel.environment%.log
             level: debug
-        firephp:
-            type:  firephp
-            level: info
 
 assetic:
     use_controller: true
@@ -27,7 +24,7 @@ knp_last_tweets:
         driver: array
 
 web_profiler_extra:
-    routing:    true
+    routing:    false
     container:  true
     assetic:    true
     twig:       true

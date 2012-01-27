@@ -12,7 +12,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
-            new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new rs\kaoz4Bundle\rskaoz4Bundle(),
@@ -34,9 +34,9 @@ class AppKernel extends Kernel
         if('dev' == $this->getEnvironment()) {
             $bundles = array_merge($bundles, array(
                 new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle(),
-            #    new Sensio\Bundle\DistributionBundle\SensioDistributionBundle(),
+                new Sensio\Bundle\DistributionBundle\SensioDistributionBundle(),
                 new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle(),
-                new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
+                new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
                 new Elao\WebProfilerExtraBundle\WebProfilerExtraBundle()
             ));
         }
@@ -47,7 +47,7 @@ class AppKernel extends Kernel
                 new Behat\BehatBundle\BehatBundle(),
                 new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle(),
                 new Elao\WebProfilerExtraBundle\WebProfilerExtraBundle(),
-                new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
+                new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             ));
         }
 

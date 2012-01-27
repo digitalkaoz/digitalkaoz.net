@@ -18,9 +18,9 @@
 
 <div class="alert-message block-message info">
     <h3>Sensio Badges</h3>
-    {% render 'BlageConnectBundle:Connect:ownSensioProfile' %}
+    {% render 'BlageConnectBundle:Connect:ownSensioProfile' with {}, {'standalone': true} %}
 
-    {% render 'BlageConnectBundle:Connect:ownSensioBadge' %}
+    {% render 'BlageConnectBundle:Connect:ownSensioBadge' with {}, {'standalone': true} %}
 </div>
 
 {% if repos %}

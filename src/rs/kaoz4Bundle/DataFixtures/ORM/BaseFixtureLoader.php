@@ -7,6 +7,7 @@ use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Yaml\Yaml;
+use Doctrine\Common\Persistence\ObjectManager;
 
 /**
  * base class for loading fixture data entirly from aml
@@ -41,7 +42,7 @@ abstract class BaseFixtureLoader extends AbstractFixture implements OrderedFixtu
      * 
      * @param type $manager 
      */
-    public function load($manager)
+    public function load(ObjectManager $manager)
     {
         $objects = $this->loadFromYaml();
         

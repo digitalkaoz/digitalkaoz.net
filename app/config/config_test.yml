@@ -23,6 +23,3 @@ doctrine:
         #path: ':memory:'
         path: %kernel.cache_dir%/test.db
         #memory: true
-    
-#nelmio_esi_debug:
-#    enabled: false    

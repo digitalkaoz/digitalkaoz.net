@@ -2,13 +2,15 @@
 
 namespace rs\kaoz4Bundle\DataFixtures\ORM;
 
+use Doctrine\Common\Persistence\ObjectManager;
+
 class LoadBioData extends BaseFixtureLoader
 {
     protected $file = '/../../Resources/fixtures/bio_fixtures.yml';
     protected $orderno = 3;
     protected $cls = 'rs\kaoz4Bundle\Entity\Bio';
     
-    public function load($manager)
+    public function load(ObjectManager $manager)
     {
         $categorys = $this->loadFromYaml();
         

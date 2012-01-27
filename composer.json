@@ -6,16 +6,15 @@
 
     "require": {
         "php":                                  ">=5.3.2",
-        "symfony/symfony":                      ">=2.0.9,<2.1.0-dev",
-        "symfony/assetic-bundle":               "*",
-        "symfony/security-bundle":              ">=2.0.9,<2.1.0-dev",
-        "doctrine/orm":                         "2.1.*",
-        "doctrine/data-fixtures":               "*",
-        "doctrine/doctrine-fixtures-bundle":    ">=2.0.1,<2.1.0-dev",
+        "symfony/symfony":                      ">=2.1-dev,<2.2",
+        "symfony/security-bundle":              ">=2.1-dev,<2.2",
+        "doctrine/doctrine-bundle":             "*",
+        "doctrine/orm":                         "2.2-dev",
+        "doctrine/doctrine-fixtures-bundle":    ">=2.1-dev,<2.2",
         "twig/extensions":                      "*",
-        "sensio/generator-bundle":              "2.0.*",
-        "sensio/framework-extra-bundle":        "2.0.*",
-        "sensio/distribution-bundle":           "2.0.*",
+        "sensio/generator-bundle":              ">2.0",
+        "sensio/framework-extra-bundle":        ">2.0",
+        "sensio/distribution-bundle":           "*",
         "jms/security-extra-bundle":            ">=1.1.0",
         "jms/aop-bundle":                       "1.0.0",
         "sonata/doctrine-orm-admin-bundle":     "*",
@@ -33,16 +32,15 @@
         "mopa/bootstrap-bundle":                "*",
         "stof/doctrine-extensions-bundle":      "*",
 
-        "ornicar/akismet-bundle":               "*",
-        "knplabs/knp-zend-cache-bundle":        "*",
-        "knplabs/knp-disqus-bundle":            "*",
-        "ihqs/contact-bundle":                  "*",
-        "monofone/connect-bundle":              "*",
-        "foq/elastica-bundle":                  "*",
-        "twitter/bootstrap":                    "*",
-        "elao/profile-extra-bundle":            "*",
-        "elastic/search":                       "*"
-
+                "ornicar/akismet-bundle":               "*",
+                "knplabs/knp-zend-cache-bundle":        "*",
+                "knplabs/knp-disqus-bundle":            "*",
+                "ihqs/contact-bundle":                  "*",
+                "monofone/connect-bundle":              "*",
+                "foq/elastica-bundle":                  "*",
+                "twitter/bootstrap":                    "*",
+                "elao/profile-extra-bundle":            "*",
+                "elastic/search":                       "*"
     },
 
     "repositories" : {
