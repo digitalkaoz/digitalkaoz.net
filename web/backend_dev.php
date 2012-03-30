@@ -10,11 +10,10 @@ if (!in_array(@$_SERVER['REMOTE_ADDR'], array(
     die('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
 }
 
-require_once __DIR__.'/../backend/bootstrap.php.cache';
+require_once __DIR__.'/../backend/autoload.php';
 require_once __DIR__.'/../backend/AppKernel.php';
 
 use Symfony\Component\HttpFoundation\Request;
 
 $kernel = new AppKernel('dev', true);
-$kernel->loadClassCache();
 $kernel->handle(Request::createFromGlobals())->send();

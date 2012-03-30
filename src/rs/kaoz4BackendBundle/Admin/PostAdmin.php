@@ -31,6 +31,10 @@ class PostAdmin extends Admin
                 ->add('abstract')
                 ->add('text')
             ->end()
+            ->with('Images')
+                ->add('images','sonata_type_model',array(),array('edit' => 'inline',
+                'inline' => 'table',))
+            ->end()
 /*            ->with('Tags')
                 ->add('tags', 'sonata_type_model', array('expanded' => true))
             ->end()
@@ -40,7 +44,7 @@ class PostAdmin extends Admin
             ->end()*/
         ;
     }
-
+    
     public function configureListFields(ListMapper $listMapper)
     {
         $listMapper

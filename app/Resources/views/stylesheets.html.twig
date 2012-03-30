@@ -1,12 +1,13 @@
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Aldrich">
 
 {% stylesheets  
-                '@MopaBootstrapBundle/Resources/bootstrap/lib/bootstrap.less'
+                '@MopaBootstrapBundle/Resources/bootstrap/css/bootstrap.css'
+                '@MopaBootstrapBundle/Resources/bootstrap/css/bootstrap-responsive.css'
                 '@MopaBootstrapBundle/Resources/public/less/paginator.less'
                 'js/libs/prettify/prettify.css'
                 'css/content.css'
 
-                filter='less, ?yui_css, ?cssembed' output='css/combined/combined_frontend.css'
+                filter='?less, ?yui_css, ?cssembed' output='css/combined/combined_frontend.css'
 %}
     <link rel="stylesheet" href="{{ asset_url }}">
 {% endstylesheets %}

@@ -269,4 +269,40 @@ class Project
     {
         return $this->slug;
     }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Project
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+        return $this;
+    }
+
+    /**
+     * Set created_at
+     *
+     * @param datetime $createdAt
+     * @return Project
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->created_at = $createdAt;
+        return $this;
+    }
+
+    /**
+     * Set updated_at
+     *
+     * @param datetime $updatedAt
+     * @return Project
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updated_at = $updatedAt;
+        return $this;
+    }
 }

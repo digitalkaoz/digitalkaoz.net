@@ -2,78 +2,9 @@ imports:
     - { resource: parameters.yml }
     - { resource: "@rskaoz4FrontBundle/Resources/config/services.yml" }
     - { resource: "@rskaoz4Bundle/Resources/config/services.yml" }
+    - { resource: "@rskaoz4Bundle/Resources/config/config.yml" }
 
-framework:
-    esi: { enabled: true }
-    translator:      { fallback: en }
-    secret:          %secret%
-    charset:         UTF-8
-    router:          { resource: "%kernel.root_dir%/config/routing.yml" }
-    form:            true
-    csrf_protection: true
-    validation:      { enable_annotations: true }
-    templating:      { engines: ['twig'] }
-    session:
-        auto_start:     true
 
-# Twig Configuration
-twig:
-    debug:            %kernel.debug%
-    strict_variables: %kernel.debug%
-    form:
-        resources:
-            - 'MopaBootstrapBundle:Form:fields.html.twig'
-# Assetic Configuration
-assetic:
-    debug:          %kernel.debug%
-    use_controller: false
-    filters:
-        cssrewrite: ~
-        cssembed:
-            jar: %kernel.root_dir%/Resources/java/cssembed-0.4.0.jar
-        less: 
-            node: %node_path%
-            node_paths: [ %node_modules_path% ]          
-        yui_css:
-            jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.6.jar
-        yui_js:
-            jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.6.jar
-    
-# Doctrine Configuration
-doctrine:
-    dbal:
-        driver:   %database_driver%
-        host:     %database_host%
-        port:     %database_port%
-        dbname:   %database_name%
-        user:     %database_user%
-        password: %database_password%
-        charset:  UTF8
-
-    orm:
-        auto_generate_proxy_classes: %kernel.debug%
-        auto_mapping: true
-        mappings:
-            StofDoctrineExtensionsBundle: false        
-
-stof_doctrine_extensions:
-    default_locale: de_DE
-    orm:
-        default:
-            sluggable: true
-            timestampable: true 
-            
-# Swiftmailer Configuration
-swiftmailer:
-    transport: %mailer_transport%
-    host:      %mailer_host%
-    username:  %mailer_user%
-    password:  %mailer_password%
-
-knp_menu:
-    twig: true
-    templating: true
-    
 knp_zend_cache:
     templates:
         knp_last_tweets:
@@ -111,7 +42,7 @@ knp_last_tweets:
     fetcher:
         driver: zend_cache
         options:
-            cache_name: knp_last_tweets            
+            cache_name: knp_last_tweets
 
 knp_disqus:
     api_key: sMyTGRuFIGDwszWATZlLk0yhS0vIXjhm
@@ -119,9 +50,9 @@ knp_disqus:
 ornicar_akismet:
     api_key:        %akismet_key%
     url:            http://digitalkaoz.net
-    
+
 ihqs_contact:
-    spam_detector: 
+    spam_detector:
         service:                ornicar_akismet
     contact:
         form:
@@ -132,9 +63,6 @@ ihqs_contact:
     connectors:                             # the list of "listeners" (or connectors here)
         email:                              # connecting the email listener
             recipients: %contact_recipient% # giving him the recipient(s) email(s)
-                
-mopa_bootstrap:
-    form: ~    
 
 blage_connect:
     profile_name: %sensio_profile%
@@ -145,7 +73,7 @@ foq_elastica:
         default: { host: localhost, port: 9200 }
     indexes:
         website:
-            client: default   
+            client: default
             types:
                 post:
                     mappings:
@@ -156,7 +84,7 @@ foq_elastica:
                     persistence:
                         driver: orm
                         model: rs\kaoz4Bundle\Entity\Post
-                        provider:                
+                        provider:
                           query_builder_method: createIsActiveQueryBuilder
 
                 project:
@@ -168,7 +96,7 @@ foq_elastica:
                     persistence:
                         driver: orm
                         model: rs\kaoz4Bundle\Entity\Project
-                        provider:                
+                        provider:
                           query_builder_method: createIsActiveQueryBuilder
                 github:
                     mappings:
@@ -176,3 +104,9 @@ foq_elastica:
                         url:  ~
                         language: ~
                         description: { boost: 3}
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        kaoz4_image:
+            upload_dir: %kernel.root_dir%/../web/upload

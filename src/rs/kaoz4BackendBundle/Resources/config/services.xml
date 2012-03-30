@@ -22,36 +22,46 @@
     <parameter key="kaoz4.admin.network.entity">rs\kaoz4Bundle\Entity\Network</parameter>
     <parameter key="kaoz4.admin.network.controller">rskaoz4BackendBundle:Network</parameter>
     
+    <parameter key="kaoz4.admin.image.admin">rs\kaoz4BackendBundle\Admin\ImageAdmin</parameter>
+    <parameter key="kaoz4.admin.image.entity">rs\kaoz4Bundle\Entity\Image</parameter>
+    <parameter key="kaoz4.admin.image.controller">rskaoz4BackendBundle:Image</parameter>
   </parameters>
 
   <services>
       
     <service id="kaoz4.admin.post" class="%kaoz4.admin.post.admin%">
-      <tag name="sonata.admin" manager_type="orm" group="Blog" label="Post"/>
+      <tag name="sonata.admin" manager_type="orm" group="Articles" label="Post"/>
       <argument />
       <argument>%kaoz4.admin.post.entity%</argument>
       <argument>%kaoz4.admin.post.controller%</argument>
     </service>
     
     <service id="kaoz4.admin.bio" class="%kaoz4.admin.bio.admin%">
-      <tag name="sonata.admin" manager_type="orm" group="Bio" label="Bio"/>
+      <tag name="sonata.admin" manager_type="orm" group="About" label="Bio"/>
       <argument />
       <argument>%kaoz4.admin.bio.entity%</argument>
       <argument>%kaoz4.admin.bio.controller%</argument>
     </service>
     
     <service id="kaoz4.admin.project" class="%kaoz4.admin.project.admin%">
-      <tag name="sonata.admin" manager_type="orm" group="Project" label="Project"/>
+      <tag name="sonata.admin" manager_type="orm" group="Articles" label="Project"/>
       <argument />
       <argument>%kaoz4.admin.project.entity%</argument>
       <argument>%kaoz4.admin.project.controller%</argument>
     </service>
 
     <service id="kaoz4.admin.network" class="%kaoz4.admin.network.admin%">
-      <tag name="sonata.admin" manager_type="orm" group="Network" label="Network"/>
+      <tag name="sonata.admin" manager_type="orm" group="About" label="Network"/>
       <argument />
       <argument>%kaoz4.admin.network.entity%</argument>
       <argument>%kaoz4.admin.network.controller%</argument>
+    </service>
+    
+    <service id="kaoz4.admin.image" class="%kaoz4.admin.image.admin%">
+      <tag name="sonata.admin" manager_type="orm" group="Media" label="Image"/>
+      <argument />
+      <argument>%kaoz4.admin.image.entity%</argument>
+      <argument>%kaoz4.admin.image.controller%</argument>
     </service>
     
   </services>

@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: "@rskaoz4BackendBundle/Resources/config/services.xml" }
+    - { resource: "@rskaoz4Bundle/Resources/config/config.yml" }
 
 
 parameters:
@@ -9,117 +10,12 @@ parameters:
     sonata.user.admin.user.entity: rs\kaoz4Bundle\Entity\User
     sonata.user.admin.user.class: rs\kaoz4BackendBundle\Admin\UserAdmin
 
-framework:
-    #esi:             ~
-    esi: { enabled: true }    
-    translator:      { fallback: en }
-    secret:          %secret%
-    charset:         UTF-8
-    router:          { resource: "%kernel.root_dir%/config/routing.yml" }
-    form:            true
-    csrf_protection: true
-    validation:      { enable_annotations: true }
-    templating:      { engines: ['twig'] }
-    session:
-        default_locale: %locale%
-        auto_start:     true
-
-# Twig Configuration
-twig:
-    debug:            %kernel.debug%
-    strict_variables: %kernel.debug%
-    form:
-        resources:
-            - 'MopaBootstrapBundle:Form:fields.html.twig'
-            
-# Assetic Configuration
-assetic:
-    debug:          %kernel.debug%
-    use_controller: false
-    filters:
-        cssrewrite: ~
-#        smartsprites: 
-#            path: %kernel.root_dir%/Resources/java/smartsprites-0.2.8
-        cssembed:
-            jar: %kernel.root_dir%/Resources/java/cssembed-0.4.0.jar
-        less: 
-            node: %node_path%
-            node_paths: [ %node_modules_path% ]          
-        yui_css:
-            jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.6.jar
-        yui_js:
-            jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.6.jar
-    
-# Doctrine Configuration~
-doctrine:
-    dbal:
-        driver:   %database_driver%
-        host:     %database_host%
-        port:     %database_port%
-        dbname:   %database_name%
-        user:     %database_user%
-        password: %database_password%
-        charset:  UTF8
-
-    orm:
-        auto_generate_proxy_classes: %kernel.debug%
-        auto_mapping: true
-        mappings:
-            StofDoctrineExtensionsBundle: false        
-
-stof_doctrine_extensions:
-    default_locale: de_DE
-    orm:
-        default:
-            sluggable: true
-            timestampable: true 
-            
-# Swiftmailer Configuration
-swiftmailer:
-    transport: %mailer_transport%
-    host:      %mailer_host%
-    username:  %mailer_user%
-    password:  %mailer_password%
-
 jms_security_extra:
 #    secure_controllers:  true
     secure_all_services: false
 jms_aop:
     cache_dir: %kernel.cache_dir%/jms_aop            
                 
-mopa_bootstrap:
-    form: ~    
-    
-foq_elastica:
-    clients:
-        default: { host: localhost, port: 9200 }
-    indexes:
-        website:
-            client: default   
-            types:
-                post:
-                    mappings:
-                        title: { boost: 5 }
-                        abstract: { boost: 3 }
-                        text: { boost: 3 }
-                        slug: ~
-                    doctrine:
-                        driver: orm
-                        model: rs\kaoz4Bundle\Entity\Post
-                        provider:                
-                          query_builder_method: createIsActiveQueryBuilder
-
-                project:
-                    mappings:
-                        name: { boost: 5 }
-                        abstract: { boost: 3 }
-                        description: { boost: 3 }
-                        slug: ~
-                    doctrine:
-                        driver: orm
-                        model: rs\kaoz4Bundle\Entity\Project
-                        provider:                
-                          query_builder_method: createIsActiveQueryBuilder
 sonata_admin:
     #security_handler: sonata.admin.security.handler.noop
     title:      Digital.Kaoz.net
@@ -129,3 +25,9 @@ fos_user:
     db_driver: orm
     firewall_name: secured_area
     user_class: rs\kaoz4Bundle\Entity\User
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        kaoz4_image:
+            upload_dir: %kernel.root_dir%/../web/upload    

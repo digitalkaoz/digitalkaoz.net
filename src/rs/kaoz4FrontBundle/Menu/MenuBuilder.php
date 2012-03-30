@@ -19,7 +19,19 @@ class MenuBuilder
 
     public function createMainMenu(Request $request)
     {
-        $menu = $this->factory->createItem('root');
+        $menu = $this->factory->createItem('root',array('attributes'=>array('class'=>'nav')));
+        $menu->setCurrentUri($request->getRequestUri());
+
+        $menu->addChild('Blog', array('route' => 'blog','attributes'=>array('class'=>'navitem blog span2')));
+        $menu->addChild('Bio', array('route' => 'bio','attributes'=>array('class'=>'navitem blog span2')));
+        $menu->addChild('Projects', array('route' => 'projects','attributes'=>array('class'=>'navitem blog span2')));
+
+        return $menu;
+    }
+    
+    public function createFooterMenu(Request $request)
+    {
+        $menu = $this->factory->createItem('root',array('attributes'=>array('class'=>'nav')));
         $menu->setCurrentUri($request->getRequestUri());
 
         $menu->addChild('Blog', array('route' => 'blog'));

@@ -1,56 +1,26 @@
 <?php
 
-use Symfony\Component\HttpKernel\Kernel;
+use rs\kaoz4Bundle\kaoz4Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
-class AppKernel extends Kernel
+class AppKernel extends kaoz4Kernel
 {
     public function registerBundles()
     {
-        $bundles = array(
-            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-            new Symfony\Bundle\TwigBundle\TwigBundle(),
-            new Symfony\Bundle\MonologBundle\MonologBundle(),
-            new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
-            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
-            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
-            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new rs\kaoz4Bundle\rskaoz4Bundle(),
+        $bundles = parent::registerBundles();
+        
+        $bundles = array_merge($bundles,array(
             new rs\kaoz4FrontBundle\rskaoz4FrontBundle(),
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Knp\Bundle\LastTweetsBundle\KnpLastTweetsBundle(),
-            new Knp\Bundle\ZendCacheBundle\KnpZendCacheBundle(),
             new Knp\Bundle\DisqusBundle\KnpDisqusBundle(),
-            new JMS\AopBundle\JMSAopBundle(),
-            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
-            new IHQS\ContactBundle\IHQSContactBundle(),
-            new Mopa\BootstrapBundle\MopaBootstrapBundle(),
-            new Ornicar\AkismetBundle\OrnicarAkismetBundle(),
-            new FOQ\ElasticaBundle\FOQElasticaBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Knp\Bundle\ZendCacheBundle\KnpZendCacheBundle(),
+            new Ornicar\AkismetBundle\OrnicarAkismetBundle(),
             new Blage\ConnectBundle\BlageConnectBundle(),
-        );
-
-        if('dev' == $this->getEnvironment()) {
-            $bundles = array_merge($bundles, array(
-                new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle(),
-                new Sensio\Bundle\DistributionBundle\SensioDistributionBundle(),
-                new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle(),
-                new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
-                new Elao\WebProfilerExtraBundle\WebProfilerExtraBundle()
-            ));
-        }
-
-        if('test' == $this->getEnvironment()) {
-            $bundles = array_merge($bundles, array(
-                new Behat\MinkBundle\MinkBundle(),
-                new Behat\BehatBundle\BehatBundle(),
-                new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle(),
-                new Elao\WebProfilerExtraBundle\WebProfilerExtraBundle(),
-                new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
-            ));
-        }
-
+            new FOQ\ElasticaBundle\FOQElasticaBundle(),
+            new IHQS\ContactBundle\IHQSContactBundle(),
+        ));
+        
         return $bundles;
     }
 

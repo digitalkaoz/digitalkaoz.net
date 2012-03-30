@@ -1,14 +1,27 @@
 <?php
 
-use Symfony\Component\HttpKernel\Kernel;
+use rs\kaoz4Bundle\kaoz4Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
-use rs\ProjectUtilitiesBundle\Project\BundleLoader;
 
-class AppKernel extends Kernel
+class AppKernel extends kaoz4Kernel
 {
     public function registerBundles()
     {
-        return BundleLoader::create($this)->loadFromFile($this->getRootDir().'/config/bundles.yml');
+        $bundles = parent::registerBundles();
+        
+        $bundles = array_merge($bundles,array(
+            new rs\kaoz4BackendBundle\rskaoz4BackendBundle(),            
+            new JMS\AopBundle\JMSAopBundle(),
+            new Symfony\Bundle\SecurityBundle\SecurityBundle(),
+            new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\UserBundle\SonataUserBundle(),
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+        ));
+        
+        return $bundles;
     }
 
     public function registerContainerConfiguration(LoaderInterface $loader)

@@ -1,8 +1,10 @@
-<a href="{{ path('project', { 'slug': project.slug }) }}">
-    {% if project.logo %}
+<article>
+    <a href="{{ path('project', { 'slug': project.slug }) }}">
+        {% if project.logo %}
         <img src="{{ project.logo}}" alt="{{ project.name }}" title="{{ project.name }}" width="50"/>
-    {% endif %}
-    <strong>{{ project.name|e }}</strong>
-</a>
+        {% endif %}
+        <strong>{{ project.name|e }}</strong>
+    </a>
 
-<p>{{ project.abstract|raw }}</p>
+    <p>{{ project.abstract|raw }}</p>
+</article>

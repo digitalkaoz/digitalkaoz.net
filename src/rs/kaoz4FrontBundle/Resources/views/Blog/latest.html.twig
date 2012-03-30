@@ -1,11 +1,10 @@
-<div class="span16">
-<a href="{{ path('post', { 'slug': post.slug }) }}">
-    {% if post.logo %}
-        <img src="{{ post.logo}}" alt="{{ post.title }}" title="{{ post.title }}" width="50"/>
-    {% endif %}
-    <strong>{{ post.title|e }}</strong>
-</a>
-</div>
-<div class="span16">
-<p>{{ post.abstract|raw }}</p>
-</div>
+<article>
+    <a href="{{ path('post', { 'slug': post.slug }) }}">
+        {% if post.logo %}
+            <img src="{{ post.logo}}" alt="{{ post.title }}" title="{{ post.title }}" width="50"/>
+        {% endif %}
+        <strong>{{ post.title|e }}</strong>
+    </a>
+
+    <p>{{ post.abstract|raw }}</p>
+</article>

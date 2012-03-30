@@ -12,5 +12,5 @@ file that was distributed with this source code.
 {% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
 
 {% block field%}
-    <img src="/upload/{{ asset(value.getFilename) }}" width="75" />
+    <img src="{{ value }}" width="75" height="75"/>
 {% endblock %}

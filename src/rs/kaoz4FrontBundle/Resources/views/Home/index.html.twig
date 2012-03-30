@@ -4,29 +4,34 @@
 
 {% block body %}
 
-<div class="row">
-  <div class="span16">
-    Lorem ipsum dolizzle sure amizzle, consectetuer adipiscing sizzle. Nullizzle we gonna chung velizzle, funky fresh volutpizzle, suscipit boom shackalack, gravida vel, crazy. Pellentesque shizzlin dizzle tortizzle. Sizzle eros. Shut the shizzle up owned dolor boofron ma nizzle hizzle brizzle. Maurizzle pellentesque nibh izzle turpis. Bling bling izzle tortizzle. Its fo rizzle eleifend rhoncizzle bow wow wow. In shizzlin dizzle platea dictumst. Tellivizzle dapibus. Curabitizzle izzle urna, pretium we gonna chung, mattizzle i'm in the shizzle, you son of a bizzle its fo rizzle, nunc. Own yo' suscipizzle. Integizzle semper bow wow wow sizzle funky fresh.
-    <br/>
-    Praesent fo shizzle mah nizzle fo rizzle, mah home g-dizzle mi i saw beyonces tizzles and my pizzle went crizzle mauris yo bibendizzle. Aliquam sure viverra lectizzle. Sheezy id for sure dawg hizzle sodales euismod. Dope lobortizzle, maurizzle vitae crazy mammasay mammasa mamma oo sa, nulla nizzle bibendum boom shackalack, izzle yo mamma augue dui izzle check it out. Vivamizzle funky fresh lacizzle that's the shizzle gizzle. Vivamizzle arcu break it down, fizzle fo shizzle my nizzle amet, gangster izzle, break yo neck, yall ac, maurizzle. Sizzle its fo rizzle laorizzle pot. Vestibulum fizzle diam, fizzle izzle, condimentum izzle, a, arcu. Morbi things brizzle nulla. Maecenas shizzle my nizzle crocodizzle eros fizzle erizzle. I'm in the shizzle metizzle yo, egestizzle boofron, accumsizzle quizzle, bow wow wow phat, neque. Nulla iaculizzle black a orci tincidunt brizzle. Fusce hizzle, nulla sollicitudizzle mollis, lacus fo luctus erat, vitae gizzle augue i saw beyonces tizzles and my pizzle went crizzle vitae arcu. Etiam bizzle shiz. Nunc sed mi. Dizzle shiz turpizzle. Vestibulum a fo shizzle. Sizzle sheezy erizzle, consectetizzle id, tempizzle ac, shiznit izzle, own yo'. Bizzle bling bling. Nulla dizzle eros, things sizzle ma nizzle, ultricizzle you son of a bizzle, tincidunt dang, augue.
-    <br/>
-  </div>
-</div>
 
-<div class="row">
-    <div class="span16">
-        <h3>Blog</h3>
-    </div>
-    {% render 'rskaoz4FrontBundle:Blog:latest' with {}, {'standalone': true} %}
-</div>
+<div class="container">
+    <section>
+        <div class="row main">
+            <div class="span8 offset2">
+                <div class="page-header">
+                    <h2>Neuester Blog Artikel</h2>
+                </div>
+                {% render 'rskaoz4FrontBundle:Blog:latest' with {}, {'standalone': true} %}
+            </div>
+        </div>
+    </section>
 
-<div class="row">
-    <div class="span8">
-        {% render 'rskaoz4FrontBundle:Project:latest' with {}, {'standalone': true} %}
-    </div>
-    <div class="span8">
-        {% render "KnpLastTweetsBundle:Twitter:lastTweets" with {'username': 'digitalkaoz'}, {'standalone': true} %}
-    </div>
+    <section>
+        <div class="row main">
+            <div class="span4 offset2">
+                <div class="tile50">
+                    <h2>Neueste Projekte</h2>
+                    {% render 'rskaoz4FrontBundle:Project:latest' with {}, {'standalone': true} %}
+                </div>
+            </div>
+            <div class="span4">
+                <div class="tile50">
+                    <h2 class="twitter">Twitter Feed</h2>
+                    {% render "KnpLastTweetsBundle:Twitter:lastTweets" with {'username': 'digitalkaoz'}, {'standalone': true} %}
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
-
 {% endblock %}

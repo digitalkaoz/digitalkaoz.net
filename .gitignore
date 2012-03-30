@@ -14,4 +14,3 @@ web/css/*-sprite.css
 web/js/combined*.js
 web/img/*sprite.png
 web/coverage
-src/rs/ProjectUtilitiesBundle

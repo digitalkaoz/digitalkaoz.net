@@ -13,7 +13,7 @@ class SearchProvider implements ProviderInterface
     protected $fetcher;
     protected $userName;
     
-    public function __construct(Elastica_Type $githubType, ZendCacheFetcher $fetcher, $userName)
+    public function __construct(Elastica_Type $githubType, ZendCacheFetcher $fetcher, $userName = null)
     {
         $this->githubType = $githubType;
         $this->fetcher = $fetcher;
@@ -25,8 +25,12 @@ class SearchProvider implements ProviderInterface
      *
      * @param Closure $loggerClosure
      */
-    public function populate(Closure $loggerClosure)
+    public function populate(\Closure $loggerClosure = null)
     {
+        if(!$this->username){
+            return;
+        }
+        
         $repos = $this->fetcher->fetch($this->userName);
 
         $docs = array();

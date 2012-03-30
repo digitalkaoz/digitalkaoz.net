@@ -84,6 +84,15 @@ class Post
     private $updated_at;
     
     /**
+     * @ORM\ManyToMany(targetEntity="rs\kaoz4Bundle\Entity\Image")
+     * @ORM\JoinTable(name="post_image",
+     *      joinColumns={@ORM\JoinColumn(name="post_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="image_id", referencedColumnName="id", unique=true)}
+     * )
+     */
+    private $images;    
+    
+    /**
      * read object data from an array
      * 
      * @param array $data
@@ -240,4 +249,64 @@ class Post
         return $this->slug;
     }
 
+    public function __construct()
+    {
+        $this->images = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Post
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+        return $this;
+    }
+
+    /**
+     * Set created_at
+     *
+     * @param datetime $createdAt
+     * @return Post
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->created_at = $createdAt;
+        return $this;
+    }
+
+    /**
+     * Set updated_at
+     *
+     * @param datetime $updatedAt
+     * @return Post
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updated_at = $updatedAt;
+        return $this;
+    }
+
+    /**
+     * Add images
+     *
+     * @param rs\kaoz4Bundle\Entity\Image $images
+     */
+    public function addImage(\rs\kaoz4Bundle\Entity\Image $images)
+    {
+        $this->images[] = $images;
+    }
+
+    /**
+     * Get images
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
 }

@@ -3,6 +3,12 @@ php_value xdebug.trace_format  0
 php_value xdebug.trace_output_dir  /tmp
 php_value xdebug.trace_options  1
 
+php_value xdebug.remote_enable on
+php_value xdebug.remote_log "/var/log/xdebug.log"
+php_value xdebug.remote_host localhost
+php_value xdebug.remote_handler dbgp
+php_value xdebug.remote_port 9000
+
 php_value xdebug.profiler_output_dir /tmp
 php_value xdebug.profiler_enable 0
 

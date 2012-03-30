@@ -19,7 +19,7 @@ class ZendCacheFetcher
     }
     
     public function fetch($username, $forceRefresh = false)
-    {        
+    {
         $cache = $this->cacheManager->getCache($this->cacheName);
         
         if (null === $cache) {

@@ -16,6 +16,6 @@ var addWysiwyg = function()
 $(document).ready(function(){
     if(typeof ckeditor != undefined)
     {
-        addWysiwyg();
+        //addWysiwyg();
     }
 });

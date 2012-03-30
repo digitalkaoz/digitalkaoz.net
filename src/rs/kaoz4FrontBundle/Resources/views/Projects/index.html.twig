@@ -4,12 +4,15 @@
 
 {% block body %}
 
-    <h2>Projects</h2>
+<div class="container">
+    <div class="page-header">
+        <h2>Projects</h2>
+    </div>
 
     {% if projects %}
           {% for project in projects %}
             {% include 'rskaoz4FrontBundle:Projects:short.html.twig' with { 'slug': project.slug, 'full': false } %}
           {% endfor %}
     {% endif %}
-
+</div>
 {% endblock %}
