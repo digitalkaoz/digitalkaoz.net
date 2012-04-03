@@ -49,7 +49,6 @@
         "ornicar/akismet-bundle":"dev-master",
 
         "twitter/bootstrap":">=2.0",
-        "mrdoob/threejs":">=0.48",
         "elastic/search":"0.19.1",
         "monofone/connect-bundle":"dev-composer_fix",
         "ihqs/contact-bundle":"dev-composer"
