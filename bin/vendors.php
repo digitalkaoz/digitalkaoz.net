@@ -12,11 +12,11 @@ if(file_exists($composer)){
 }else{
     system(sprintf('curl %s | php -d=phar.readonly=Off -d=phar.require_hash=Off', 'http://getcomposer.org/installer'));
 }
-//system(sprintf('php %s', $composer.' update'));
+system(sprintf('php %s', $composer.' update'));
 
 
 // Update the bootstrap files
-system(sprintf('%s %s', $interpreter, escapeshellarg($rootDir.'/vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/bin/build_bootstrap.php')));
+system(sprintf('%s %s', $interpreter, escapeshellarg($rootDir.'/bin/build_bootstrap.php')));
 
 //replace twitter bootstrap with real version
 system(sprintf('%s %s mopa:bootstrap:install', $interpreter, escapeshellarg($rootDir.'/app/console')));
