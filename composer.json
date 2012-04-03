@@ -64,11 +64,11 @@
     "repositories":[
         {
             "type":"vcs",
-            "url":"git://digitalkaoz@github.com/digitalkaoz/BlageConnectBundle"
+            "url":"git://github.com/digitalkaoz/BlageConnectBundle"
         },
         {
             "type":"vcs",
-            "url":"git://digitalkaoz@github.com/digitalkaoz/ContactBundle.git"
+            "url":"git://github.com/digitalkaoz/ContactBundle.git"
         },
         {
             "type":"package",
