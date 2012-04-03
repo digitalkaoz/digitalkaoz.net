@@ -10,7 +10,7 @@ env:
 before_script:
   - cp app/config/parameters.example.yml app/config/parameters.yml
   - php bin/vendors.php
-  - sh vendor/elastic/search/bin/elasticsearch &
+#  - sh vendor/elastic/search/bin/elasticsearch -server
 
 script: "phpunit -c app/"
   
