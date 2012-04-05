@@ -18,7 +18,7 @@
     <body>
         {% render 'rskaoz4FrontBundle:Home:header' with { 'q': app.request.get('q') }, {'standalone': true} %}
 
-        {% block body %}{% endblock %}
+        {% block page %}{% endblock %}
 
         {% render 'rskaoz4FrontBundle:Home:footer' with {}, {'standalone': true} %}
 
