@@ -27,7 +27,7 @@ class SearchProvider implements ProviderInterface
      */
     public function populate(\Closure $loggerClosure = null)
     {
-        if(!$this->username){
+        if(!$this->userName){
             return;
         }
         
