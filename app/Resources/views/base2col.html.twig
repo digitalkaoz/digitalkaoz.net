@@ -1,14 +1,16 @@
 {% extends "::base.html.twig" %}
 
 {% block page %}
-    <div class="row">
-        <div class="span8 main">
-            {% block body %}{% endblock %}            
-        </div>
+    <div class="container">
+        <div class="row">
+            <div class="span8 main">
+                {% block body %}{% endblock %}
+            </div>
 
-        <div class="span4">
-            {% block sidebar %}{% endblock %}
-            {% render 'rskaoz4FrontBundle:Home:sidebar' with {}, {'standalone': true} %}                
+            <div class="span4">
+                {% block sidebar %}{% endblock %}
+                {% render 'rskaoz4FrontBundle:Home:sidebar' with {}, {'standalone': true} %}
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -1,0 +1,7 @@
+<div class="sensio badges">
+{% for badge in badges %}
+  <a href="{{ badge.url }}" title="{{ badge.name }}">
+    <img src="{{ badge.pictureUrl }}" alt="{{badge.name}}" />
+  </a>
+{% endfor %}
+</div>

@@ -1,5 +1,5 @@
 {% if networks %}
-    <div class="alert-message block-message info">    
+    <div class="">
         <h3>Networks</h3>
         <ul class="unstyled">
           {% for network in networks %}
@@ -12,11 +12,11 @@
                     </a>
                 </li>
           {% endfor %}
-        </ul>                
+        </ul>
     </div>
 {% endif %}
 
-<div class="alert-message block-message info">
+<div class="">
     <h3>Sensio Badges</h3>
     {% render 'BlageConnectBundle:Connect:ownSensioProfile' with {}, {'standalone': true} %}
 
@@ -24,7 +24,7 @@
 </div>
 
 {% if repos %}
-    <div class="alert-message block-message info">    
+    <div class="">
         <h3>Github Projects</h3>
         <ul class="unstyled">
           {% for repo in repos %}
