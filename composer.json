@@ -50,7 +50,7 @@
 
         "twitter/bootstrap":">=2.0",
         "elastic/search":"0.19.1",
-        "monofone/connect-bundle":"dev-master",
+        "monofone/connect-bundle":"dev-composer_fix",
         "ihqs/contact-bundle":"dev-composer"
     },
 
