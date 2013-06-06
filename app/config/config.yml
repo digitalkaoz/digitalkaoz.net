@@ -3,46 +3,31 @@ imports:
     - { resource: "@rskaoz4FrontBundle/Resources/config/services.yml" }
     - { resource: "@rskaoz4Bundle/Resources/config/services.yml" }
     - { resource: "@rskaoz4Bundle/Resources/config/config.yml" }
+    - { resource: security.yml }
 
 
-knp_zend_cache:
-    templates:
+liip_doctrine_cache:
+    namespaces:
         knp_last_tweets:
-            frontend:
-                name: Core
-                options:
-                    lifetime: 300
-                    automatic_serialization: true
-            backend:
-                name: File
-                options:
-                    cache_dir: %kernel.root_dir%/cache/%kernel.environment%
+            type: file_system
+            directory: %kernel.root_dir%/cache/%kernel.environment%
         sensio_connect:
-            frontend:
-                name: Core
-                options:
-                    lifetime: 300
-                    automatic_serialization: true
-            backend:
-                name: File
-                options:
-                    cache_dir: %kernel.root_dir%/cache/%kernel.environment%
+            type: file_system
+            directory: %kernel.root_dir%/cache/%kernel.environment%
         github:
-            frontend:
-                name: Core
-                options:
-                    lifetime: 300
-                    automatic_serialization: true
-            backend:
-                name: File
-                options:
-                    cache_dir: %kernel.root_dir%/cache/%kernel.environment%
+            type: file_system
+            directory: %kernel.root_dir%/cache/%kernel.environment%
+
+sensio_labs_connect:
+    app_id:     40eb4a30fdba385843d351c6f54fc70c01341483a46f00a05a0d181b36353974
+    app_secret: 38f28a05eb439dc22f012bb8a2adec107ce1d09f101d5fbefe33cc78a34d6e7e
+    scope:      SCOPE_PUBLIC
 
 knp_last_tweets:
     fetcher:
-        driver: zend_cache
+        driver: doctrine_cache
         options:
-            cache_name: knp_last_tweets
+            cache_service: liip_doctrine_cache.ns.knp_last_tweets
 
 knp_disqus:
     api_key: sMyTGRuFIGDwszWATZlLk0yhS0vIXjhm
@@ -51,24 +36,11 @@ ornicar_akismet:
     api_key:        %akismet_key%
     url:            http://digitalkaoz.net
 
-ihqs_contact:
-    spam_detector:
-        service:                ornicar_akismet
-    contact:
-        form:
-            type:               ihqs_contact_contact
-            handler:            ihqs_contact.contact.form.handler.default
-            name:               ihqs_contact_contact_form
-            validation_groups:  [Contact]
-    connectors:                             # the list of "listeners" (or connectors here)
-        email:                              # connecting the email listener
-            recipients: %contact_recipient% # giving him the recipient(s) email(s)
-
 blage_connect:
     profile_name: %sensio_profile%
 
 
-foq_elastica:
+fos_elastica:
     clients:
         default: { host: localhost, port: 9200 }
     indexes:
@@ -105,8 +77,7 @@ foq_elastica:
                         language: ~
                         description: { boost: 3}
 
-vich_uploader:
-    db_driver: orm
-    mappings:
-        kaoz4_image:
-            upload_dir: %kernel.root_dir%/../web/upload
+k_phoen_contact:
+    to:           foo@bar.baz
+    redirect_url: homepage      # the url to retirect the user to once the mail
+                                # is sent

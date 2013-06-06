@@ -9,7 +9,7 @@
 
             <div class="span4">
                 {% block sidebar %}{% endblock %}
-                {% render 'rskaoz4FrontBundle:Home:sidebar' with {}, {'standalone': true} %}
+                {{ render(controller('rskaoz4FrontBundle:Home:sidebar'), {'strategy': 'esi'}) }}
             </div>
         </div>
     </div>

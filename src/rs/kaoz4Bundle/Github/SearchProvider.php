@@ -1,11 +1,10 @@
 <?php
 namespace rs\kaoz4Bundle\Github;
 
-use FOQ\ElasticaBundle\Provider\ProviderInterface;
 use Elastica_Document;
 use Elastica_Type;
-use rs\kaoz4Bundle\Github\ZendCacheFetcher;
-use Closure;
+use FOS\ElasticaBundle\Provider\ProviderInterface;
+use rs\kaoz4Bundle\Github\CacheFetcher;
 
 class SearchProvider implements ProviderInterface
 {
@@ -13,7 +12,7 @@ class SearchProvider implements ProviderInterface
     protected $fetcher;
     protected $userName;
     
-    public function __construct(Elastica_Type $githubType, ZendCacheFetcher $fetcher, $userName = null)
+    public function __construct(Elastica_Type $githubType, CacheFetcher $fetcher, $userName = null)
     {
         $this->githubType = $githubType;
         $this->fetcher = $fetcher;
@@ -23,7 +22,7 @@ class SearchProvider implements ProviderInterface
     /**
      * Insert the repository objects in the type index
      *
-     * @param Closure $loggerClosure
+     * @param \Closure $loggerClosure
      */
     public function populate(\Closure $loggerClosure = null)
     {

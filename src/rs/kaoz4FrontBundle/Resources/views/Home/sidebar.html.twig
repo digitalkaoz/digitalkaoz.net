@@ -18,18 +18,19 @@
 
 <div class="">
     <h3>Sensio Badges</h3>
-    {% render 'BlageConnectBundle:Connect:ownSensioProfile' with {}, {'standalone': true} %}
+    {#{{ render(controller('BlageConnectBundle:Connect:ownSensioProfile'), {'strategy': 'esi'}) }}#}
 
-    {% render 'BlageConnectBundle:Connect:ownSensioBadge' with {}, {'standalone': true} %}
+    {#{{ render(controller('BlageConnectBundle:Connect:ownSensioBadge'), {'strategy': 'esi'}) }}#}
 </div>
 
 {% if repos %}
     <div class="">
-        <h3>Github Projects</h3>
+        <h3>Github <span><a href="https://github.com/digitalkaoz" target="_blank">Profile</a></span></h3>
+
         <ul class="unstyled">
           {% for repo in repos %}
                 <li>
-                    <a href="{{ repo.url }}" target="blank">
+                    <a href="{{ repo.html_url }}" target="blank">
                         <strong>{{ repo.name|e }}</strong>
                     </a>
                 </li>

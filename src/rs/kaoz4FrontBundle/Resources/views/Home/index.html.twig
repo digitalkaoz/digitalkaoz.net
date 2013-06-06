@@ -12,7 +12,7 @@
                 <div class="page-header">
                     <h2>Neuester Blog Artikel</h2>
                 </div>
-                {% render 'rskaoz4FrontBundle:Blog:latest' with {}, {'standalone': true} %}
+                {{ render(controller('rskaoz4FrontBundle:Blog:latest', {}), {'strategy': 'esi'}) }}
             </div>
         </div>
     </section>
@@ -22,13 +22,13 @@
             <div class="span4 offset2">
                 <div class="tile50">
                     <h2>Neueste Projekte</h2>
-                    {% render 'rskaoz4FrontBundle:Project:latest' with {}, {'standalone': true} %}
+                    {{ render(controller('rskaoz4FrontBundle:Project:latest', {}), {'strategy': 'esi'}) }}
                 </div>
             </div>
             <div class="span4">
                 <div class="tile50">
                     <h2 class="twitter">Twitter Feed</h2>
-                    {% render "KnpLastTweetsBundle:Twitter:lastTweets" with {'username': 'digitalkaoz'}, {'standalone': true} %}
+                    {{ render(controller("KnpLastTweetsBundle:Twitter:lastTweets", {'username': 'digitalkaoz'}), {'strategy': 'esi'}) }}
                 </div>
             </div>
         </div>

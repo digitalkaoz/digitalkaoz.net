@@ -3,7 +3,5 @@ rskaoz4FrontBundle:
     type:     annotation
     prefix:   /
 
-# Internal routing configuration to handle ESI
-_internal:
-   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
-   prefix:   /_internal
+kphoen_contact:
+    resource: "@KPhoenContactBundle/Resources/config/routing.yml"

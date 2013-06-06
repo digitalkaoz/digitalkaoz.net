@@ -2,38 +2,31 @@
 
 namespace rs\kaoz4Bundle\Github;
 
-use Zend\Cache\Manager as CacheManager;
-use \Github_Client;
+use Doctrine\Common\Cache\Cache;
+use Github\Client;
 
-class ZendCacheFetcher
+class CacheFetcher
 {
     protected $cacheManager;
-    protected $cacheName;
     protected $fetcher;
 
-    public function __construct(Github_Client $fetcher, CacheManager $cacheManager, $cacheName)
+    public function __construct(Client $fetcher, Cache $cacheManager)
     {
         $this->fetcher = $fetcher;
         $this->cacheManager = $cacheManager;
-        $this->cacheName = $cacheName;
     }
     
     public function fetch($username, $forceRefresh = false)
     {
-        $cache = $this->cacheManager->getCache($this->cacheName);
-        
-        if (null === $cache) {
-            throw new \Exception("Unknown Zend Cache '".$this->cacheName."'");
-        }
-        
         $cacheId = 'kaoz4_github_'.$username;
-        
-        if ($forceRefresh || false === ($repos = $cache->load($cacheId))) {
-            $repos = $this->fetcher->getRepoApi()->getUserRepos('digitalkaoz');
+        $repos = $this->cacheManager->fetch($cacheId);
+
+        if ($forceRefresh || false === $repos) {
+            $repos = $this->fetcher->api('user')->repositories($username);
             
             foreach($repos as $key=>$repo)
             {
-                if($repo['fork'])
+                if(isset($repo['fork']) &&  $repo['fork'] === true)
                 {
                     unset($repos[$key]);
                 }                    
@@ -50,7 +43,7 @@ class ZendCacheFetcher
                 return strtotime($a) < strtotime($b) ? 1 : -1;
             });
 
-            $cache->save($repos, $cacheId);
+            $this->cacheManager->save($cacheId, $repos);
         }
         
         return $repos;

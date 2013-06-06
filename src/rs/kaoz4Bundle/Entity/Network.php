@@ -27,7 +27,7 @@ class Network
      *
      * @ORM\Column(name="name", type="string", length=255)
      * @Assert\NotBlank()
-     * @Assert\MaxLength(255)
+     * @Assert\Length(max="255")
      */
     private $name;
 
@@ -37,7 +37,7 @@ class Network
      * @ORM\Column(name="url", type="string", length=255)
      * @Assert\NotBlank()
      * @Assert\Url()
-     * @Assert\MaxLength(255)
+     * @Assert\Length(max="255")
      */
     private $url;
 
@@ -61,7 +61,7 @@ class Network
      *
      * @ORM\Column(name="logo", type="string", length=255, nullable=true)
      * @Assert\Image()
-     * @Assert\MaxLength(255)
+     * @Assert\Length(max="255")
      */
     private $logo;
     

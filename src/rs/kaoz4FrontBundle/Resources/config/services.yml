@@ -1,7 +1,6 @@
 parameters:
-    kaoz4.github.fetcher.class:         rs\kaoz4Bundle\Github\ZendCacheFetcher
-    kaoz4.github.fetcher.cache_name:    github
-    kaoz4.github.api_client:            Github_Client
+    kaoz4.github.fetcher.class:         rs\kaoz4Bundle\Github\CacheFetcher
+    kaoz4.github.api_client:            Github\Client
     kaoz4.search.provider.github.class: rs\kaoz4Bundle\Github\SearchProvider
 
 services:
@@ -33,22 +32,35 @@ services:
         scope: request
         tags:
             - { name: knp_menu.menu, alias: footer }
-            
+
+
+    kaoz4.cached.github_client:
+        class: Github\HttpClient\CachedHttpClient
+        arguments: [{ cache_dir: '/tmp/github-api-cache' }]
+        public: false
+
     kaoz4.github.api:
         class: %kaoz4.github.api_client%
+        arguments:
+            - '@kaoz4.cached.github_client'
 
-    kaoz4.github.fetcher.zend_cache:
+    kaoz4.github.fetcher.cache:
         class: %kaoz4.github.fetcher.class%
         arguments:
             - '@kaoz4.github.api'
-            - '@knp_zend_cache.manager'
-            - %kaoz4.github.fetcher.cache_name%
+            - '@liip_doctrine_cache.ns.github'
 
     kaoz4.search.provider.github:
         class: %kaoz4.search.provider.github.class%
         tags:
-            -  { name: foq_elastica.provider, index: website, type: github }
+            -  { name: fos_elastica.provider, index: website, type: github }
         arguments:
-            - '@foq_elastica.index.website.github'
-            - '@kaoz4.github.fetcher.zend_cache'
+            - '@fos_elastica.index.website.github'
+            - '@kaoz4.github.fetcher.cache'
             - %kaoz4.github.account%
+
+    blage_connect.cache:
+        class: %blage_connect.cache.class%
+        arguments:
+            - '@blage_connect.sensio'
+            - '@liip_doctrine_cache.ns.sensio_connect'

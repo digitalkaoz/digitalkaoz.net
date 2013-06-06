@@ -13,8 +13,7 @@
             {% include 'rskaoz4FrontBundle:Blog:short.html.twig' with { 'post': post, 'full': loop.index == 1} %}
         {% endfor %}
 
-        {{ paginator.render()|raw }}
-    
+        {{ knp_pagination_render(paginator) }}
     {% endif %}
 
 {% endblock %}

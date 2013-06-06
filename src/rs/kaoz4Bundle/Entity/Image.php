@@ -11,7 +11,6 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="rs\kaoz4Bundle\Entity\ImageRepository")
- * @Vich\Uploadable
  */
 class Image
 {
@@ -32,7 +31,6 @@ class Image
      *     maxSize="1M",
      *     mimeTypes={"image/png", "image/jpeg", "image/pjpeg"}
      * )
-     * @Vich\UploadableField(mapping="kaoz4_image", fileNameProperty="imageName")
      */
     private $image;
 

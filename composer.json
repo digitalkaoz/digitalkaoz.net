@@ -1,57 +1,32 @@
 {
     "name":"digitalkaoz.net",
     "type":"webpage",
-    "target-dir":"vendor/",
     "homepage":"http://digitalkaoz.net",
 
     "require":{
-        "symfony/symfony":">=2.1-dev,<2.2",
-        "symfony/assetic-bundle":"master",
-        "symfony/security-bundle":">=2.1-dev,<2.2",
-        "symfony/swiftmailer-bundle":"master",
-        "symfony/monolog-bundle":"master",
-        "symfony/twig-bundle":"*",
+        "symfony/framework-standard-edition":"~2.2",
 
-        "twig/extensions":"*",
-        "sensio/generator-bundle":">2.0",
-        "sensio/framework-extra-bundle":">2.0",
-        "sensio/distribution-bundle":"*",
+        "kriswallsmith/buzz":"~0.10",
+        "friendsofsymfony/elastica-bundle" : "~2.1",
+        "stof/doctrine-extensions-bundle":"dev-master@dev",
+        "elao/web-profiler-extra-bundle":"~2.2",
+        "ornicar/akismet-bundle":"dev-master@dev",
+        "mopa/bootstrap-bundle":"2.2-alpha1",
+        "twitter/bootstrap":"~2.3",
+        "kphoen/contact-bundle":"~1.0",
+        "doctrine/data-fixtures" : "~1.0-alpha3",
+        "doctrine/doctrine-fixtures-bundle" : "dev-master@dev",
+        "sonata-project/user-bundle" : "~2.1",
+        "liip/doctrine-cache-bundle": "~1.0",
+        "sensiolabs/connect-bundle": "dev-master@dev",
 
-        "doctrine/doctrine-bundle":"master",
-        "doctrine/orm":"2.2.*",
-        "doctrine/doctrine-fixtures-bundle":">=2.1-dev,<2.2",
+        "knplabs/knp-menu-bundle":"~1.1",
+        "knplabs/knp-paginator-bundle":"~2.3",
+        "knplabs/knp-disqus-bundle":"dev-master@dev",
+        "knplabs/github-api":"dev-master@dev",
 
-        "jms/security-extra-bundle":">=1.1.0",
-        "jms/aop-bundle":"1.0.0",
-
-        "sonata-project/doctrine-orm-admin-bundle":"*",
-        "sonata-project/user-bundle":"*",
-
-        "behat/mink-bundle":"master",
-        "behat/behat-bundle":">=1.0",
-
-        "knplabs/knp-menu-bundle":"*",
-        "knplabs/knp-paginator-bundle":"*",
-        "knplabs/knp-last-tweets-bundle":"*",
-        "knplabs/knp-zend-cache-bundle":"*",
-        "knplabs/knp-disqus-bundle":"*",
-
-        "ruflin/Elastica":"*",
-        "kriswallsmith/buzz":">=0.5",
-        "friendsofsymfony/user-bundle":"1.1.0",
-        "mopa/bootstrap-bundle":"master",
-        "stof/doctrine-extensions-bundle":"*",
-        "vich/uploader-bundle":"master",
-        "exercise/elastica-bundle":"*",
-        "elao/profiler-extra-bundle":"2.0",
-
-        "ornicar/github-api":"*",
-        "ornicar/akismet-bundle":"dev-master",
-
-        "twitter/bootstrap":">=2.0",
-        "elastic/search":"0.19.1",
-        "monofone/connect-bundle":"dev-composer_fix",
-        "ihqs/contact-bundle":"dev-composer"
+        "monofone/connect-bundle":"dev-master@dev",
+        "knplabs/knp-last-tweets-bundle":"dev-doctrine_cache@dev"
     },
 
     "autoload":{
@@ -60,117 +35,38 @@
         }
     },
 
-    "repositories":[
+    "repositories": [
         {
-            "type":"vcs",
-            "url":"git://github.com/digitalkaoz/BlageConnectBundle"
+            "type": "vcs",
+            "url": "https://github.com/digitalkaoz/BlageConnectBundle"
         },
         {
-            "type":"vcs",
-            "url":"git://github.com/digitalkaoz/ContactBundle.git"
-        },
-        {
-            "type":"package",
-            "package":{
-                "name":"elastic/search",
-                "description":"elasticsearch",
-                "version":"0.19.1",
-                "dist":{
-                    "url":"https://github.com/downloads/elasticsearch/elasticsearch/elasticsearch-0.19.1.zip",
-                    "type":"zip"
-                }
-            }
-        },
-        {
-            "type":"package",
-            "package":{
-                "name":"twitter/bootstrap",
-                "description":"twitter bootstrap",
-                "version":"2.0.2",
-                "dist":{
-                    "url":"http://twitter.github.com/bootstrap/assets/bootstrap.zip",
-                    "type":"zip"
-                }
-            }
-        },
-        {
-            "type":"package",
-            "package":{
-                "name":"mrdoob/threejs",
-                "description":"three js",
-                "version":"0.48.0",
-                "dist":{
-                    "url":"https://github.com/mrdoob/three.js/zipball/r48",
-                    "type":"zip"
-                }
-            }
-        },
-        {
-            "type":"package",
-            "package":{
-                "name":"zendframework/zend-cache",
-                "version":"2.0.0beta1",
-                "dist":{
-                    "url":"http://github.com/KnpLabs/zend-cache/zipball/master",
-                    "type":"zip"
-                },
-                "source":{
-                    "url":"git://github.com/KnpLabs/zend-cache.git",
-                    "type":"git",
-                    "reference":"master"
-                },
-                "autoload":{
-                    "psr-0":{
-                        "Zend\\Cache":""
-                    }
-                },
-                "target-dir":"Zend/Cache"
-            }
-        },
-        {
-            "type":"package",
-            "package":{
-                "name":"elao/profiler-extra-bundle",
-                "version":"2.0",
-                "dist":{
-                    "url":"https://github.com/Elao/WebProfilerExtraBundle/zipball/master",
-                    "type":"zip"
-                },
-                "source":{
-                    "url":"git://github.com/Elao/WebProfilerExtraBundle.git",
-                    "type":"git",
-                    "reference":"master"
-                },
-                "autoload":{
-                    "psr-0":{
-                        "Elao\\WebProfilerExtraBundle" : ""
-                    }
-                },
-                "target-dir":"Elao/WebProfilerExtraBundle"
-            }
-        },
-        {
-            "type":"package",
-            "package":{
-                "name":"zendframework/zend-filter",
-                "version":"2.0.0beta1",
-                "dist":{
-                    "url":"http://github.com/KnpLabs/zend-filter/zipball/master",
-                    "type":"zip"
-                },
-                "source":{
-                    "url":"git://github.com/KnpLabs/zend-filter.git",
-                    "type":"git",
-                    "reference":"master"
-                },
-                "autoload":{
-                    "psr-0":{
-                        "Zend\\Filter":""
-                    }
-                },
-                "target-dir":"Zend/Filter"
-            }
+            "type" : "vcs",
+            "url" : "https://github.com/digitalkaoz/KnpLastTweetsBundle"
         }
-    ]
+    ],
+
+    "scripts": {
+        "post-install-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "app/console mopa:bootstrap:symlink:less",
+            "app/console assetic:dump --env=prod --no-debug"
+        ],
+        "post-update-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "app/console mopa:bootstrap:symlink:less",
+            "app/console assetic:dump --env=prod --no-debug"
+        ]
+    },
+
+    "config": {
+        "bin-dir": "bin"
+    }
 }
 

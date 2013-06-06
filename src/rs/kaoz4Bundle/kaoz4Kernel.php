@@ -26,7 +26,7 @@ abstract class kaoz4Kernel extends Kernel
             new \Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new \Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new \Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
-            new \Vich\UploaderBundle\VichUploaderBundle(),
+            new \Liip\DoctrineCacheBundle\LiipDoctrineCacheBundle(),
         );
 
         if('dev' == $this->getEnvironment()) {
@@ -36,14 +36,11 @@ abstract class kaoz4Kernel extends Kernel
                 new \Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle(),
                 new \Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
                 new \Elao\WebProfilerExtraBundle\WebProfilerExtraBundle(),
-//                new \rs\YumlBundle\rsYumlBundle()
             ));
         }
 
         if('test' == $this->getEnvironment()) {
             $bundles = array_merge($bundles, array(
-                new \Behat\MinkBundle\MinkBundle(),
-                new \Behat\BehatBundle\BehatBundle(),
                 new \Symfony\Bundle\WebProfilerBundle\WebProfilerBundle(),
                 new \Elao\WebProfilerExtraBundle\WebProfilerExtraBundle(),
                 new \Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),

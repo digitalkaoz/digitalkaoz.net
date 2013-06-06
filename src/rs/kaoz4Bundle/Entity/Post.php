@@ -28,7 +28,7 @@ class Post
      *
      * @ORM\Column(name="title", type="string", length=255)
      * @Assert\NotBlank()
-     * @Assert\MaxLength(255)
+     * @Assert\Length(max="255")
      */
     private $title;
 

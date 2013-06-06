@@ -14,11 +14,12 @@ class AppKernel extends kaoz4Kernel
             new Knp\Bundle\LastTweetsBundle\KnpLastTweetsBundle(),
             new Knp\Bundle\DisqusBundle\KnpDisqusBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
-            new Knp\Bundle\ZendCacheBundle\KnpZendCacheBundle(),
             new Ornicar\AkismetBundle\OrnicarAkismetBundle(),
             new Blage\ConnectBundle\BlageConnectBundle(),
-            new FOQ\ElasticaBundle\FOQElasticaBundle(),
-            new IHQS\ContactBundle\IHQSContactBundle(),
+            new FOS\ElasticaBundle\FOSElasticaBundle(),
+            new KPhoen\ContactBundle\KPhoenContactBundle(),
+            new Symfony\Bundle\SecurityBundle\SecurityBundle(),
+            new SensioLabs\Bundle\ConnectBundle\SensioLabsConnectBundle(),
         ));
         
         return $bundles;

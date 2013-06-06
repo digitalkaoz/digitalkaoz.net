@@ -19,15 +19,23 @@ monolog:
 assetic:
     use_controller: true
 
-knp_last_tweets:
-    fetcher:
-        driver: array
+#knp_last_tweets:
+#    fetcher:
+#        driver: array
 
 web_profiler_extra:
-    routing:    false
-    container:  true
-    assetic:    true
-    twig:       true
+    routing:
+        enabled:        true
+        display_in_wdt: true
+    container:
+        enabled:        true
+        display_in_wdt: true
+    assetic:
+        enabled:        true
+        display_in_wdt: true
+    twig:
+        enabled:        true
+        display_in_wdt: true
 
 ornicar_akismet:
     service:        ornicar_akismet.akismet_stub
