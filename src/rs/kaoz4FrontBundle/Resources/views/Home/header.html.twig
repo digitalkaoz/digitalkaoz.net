@@ -1,46 +1,44 @@
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="span8 offset2 headline">
-                <a href="{{ path('home') }}" class="brand"><h1 id="logo">Digital.kaoZ</h1></a>
-            </div>
-            <div class="span2">
-                <form class="navbar-search" action="{{ path('search') }}" method="GET">
-                    <input type="text" name="q" value="{{ app.request.get('q') }}" class="search-query" placeholder="Search" />
-                </form>
-            </div>
+<header class="container">
+    <div class="row">
+        <div class="span8 offset2 headline">
+            <a href="{{ path('home') }}" class="brand"><h1 id="logo">Digital.kaoZ</h1></a>
+        </div>
+        <div class="pull-right">
+            <form class="navbar-search" action="{{ path('search') }}" method="GET">
+                <input type="text" name="q" value="{{ app.request.get('q') }}" class="search-query"
+                       placeholder="Search"/>
+            </form>
         </div>
     </div>
 </header>
 
-<nav>
-    <div class="header">
-        <div class="container">
-            <img src="/img/alien02.gif" id="main-alien"/>
+<nav class="header container">
+    <img src="/img/alien02.gif" id="main-alien"/>
 
-            <div class="row">
-                <div class="span2 offset2">
-                    <div class="tile33"><a href="{{ path('blog') }}">
-                        <img src="/img/alien01.gif" width="30%"/>
-                        <strong>Blog</strong>
-<!--                        <small>lorem ipsum dolor</small>-->
-                    </a></div>
-                </div>
-                <div class="span2 offset1">
-                    <div class="tile33"><a href="{{ path('bio') }}">
-                        <img src="/img/alien01.gif" width="30%"/>
-                        <strong>Biographie</strong>
-<!--                        <small>lorem ipsum dolor</small>-->
-                    </a></div>
-                </div>
-                <div class="span2 offset1">
-                    <div class="tile33"><a href="{{ path('projects') }}">
-                        <img src="/img/alien01.gif" width="30%"/>
-                        <strong>Projekte</strong>
-<!--                        <small>lorem ipsum dolor</small>-->
-                    </a></div>
-                </div>
-            </div>
+    <div class="row">
+        <div class="span2 offset2 tile">
+            <a href="{{ path('blog') }}">
+                <img src="/img/alien01.gif" width="30%"/>
+                <strong>Blog</strong>
+            </a>
+        </div>
+        <div class="span2 tile">
+            <a href="{{ path('bio') }}">
+                <img src="/img/alien01.gif" width="30%"/>
+                <strong>Bio</strong>
+            </a>
+        </div>
+        <div class="span2 tile">
+            <a href="{{ path('projects') }}">
+                <img src="/img/alien01.gif" width="30%"/>
+                <strong>Work</strong>
+            </a>
+        </div>
+        <div class="span2 tile">
+            <a href="{{ path('projects') }}">
+                <img src="/img/alien01.gif" width="30%"/>
+                <strong>Refs</strong>
+            </a>
         </div>
     </div>
 </nav>

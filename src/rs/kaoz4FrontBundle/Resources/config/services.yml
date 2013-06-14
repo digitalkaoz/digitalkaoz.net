@@ -36,7 +36,7 @@ services:
 
     kaoz4.cached.github_client:
         class: Github\HttpClient\CachedHttpClient
-        arguments: [{ cache_dir: '/tmp/github-api-cache' }]
+        arguments: [{ cache_dir: %kernel.cache_dir%/github-api-cache }]
         public: false
 
     kaoz4.github.api:

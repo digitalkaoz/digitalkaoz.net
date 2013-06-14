@@ -24,13 +24,13 @@ class CacheFetcher
         if ($forceRefresh || false === $repos) {
             $repos = $this->fetcher->api('user')->repositories($username);
             
-            foreach($repos as $key=>$repo)
+            /*foreach($repos as $key=>$repo)
             {
                 if(isset($repo['fork']) &&  $repo['fork'] === true)
                 {
                     unset($repos[$key]);
                 }                    
-            }
+            }*/
             
             usort($repos, function($a, $b){
                 $a = $a['created_at'];

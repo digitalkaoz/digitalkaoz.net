@@ -25,6 +25,7 @@ class MenuBuilder
         $menu->addChild('Blog', array('route' => 'blog','attributes'=>array('class'=>'navitem blog span2')));
         $menu->addChild('Bio', array('route' => 'bio','attributes'=>array('class'=>'navitem blog span2')));
         $menu->addChild('Projects', array('route' => 'projects','attributes'=>array('class'=>'navitem blog span2')));
+        $menu->addChild('References', array('route' => 'bio','attributes'=>array('class'=>'navitem blog span2')));
 
         return $menu;
     }

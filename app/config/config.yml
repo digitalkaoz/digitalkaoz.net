@@ -10,13 +10,13 @@ liip_doctrine_cache:
     namespaces:
         knp_last_tweets:
             type: file_system
-            directory: %kernel.root_dir%/cache/%kernel.environment%
+            directory: %kernel.cache_dir%
         sensio_connect:
             type: file_system
-            directory: %kernel.root_dir%/cache/%kernel.environment%
+            directory: %kernel.cache_dir%
         github:
             type: file_system
-            directory: %kernel.root_dir%/cache/%kernel.environment%
+            directory: %kernel.cache_dir%
 
 sensio_labs_connect:
     app_id:     40eb4a30fdba385843d351c6f54fc70c01341483a46f00a05a0d181b36353974

@@ -28,7 +28,6 @@ var counterX = 0,
     yMove = 20,
     dragExtentX = 200,
     dragExtentY = 100,
-    renderer,
     logoObject3D,
 
     cdCubes,
@@ -41,7 +40,7 @@ var logoImage = new Image();
 // preload logo
 logoImage.src = creativeJSImageFolder + 'kaoz4-logo.png';
 
-window.addEventListener("load", init3D, false);
+//window.addEventListener("load", init3D, false);
 
 function init3D() {
     camera = new THREE.PerspectiveCamera(27, width / height, 1, 2000);
@@ -78,11 +77,12 @@ function setupRenderer() {
 
     if (Detector.webgl) {
         renderer = new THREE.WebGLRenderer({antialias:true});
-        setInterval(loop, 1000 / 30);
-
+        //setInterval(loop, 1000 / 30);
+        loop();
     } else if (Detector.canvas) {
         renderer = new THREE.CanvasRenderer({});
-        setInterval(loop, 1000 / 20);
+        //setInterval(loop, 1000 / 20);
+        loop();
 
     } else {
         // oh super noes! No canvas or WebGL? WTF!? Best just leave it as it is

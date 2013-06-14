@@ -12,7 +12,7 @@
                 <div class="page-header">
                     <h2>Neuester Blog Artikel</h2>
                 </div>
-                {{ render(controller('rskaoz4FrontBundle:Blog:latest', {}), {'strategy': 'esi'}) }}
+                {{ render(controller('rskaoz4FrontBundle:Blog:latest'), {'strategy': 'esi'}) }}
             </div>
         </div>
     </section>
@@ -21,8 +21,8 @@
         <div class="row main">
             <div class="span4 offset2">
                 <div class="tile50">
-                    <h2>Neueste Projekte</h2>
-                    {{ render(controller('rskaoz4FrontBundle:Project:latest', {}), {'strategy': 'esi'}) }}
+                    <h2>Neuestes Projekt</h2>
+                    {{ render(controller('rskaoz4FrontBundle:Project:latest'), {'strategy': 'esi'}) }}
                 </div>
             </div>
             <div class="span4">

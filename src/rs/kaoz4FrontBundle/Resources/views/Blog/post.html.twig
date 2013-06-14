@@ -11,17 +11,17 @@
             <div class="span2"></div>
         {% endif %}
         
-        <div class="span10 offset2">
+        <div class="span6 offset2">
             <h2>{{ post.title|e }}</h2>
         </div>
 
-        <div class="span12">
+        <div class="span8">
             <p>{{ post.text|raw }}</p>
         </div>
 
     </div>
 
-    <div id="disqus_thread" class="span10">
+    <div id="disqus_thread" class="span8">
         {{ knp_disqus_render('blog', {'identifier': post.slug, 'limit': 100}) }}
     </div>
     

@@ -48,6 +48,7 @@
 
     "scripts": {
         "post-install-cmd": [
+            "npm --prefix=./web/js/libs install",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
@@ -56,6 +57,7 @@
             "app/console assetic:dump --env=prod --no-debug"
         ],
         "post-update-cmd": [
+            "npm --prefix=./web/js/libs install",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",

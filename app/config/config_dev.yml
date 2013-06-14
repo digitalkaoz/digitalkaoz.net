@@ -19,9 +19,9 @@ monolog:
 assetic:
     use_controller: true
 
-#knp_last_tweets:
-#    fetcher:
-#        driver: array
+knp_last_tweets:
+    fetcher:
+        driver: array
 
 web_profiler_extra:
     routing:
