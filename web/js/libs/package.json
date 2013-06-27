@@ -1,0 +1,9 @@
+{
+    "name" : "digitalkaoz.net",
+    "version" : "0.1.0",
+
+    "dependencies" : {
+        "three" : "*",
+        "code-prettify" : "*"
+    }
+}

@@ -16,8 +16,8 @@ class AppKernel extends kaoz4Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
-            new Sonata\UserBundle\SonataUserBundle(),
             new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
             new FOS\UserBundle\FOSUserBundle(),
         ));
         

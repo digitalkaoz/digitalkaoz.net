@@ -32,8 +32,7 @@ class PostAdmin extends Admin
                 ->add('text')
             ->end()
             ->with('Images')
-                ->add('images','sonata_type_model',array(),array('edit' => 'inline',
-                'inline' => 'table',))
+                ->add('images','sonata_type_collection',array(),array('edit' => 'inline','inline' => 'table'))
             ->end()
 /*            ->with('Tags')
                 ->add('tags', 'sonata_type_model', array('expanded' => true))

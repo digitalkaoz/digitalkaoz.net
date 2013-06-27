@@ -84,11 +84,7 @@ class Post
     private $updated_at;
     
     /**
-     * @ORM\ManyToMany(targetEntity="rs\kaoz4Bundle\Entity\Image")
-     * @ORM\JoinTable(name="post_image",
-     *      joinColumns={@ORM\JoinColumn(name="post_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="image_id", referencedColumnName="id", unique=true)}
-     * )
+     * @ORM\OneToMany(targetEntity="rs\kaoz4Bundle\Entity\Image" mappedBy="")
      */
     private $images;    
     

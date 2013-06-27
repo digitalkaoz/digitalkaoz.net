@@ -16,7 +16,6 @@
         "kphoen/contact-bundle":"~1.0",
         "doctrine/data-fixtures" : "~1.0-alpha3",
         "doctrine/doctrine-fixtures-bundle" : "dev-master@dev",
-        "sonata-project/user-bundle" : "~2.1",
         "liip/doctrine-cache-bundle": "~1.0",
         "sensiolabs/connect-bundle": "dev-master@dev",
 
@@ -26,7 +25,10 @@
         "knplabs/github-api":"dev-master@dev",
 
         "monofone/connect-bundle":"dev-master@dev",
-        "knplabs/knp-last-tweets-bundle":"dev-doctrine_cache@dev"
+        "knplabs/knp-last-tweets-bundle":"dev-doctrine_cache@dev",
+
+        "sonata-project/admin-bundle": "~2.2",
+        "sonata-project/doctrine-orm-admin-bundle": "~2.2"
     },
 
     "autoload":{
@@ -71,4 +73,3 @@
         "bin-dir": "bin"
     }
 }
-
