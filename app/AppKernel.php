@@ -14,15 +14,25 @@ class AppKernel extends Kernel
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Symfony\Bundle\SecurityBundle\SecurityBundle(),
+            new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
 
-            new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
+            new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
             new Liip\DoctrineCacheBundle\LiipDoctrineCacheBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
+
             new FOS\RestBundle\FOSRestBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+
             new JMS\SerializerBundle\JMSSerializerBundle($this),
+            new JMS\AopBundle\JMSAopBundle(),
+            new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
 
             // enable cmf bundles
+            new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
             new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
             new Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),
             new Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle(),
@@ -30,8 +40,17 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\SimpleCmsBundle\CmfSimpleCmsBundle(),
             new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
 
+            //enable backend bundles
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
+            new Symfony\Cmf\Bundle\TreeBrowserBundle\CmfTreeBrowserBundle(),
+            new Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
+
             // and the sandbox bundle
             new Acme\MainBundle\AcmeMainBundle(),
+            new kaoz5\UserBundle\kaoz5UserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
