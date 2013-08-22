@@ -98,9 +98,9 @@ fos_js_routing:
         - admin_bundle_routingextra_route_create
         - admin_bundle_routingextra_route_delete
         - admin_bundle_routingextra_route_edit
-        - admin_bundle_simplecms_page_create
-        - admin_bundle_simplecms_page_delete
-        - admin_bundle_simplecms_page_edit
+#        - admin_bundle_simplecms_page_create
+#        - admin_bundle_simplecms_page_delete
+#        - admin_bundle_simplecms_page_edit
         - cmf_tree_browser.phpcr_children
         - cmf_tree_browser.phpcr_move
         - sonata.admin.doctrine_phpcr.phpcrodm_children

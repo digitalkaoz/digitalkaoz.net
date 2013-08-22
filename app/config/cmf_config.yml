@@ -30,11 +30,17 @@ cmf_core:
 cmf_create:
     phpcr_odm: true
 
-cmf_simple_cms:
-    routing:
-        templates_by_class:
-            Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page:  CmfSimpleCmsBundle:Page:index.html.twig
-        controllers_by_class:
-            Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute:  cmf_routing.redirect_controller:redirectAction
-    multilang:
-        locales: %locales%
+#cmf_simple_cms:
+#    routing:
+#        templates_by_class:
+#            Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page:  CmfSimpleCmsBundle:Page:index.html.twig
+#        controllers_by_class:
+#            Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute:  cmf_routing.redirect_controller:redirectAction
+#    multilang:
+#        locales: %locales%
+
+cmf_routing:
+    chain:
+        routers_by_id:
+            cmf_routing.dynamic_router: 20
+            router.default: 100
