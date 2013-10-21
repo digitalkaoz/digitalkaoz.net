@@ -1,54 +1,42 @@
-# Symfony Content Management Framework Standard Editiong
+# Symfony CMF Standard Edition
 
-### You will need:
-  * Git 1.6+
-  * PHP 5.3.3+
-  * php5-intl
-  * phpunit 3.6+ (optional)
-  * composer
+[![Build Status](https://secure.travis-ci.org/symfony-cmf/symfony-cmf-standard.png)](http://travis-ci.org/symfony-cmf/symfony-cmf-standard)
+[![Latest Stable Version](https://poser.pugx.org/symfony-cmf/standard-edition/version.png)](https://packagist.org/packages/symfony-cmf/standard-edition)
+[![Total Downloads](https://poser.pugx.org/symfony-cmf/standard-edition/d/total.png)](https://packagist.org/packages/symfony-cmf/standard-edition)
 
-## Get the code
+The Symfony CMF Standard Edition (SE) is a distribution of the
+[Symfony Content Management Framework (CMF)](http://cmf.symfony.com/)
+and licensed under the [MIT License](LICENSE).
 
-    git clone git://github.com/symfony-cmf/symfony-cmf-standard.git
-    cd symfony-cmf-standard
-    # copy parameters template and edit as needed
-    cp app/config/parameters.yml.dist app/config/parameters.yml
-    curl -s http://getcomposer.org/installer | php --
-    php composer.phar install
+This distribution is based on all the main CMF components needed for most common
+use cases, and can be used to create a new Symfony/CMF project from scratch.
 
-This will fetch the main project and all it's dependencies ( CMF Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
-Please also adjust the ``app/config/parameters.yml`` as needed.
 
-The next step is to setup the database:
+## Requirements
 
-    app/console doctrine:database:create
-    app/console doctrine:phpcr:init:dbal
-    app/console doctrine:phpcr:register-system-node-types
-    app/console doctrine:phpcr:fixtures:load
+* Symfony 2.3.x
+* See also the `require` section of [composer.json](composer.json)
 
-## Access by web browser
 
-Create an apache virtual host entry along the lines of
-<Virtualhost *:80>
-    Servername simple-cms.lo
-    DocumentRoot /path/to/symfony-cmf/symfony-cmf-standard/web
-    <Directory /path/to/symfony-cmf/symfony-cmf-standard>
-        AllowOverride All
-    </Directory>
-</Virtualhost>
+## Documentation
 
-And add an entry to your hosts file for simple-cms.lo
+For the install guide and reference, see:
 
-If you are running Symfony2 for the first time, run http://simple-cms.lo/config.php to ensure your system settings have been
-setup inline with the expected behaviour of the Symfony2 framework.
+* [symfony-cmf-standard documentation](http://symfony.com/doc/master/cmf/getting_started/installing_symfony_cmf.html)
 
-Note however that "Configure your Symfony Application online" is not supported.
+See also:
 
-Then point your browser to http://simple-cms.lo/app_dev.php
+* [All Symfony CMF documentation](http://symfony.com/doc/master/cmf/index.html) - complete Symfony CMF reference
+* [Symfony CMF Website](http://cmf.symfony.com/) - introduction, live demo, support and community links
 
-Functional tests are written with PHPUnit. Note that Bundles and Components are tested independently.
 
-    app/console doctrine:phpcr:workspace:create standard_test
-    phpunit -c app
+## Contributing
 
-[![Build Status](https://secure.travis-ci.org/symfony-cmf/symfony-cmf-standard.png?branch=master)](http://travis-ci.org/symfony-cmf/symfony-cmf-standard)
+Pull requests are welcome. Please see our [CONTRIBUTING](CONTRIBUTING.md) guide.
+
+Unit and/or functional tests exist for this bundle. See the
+[Testing documentation](http://symfony.com/doc/master/cmf/components/testing.html)
+for a guide to running the tests.
+
+Thanks to
+[everyone who has contributed](https://github.com/symfony-cmf/symfony-cmf-standard/contributors) already.

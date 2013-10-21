@@ -1,21 +1,31 @@
 parameters:
-    locale: en
-
-    secret: ThisTokenIsNotSoSecretChangeIt
-
-    liip_vie.use_coffee: false
-    # a little hack to avoid errors on missing node/coffescript.
-    # remove -disabled if you want coffee.
-    coffee.extension: "\.coffee-disabled$"
-    coffee.bin: ''
-    coffee.node: ''
-
-    database_driver: pdo_sqlite
-    database_path: %kernel.root_dir%/app.sqlite
+    database_driver:   pdo_sqlite
+    database_path: '%kernel.root_dir%/app.sqlite'
+    database_host: null
+    database_port: null
+    database_name: null
+    database_user: null
+    database_password: null
 
     phpcr_backend:
         type: doctrinedbal
-        connection: doctrine.dbal.default_connection
+        connection: default
+# Enable these lines to use file system caching for the storage API
+#        caches:
+#            meta: liip_doctrine_cache.ns.meta
+#            nodes: liip_doctrine_cache.ns.nodes
     phpcr_workspace: default
     phpcr_user: admin
     phpcr_pass: admin
+
+    mailer_transport:  smtp
+    mailer_host:       127.0.0.1
+    mailer_user:       ~
+    mailer_password:   ~
+
+    locale:            en
+    locales:           [en, de]
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    node_path:         /usr/local/bin/node
+    node_modules_path: /usr/local/share/npm/lib/node_modules

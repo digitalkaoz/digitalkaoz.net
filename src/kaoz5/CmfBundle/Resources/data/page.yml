@@ -1,0 +1,39 @@
+static:
+    home:
+        name: "home"
+        title:
+            de: "Webdevelopment and me..."
+        body: 
+            de: "Lorem Ipsum"
+
+    about:
+        name: "about"
+        label: "About Me"
+        title: "Some information about me"
+        body: "The about us page with some content"
+
+    contact:
+        name: "contact"
+        label: "Contact"
+        title: "A contact page"
+        body: "Please send an email to symfony-cmf-devs@groups.google.com"
+
+    map:
+        name: "map"
+        label:
+            en: "Map"
+            de: "Karte"
+        parent: "/contact"
+        title:
+            en: "A map of a location in the US"
+            de: "Eine Karte von einem Ort in Deutschland"
+        body: 
+            en: "Have a look at the map to find us."
+            de: "Hier können Sie uns finden."
+
+    team:
+        name: "team"
+        label: "Team"
+        parent: "/contact"
+        title: "A team page"
+        body: "Our team consists of C, M and F."

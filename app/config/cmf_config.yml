@@ -1,0 +1,38 @@
+# cmf configuration
+doctrine_phpcr:
+    # configure the PHPCR session
+    session:
+        backend: %phpcr_backend%
+        workspace: %phpcr_workspace%
+        username: %phpcr_user%
+        password: %phpcr_pass%
+    # enable the ODM layer
+    odm:
+        auto_mapping: true
+        auto_generate_proxy_classes: %kernel.debug%
+        locales:
+            en:
+                - de
+            de:
+                - en
+
+cmf_core:
+    persistence:
+        phpcr:
+            enabled: true
+            use_sonata_admin: auto
+            basepath: /cms
+    publish_workflow:
+        enabled: false
+    multilang:
+        locales: %locales%
+
+cmf_create:
+    editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
+
+cmf_simple_cms:
+    routing:
+        templates_by_class:
+            Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:  CmfSimpleCmsBundle:Page:index.html.twig
+        controllers_by_class:
+            Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute:  cmf_routing.redirect_controller:redirectAction

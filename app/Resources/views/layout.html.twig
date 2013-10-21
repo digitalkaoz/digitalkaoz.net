@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content=" minimum-scale=1.0, maximum-scale=1.0, width=device-width; user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{% block title %}{{ title|default('Simple CMS')|striptags }}{% endblock %}</title>
+
+    {% block includes %}
+        {% stylesheets
+        '@MopaBootstrapBundle/Resources/bootstrap/less/bootstrap.less'
+        'less/main.less'
+        filter="less, ?yui_css"
+        output="css/styles_combined.css" %}
+
+        <link href="{{ asset_url }}" rel="stylesheet">
+        {% endstylesheets %}
+
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        {% include "CmfCreateBundle::includecssfiles.html.twig" %}
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+
+    <div id="top" class="row">
+        <div class="col-md-12">
+            <ul id="skiplinks" class="pull-left hidden-desktop">
+                <li><a href="#content" title="Go to main content">Skip to content</a></li>
+                <li><a href="#navigation" title="go to navigation">Skip to navigation</a></li>
+            </ul>
+        </div>
+        <div class="pull-right">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %}
+        </div>
+        {#<div id="language_selector" class="pull-right">#}
+            {#{% block language_selector %}#}
+                {#{{ locale_switcher() }}#}
+            {#{% endblock %}#}
+        {#</div>#}
+    </div>
+
+    <div class="row">
+        <div id="banner" class="col-md-12">
+            <a href="https://github.com/symfony-cmf/cmf-standard"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"/></a>
+
+            <div class="hero-unit">
+                <h1 id="logo-text"><a href="/">Standard Edition</a></h1>
+
+                <p id="slogan">Symfony2 Content Management Framework</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="content-container" class="col-md-12 boxed">
+            <div class="row">
+                <div id="navigation" class="col-md-3">
+                    <div class="well">
+                        {% block navigation %}
+                            <h2>Navigation</h2>
+                            {{ knp_menu_render('main') }}
+                        {% endblock %}
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div id="content">
+                        <div class="inner">
+                            {% block content %}
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+{% javascripts
+
+    'js/scripts.js'
+    filter="?yui_js"
+    output="js/scripts_combined.js" %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+{% render controller("cmf_create.jsloader.controller:includeJSFilesAction", {'_locale': app.request.locale}) %}
+
+</body>
+</html>
