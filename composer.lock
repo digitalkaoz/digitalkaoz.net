@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "af96c8c468dab82458930e9aa30d7f50",
+    "hash": "f47424890cc7500d93b8a6d594057046",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1999,6 +1999,56 @@
             "time": "2013-09-30 15:27:15"
         },
         {
+            "name": "liip/search-bundle",
+            "version": "1.0.0",
+            "target-dir": "Liip/SearchBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/liip/LiipSearchBundle.git",
+                "reference": "04508e768d31eae3386957f06ba9ab23dd7874bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/liip/LiipSearchBundle/zipball/04508e768d31eae3386957f06ba9ab23dd7874bf",
+                "reference": "04508e768d31eae3386957f06ba9ab23dd7874bf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "symfony/framework-bundle": "~2.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Liip\\SearchBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Liip AG",
+                    "homepage": "http://www.liip.ch/"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/liip/LiipSearchBundle/contributors"
+                }
+            ],
+            "description": "This bundles provides some basic infrastructure for creating a search UI in Symfony2 applications along with integration with Google's search API",
+            "keywords": [
+                "Symfony2"
+            ],
+            "time": "2013-06-11 15:14:23"
+        },
+        {
             "name": "lunetics/locale-bundle",
             "version": "v2.2.1",
             "target-dir": "Lunetics/LocaleBundle",
@@ -3527,6 +3577,60 @@
                 "routing"
             ],
             "time": "2013-10-14 15:34:10"
+        },
+        {
+            "name": "symfony-cmf/search-bundle",
+            "version": "1.0.0",
+            "target-dir": "Symfony/Cmf/Bundle/SearchBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony-cmf/SearchBundle.git",
+                "reference": "2a9a138f74a4ba6994926456ac793335ea17946b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony-cmf/SearchBundle/zipball/2a9a138f74a4ba6994926456ac793335ea17946b",
+                "reference": "2a9a138f74a4ba6994926456ac793335ea17946b",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/phpcr-odm": "1.0.*",
+                "liip/search-bundle": "1.0.*",
+                "php": ">=5.3.3",
+                "symfony-cmf/routing-bundle": "1.1.*",
+                "symfony/framework-bundle": "~2.2"
+            },
+            "require-dev": {
+                "symfony-cmf/testing": "1.0.*"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Cmf\\Bundle\\SearchBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony CMF Community",
+                    "homepage": "https://github.com/symfony-cmf/SearchBundle/contributors"
+                }
+            ],
+            "description": "Symfony SearchBundle",
+            "homepage": "http://cmf.symfony.com",
+            "keywords": [
+                "database",
+                "search"
+            ],
+            "time": "2013-10-03 14:29:15"
         },
         {
             "name": "symfony-cmf/simple-cms-bundle",

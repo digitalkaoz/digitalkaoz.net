@@ -43,6 +43,9 @@
                 <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
             {% endif %}
         </div>
+        <div>
+            {{ render(url('liip_searchbox')~'?query='~app.request.get('query'), {'_locale': app.request.locale}) }}
+        </div>
         {#<div id="language_selector" class="pull-right">#}
             {#{% block language_selector %}#}
                 {#{{ locale_switcher() }}#}

@@ -36,3 +36,16 @@ cmf_simple_cms:
             Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:  CmfSimpleCmsBundle:Page:index.html.twig
         controllers_by_class:
             Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute:  cmf_routing.redirect_controller:redirectAction
+
+cmf_search:
+    show_paging:          true
+    persistence:
+        phpcr:
+            enabled:              true
+            search_basepath:      /cms
+#            manager_registry:     doctrine_phpcr
+#            manager_name:         ~
+#            translation_strategy: ~
+            search_fields:
+                summary: "phpcr_locale:de-body"
+                title: "phpcr_locale:de-title"

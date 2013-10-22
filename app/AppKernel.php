@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
             new Liip\DoctrineCacheBundle\LiipDoctrineCacheBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
+            new Liip\SearchBundle\LiipSearchBundle(),
             new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
 
             new FOS\UserBundle\FOSUserBundle(),
@@ -42,6 +43,7 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\SimpleCmsBundle\CmfSimpleCmsBundle(),
             new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
             new Symfony\Cmf\Bundle\MediaBundle\CmfMediaBundle(),
+            new Symfony\Cmf\Bundle\SearchBundle\CmfSearchBundle(),
 
             //enable backend bundles
             new Sonata\jQueryBundle\SonatajQueryBundle(),
