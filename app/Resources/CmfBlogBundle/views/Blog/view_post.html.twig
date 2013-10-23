@@ -1,0 +1,20 @@
+{% extends "CmfBlogBundle::default_layout.html.twig" %}
+{% block content %}
+    <div class="row-fluid">
+        <div class="span6">
+            {% if cmf_prev(post) %}
+                <a href="{{ path(cmf_prev(post)) }}">&lt;&lt; {{ cmf_prev(post).title }}</a>
+            {% endif %}
+        </div>
+        <div class="span6" style="text-align: right">
+            {% if cmf_next(post) %}
+                <a href="{{ path(cmf_next(post)) }}">{{ cmf_next(post).title }} &gt;&gt;</a>
+            {% endif %}
+        </div>
+    </div>
+
+    {% createphp post as="rdf" %}
+        {{ rdf|raw }}
+    {% endcreatephp %}
+
+{% endblock %}
