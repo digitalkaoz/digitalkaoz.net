@@ -82,6 +82,9 @@ file that was distributed with this source code.
             <script type="text/javascript">
                 $(document).ready( function() {
                     CKEDITOR.config.height = 500;
+                    //CKEDITOR.config.toolbar = "full";
+
+                    console.log(CKEDITOR.config);
                     $('textarea[name$="[body]"]').ckeditor();
                 } );
             </script>

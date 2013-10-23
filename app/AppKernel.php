@@ -44,6 +44,8 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
             new Symfony\Cmf\Bundle\MediaBundle\CmfMediaBundle(),
             new Symfony\Cmf\Bundle\SearchBundle\CmfSearchBundle(),
+            new Symfony\Cmf\Bundle\BlogBundle\CmfBlogBundle(),
+            new Symfony\Cmf\Bundle\RoutingAutoBundle\CmfRoutingAutoBundle(),
 
             //enable backend bundles
             new Sonata\jQueryBundle\SonatajQueryBundle(),

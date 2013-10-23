@@ -12,6 +12,10 @@ kaoz5_cmf:
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #   prefix:   /_internal
 
+#users:
+#    type:     rest
+#    resource: kaoz5\UserBundle\Controller\UsersRestController
+
 home_redirect:
     pattern: /
     defaults:

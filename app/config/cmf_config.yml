@@ -27,8 +27,24 @@ cmf_core:
     multilang:
         locales: %locales%
 
+cmf_blog:
+    use_sonata_admin:     auto
+    blog_basepath:        /cms/blog
+
 cmf_create:
     editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
+
+cmf_routing:
+    chain:
+        routers_by_id:
+            cmf_routing.dynamic_router: 20
+            router.default: 100
+    dynamic:
+        enabled: true
+        controllers_by_class:
+            Symfony\Cmf\Bundle\BlogBundle\Document\Blog: cmf_blog.blog_controller:listAction
+            Symfony\Cmf\Bundle\BlogBundle\Document\Post: cmf_blog.blog_controller:viewPostAction
+
 
 cmf_simple_cms:
     routing:
@@ -43,9 +59,6 @@ cmf_search:
         phpcr:
             enabled:              true
             search_basepath:      /cms
-#            manager_registry:     doctrine_phpcr
-#            manager_name:         ~
-#            translation_strategy: ~
             search_fields:
                 summary: "phpcr_locale:de-body"
-                title: "phpcr_locale:de-title"
+                title: "phpcr_locale:title"

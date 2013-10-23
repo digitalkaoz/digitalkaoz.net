@@ -3,6 +3,7 @@ imports:
     - { resource: cmf_config.yml }
     - { resource: backend_config.yml }
     - { resource: security.yml }
+    - { resource: @CmfBlogBundle/Resources/config/routing/autoroute_default.yml }
 
 framework:
     #esi:             ~
@@ -106,6 +107,9 @@ fos_js_routing:
         - sonata.admin.doctrine_phpcr.phpcrodm_children
         - sonata.admin.doctrine_phpcr.phpcrodm_move
         - presta_cms_page_edit
+        - admin_bundle_blog_blog_create
+        - admin_bundle_blog_blog_delete
+        - admin_bundle_blog_blog_edit
 
 liip_imagine:
     # ...

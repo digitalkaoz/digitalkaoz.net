@@ -12,6 +12,9 @@
         "symfony-cmf/standard-edition" : "~1.0",
 
         "symfony-cmf/search-bundle" : "~1.0",
+        "symfony-cmf/routing-auto-bundle" : "~1.0.0-alpha8",
+        "symfony-cmf/blog-bundle" : "~1.0.0-beta7",
+
         "jms/security-extra-bundle" : "~1.5",
         "friendsofsymfony/user-bundle": "~1.3",
         "sonata-project/doctrine-phpcr-admin-bundle": "1.0",
