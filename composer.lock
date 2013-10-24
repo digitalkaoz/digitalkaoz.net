@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "f30312e269a638e870562958dc94d8fe",
+    "hash": "5e99d1cc01d4c9b9eac5e7454bb99691",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -2780,24 +2780,24 @@
         },
         {
             "name": "sonata-project/admin-bundle",
-            "version": "2.2.6",
+            "version": "2.2.7",
             "target-dir": "Sonata/AdminBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "cb66be169b256be4cd28f5121b548f69f809c8f5"
+                "reference": "7d3658f1bb036ee01838e89f13265297a3e5e365"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/cb66be169b256be4cd28f5121b548f69f809c8f5",
-                "reference": "cb66be169b256be4cd28f5121b548f69f809c8f5",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/7d3658f1bb036ee01838e89f13265297a3e5e365",
+                "reference": "7d3658f1bb036ee01838e89f13265297a3e5e365",
                 "shasum": ""
             },
             "require": {
                 "doctrine/common": "~2.2",
                 "knplabs/knp-menu-bundle": "~1.1",
                 "sensio/generator-bundle": "~2.2",
-                "sonata-project/block-bundle": "~2.2,>=2.2.1",
+                "sonata-project/block-bundle": "~2.2,>=2.2.7",
                 "sonata-project/exporter": "1.*",
                 "sonata-project/jquery-bundle": "1.8.*",
                 "symfony/class-loader": "~2.2",
@@ -2855,21 +2855,21 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2013-10-18 08:56:24"
+            "time": "2013-10-24 09:46:58"
         },
         {
             "name": "sonata-project/block-bundle",
-            "version": "2.2.6",
+            "version": "2.2.7",
             "target-dir": "Sonata/BlockBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataBlockBundle.git",
-                "reference": "c3424678c81dbb51fa5a1f8085284b8ec247bda7"
+                "reference": "ff56bb0135fbfe0d270a47049a7d35f8610c4776"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataBlockBundle/zipball/c3424678c81dbb51fa5a1f8085284b8ec247bda7",
-                "reference": "c3424678c81dbb51fa5a1f8085284b8ec247bda7",
+                "url": "https://api.github.com/repos/sonata-project/SonataBlockBundle/zipball/ff56bb0135fbfe0d270a47049a7d35f8610c4776",
+                "reference": "ff56bb0135fbfe0d270a47049a7d35f8610c4776",
                 "shasum": ""
             },
             "require": {
@@ -2917,7 +2917,7 @@
                 "block",
                 "sonata"
             ],
-            "time": "2013-08-19 17:41:22"
+            "time": "2013-10-24 09:04:49"
         },
         {
             "name": "sonata-project/doctrine-phpcr-admin-bundle",

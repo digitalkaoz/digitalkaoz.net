@@ -65,6 +65,10 @@
         },
         "branch-alias": {
             "dev-master": "1.0-dev"
-        }
+        },
+
+        "ckeditor-repository" : "https://github.com/ckeditor/ckeditor-dev.git",
+        "ckeditor-commit" : "ebf5182f7bf165a192ae9ced674c76162ecf76d1"
+
     }
 }

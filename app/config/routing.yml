@@ -16,7 +16,7 @@ kaoz5_cmf:
 #    type:     rest
 #    resource: kaoz5\UserBundle\Controller\UsersRestController
 
-home_redirect:
+home:
     pattern: /
     defaults:
         _controller: FrameworkBundle:Redirect:redirect
