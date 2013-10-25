@@ -22,7 +22,8 @@
         "liip/imagine-bundle" : "~0.10",
         "twbs/bootstrap" : "~3.0",
         "mopa/bootstrap-bundle": "~3.0.0-beta2",
-        "wjzijderveld/check-bundles": "dev-master"
+        "wjzijderveld/check-bundles": "dev-master",
+        "raulfraile/ladybug-bundle": "~1.0"
     },
     "require-dev": {
         "liip/functional-test-bundle": "~1.0"

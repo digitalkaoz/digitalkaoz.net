@@ -7,7 +7,7 @@
 
     {% block includes %}
         {% stylesheets
-        '@MopaBootstrapBundle/Resources/bootstrap/less/bootstrap.less'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/less/bootstrap.less'
         'less/main.less'
         filter="less, ?yui_css"
         output="css/styles_combined.css" %}
@@ -52,15 +52,34 @@
                 {{ render(url('liip_searchbox')~'?query='~app.request.get('query'), {'_locale': app.request.locale}) }}
             </div>
         </div>
+
+        <nav class="navbar navbar-default" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                {{ knp_menu_render('main', {'template' : '::main_menu.html.twig', 'depth': 1}) }}
+            </div>
+        </nav>
     </div>
 
     <div class="row">
         <nav class="col-md-3" id="navigation">
             {% block sidebar %}
                 {# navigation #}
-                {% block navigation %}
-                    {{ knp_menu_render('main', {'template' : '::main_menu.html.twig'}) }}
-                {% endblock %}
+                {% set menu = knp_menu_get('main') %}
+                {% set topmenuitem = admin_menu_top(menu) %}
+                {% if topmenuitem %}
+                    {{ knp_menu_render([menu, topmenuitem.name], { 'template': '::side_menu.html.twig'}) }}
+                {% endif %}
             {% endblock %}
         </nav>
 
@@ -81,7 +100,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
 {% javascripts
-    '@MopaBootstrapBundle/Resources/bootstrap/dist/js/bootstrap.js'
+    '@MopaBootstrapBundle/Resources/public/bootstrap/dist/js/bootstrap.js'
     'js/scripts.js'
     filter="?yui_js"
     output="js/scripts_combined.js" %}

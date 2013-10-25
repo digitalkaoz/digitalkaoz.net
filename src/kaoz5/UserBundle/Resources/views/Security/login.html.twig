@@ -5,7 +5,7 @@
         <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
     {% endif %}
 
-    <form action="{{ path("fos_user_security_check") }}" method="post" role="form">
+    <form action="{{ path("fos_user_security_check") }}" method="post" role="form" class="form-signin well">
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
 
         <div class="form-group">
@@ -22,6 +22,6 @@
             <label for="remember_me"><input type="checkbox" id="remember_me" name="_remember_me" value="on"/> {{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
         </div>
 
-        <button type="submit" id="_submit" class="btn btn-primary">{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}</button>
+        <button type="submit" id="_submit" class="btn btn-lg btn-primary btn-block">{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}</button>
     </form>
 {% endblock fos_user_content %}

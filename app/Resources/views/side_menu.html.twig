@@ -19,7 +19,7 @@
 
 {% block list %}
 {% if item.hasChildren and options.depth is not sameas(0) and item.displayChildren %}
-    <ul class="{% if not item.parent %}navbar-nav nav{% endif %}"{{ _self.attributes(listAttributes) }}>
+    <ul class="{% if not item.parent %}nav nav-stacked{% else %}nav{% endif %}"{{ _self.attributes(listAttributes) }}>
         {{ block('children') }}
     </ul>
 {% endif %}
