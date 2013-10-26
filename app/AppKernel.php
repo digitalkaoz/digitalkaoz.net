@@ -18,14 +18,12 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
 
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
             new Liip\DoctrineCacheBundle\LiipDoctrineCacheBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
             new Liip\SearchBundle\LiipSearchBundle(),
             new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
-            new RaulFraile\Bundle\LadybugBundle\RaulFraileLadybugBundle(),
             new FM\ElfinderBundle\FMElfinderBundle(),
 
             new FOS\UserBundle\FOSUserBundle(),
@@ -65,6 +63,10 @@ class AppKernel extends Kernel
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
+            $bundles[] = new Elao\WebProfilerExtraBundle\WebProfilerExtraBundle();
+            $bundles[] = new RaulFraile\Bundle\LadybugBundle\RaulFraileLadybugBundle();
+            $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+
         }
 
         return $bundles;

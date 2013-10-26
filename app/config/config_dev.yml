@@ -21,3 +21,17 @@ monolog:
 
 assetic:
     use_controller: true
+
+web_profiler_extra:
+    routing:
+        enabled:        false
+        display_in_wdt: false
+    container:
+        enabled:        true
+        display_in_wdt: false
+    assetic:
+        enabled:        true
+        display_in_wdt: false
+    twig:
+        enabled:        true
+        display_in_wdt: false

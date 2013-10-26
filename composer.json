@@ -24,7 +24,8 @@
         "mopa/bootstrap-bundle": "~3.0.0-beta2",
         "wjzijderveld/check-bundles": "dev-master",
         "raulfraile/ladybug-bundle": "~1.0",
-        "helios-ag/fm-elfinder-bundle": "~1.4"
+        "helios-ag/fm-elfinder-bundle": "~1.4",
+        "elao/web-profiler-extra-bundle": "dev-master"
 },
     "require-dev": {
         "liip/functional-test-bundle": "~1.0"
