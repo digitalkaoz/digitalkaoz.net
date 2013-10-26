@@ -23,6 +23,9 @@ home:
         route: /cms/simple/home
         permanent: true # this for 301
 
+elfinder:
+     resource: "@FMElfinderBundle/Resources/config/routing.yml"
+
 _imagine:
     resource: .
     type:     imagine

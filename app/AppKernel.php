@@ -26,6 +26,7 @@ class AppKernel extends Kernel
             new Liip\SearchBundle\LiipSearchBundle(),
             new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
             new RaulFraile\Bundle\LadybugBundle\RaulFraileLadybugBundle(),
+            new FM\ElfinderBundle\FMElfinderBundle(),
 
             new FOS\UserBundle\FOSUserBundle(),
             new FOS\RestBundle\FOSRestBundle(),

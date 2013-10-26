@@ -58,6 +58,16 @@ liip_doctrine_cache:
         nodes:
             type: file_system
 
+fm_elfinder:
+    editor: ckeditor
+    connector:
+        roots:
+            media:
+                driver: cmf_media.adapter.elfinder.phpcr_driver
+                path: "/cms/media"
+                upload_allow: ['all']
+                upload_max_size: 8M
+
 knp_menu:
     twig: true
 
@@ -139,3 +149,8 @@ liip_imagine:
             quality: 85
             filters:
                 thumbnail: { size: [50, 50], mode: inset }
+        elfinder_thumbnail:
+            data_loader: cmf_media_doctrine_phpcr
+            quality: 85
+            filters:
+                thumbnail: { size: [48, 48], mode: inset }
