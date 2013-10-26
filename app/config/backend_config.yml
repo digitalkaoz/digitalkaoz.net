@@ -79,10 +79,11 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock
         Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:
             valid_children:
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
+                - all
+#                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
+#                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
+#                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
+#                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
         Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:
             valid_children:
                 - all

@@ -79,6 +79,9 @@ fos_rest:
         formats:
             json: true
 
+#raul_fraile_ladybug:
+#    object_max_nesting_level: 10
+
 fos_js_routing:
     routes_to_expose:
         - admin_sandbox_main_editablestaticcontent_create
@@ -114,13 +117,25 @@ fos_js_routing:
 liip_imagine:
     # ...
     filter_sets:
+        #??? CreateJS ?
         image_upload_thumbnail:
             data_loader: cmf_media_doctrine_phpcr
             quality: 85
             filters:
                 thumbnail: { size: [616, 419], mode: outbound }
+        #???
         cmf_block:
             data_loader: cmf_media_doctrine_phpcr
             quality: 85
             filters:
                 thumbnail: { size: [616, 419], mode: outbound }
+        stage_block:
+            data_loader: cmf_media_doctrine_phpcr
+            quality: 85
+            filters:
+                thumbnail: { size: [850, 350], mode: inset }
+        admin_list:
+            data_loader: cmf_media_doctrine_phpcr
+            quality: 85
+            filters:
+                thumbnail: { size: [50, 50], mode: inset }

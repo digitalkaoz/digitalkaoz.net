@@ -1,0 +1,38 @@
+{% extends sonata_block.templates.block_base %}
+
+{% block block %}
+
+    {% if block.children %}
+        {% set id = block.id|replace({'/':'_'}) %}
+
+        <div id="{{ id }}" class="carousel slide" style="height:350px;">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                {% for item in block.children %}
+                    <li data-target="#{{ id }}" data-slide-to="{{ loop.index0 }}" class="{% if loop.first %}active{% endif %}"></li>
+                {% endfor %}
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                {% for item in block.children %}
+                    <div class="item {% if loop.first %} active {% endif %}">
+                        {{ sonata_block_render(item) }}
+                        <div class="carousel-caption">
+                            <h3>{{ item.label }}</h3>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#{{ id }}" data-slide="prev">
+                <span class="icon-prev"></span>
+            </a>
+            <a class="right carousel-control" href="#{{ id }}" data-slide="next">
+                <span class="icon-next"></span>
+            </a>
+        </div>
+    {% endif %}
+
+{% endblock %}

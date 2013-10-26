@@ -6,6 +6,9 @@
 
     <parameters>
         <parameter key="kaoz5_cmf.menu_twig.class">kaoz5\CmfBundle\Twig\MenuTwigExtension</parameter>
+        <parameter key="cmf_block.persistence.phpcr.imagine_admin.class">kaoz5\CmfBundle\Admin\kaozImagineBlockAdmin</parameter>
+        <parameter key="cmf_routing.dynamic.persistence.phpcr.content_basepath">/cms</parameter>
+        <parameter key="cmf_menu.persistence.phpcr.content_basepath">/cms</parameter>
     </parameters>
 
     <services>
