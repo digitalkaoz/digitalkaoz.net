@@ -25,7 +25,9 @@
         "wjzijderveld/check-bundles": "dev-master",
         "raulfraile/ladybug-bundle": "~1.0",
         "helios-ag/fm-elfinder-bundle": "~1.4",
-        "elao/web-profiler-extra-bundle": "dev-master"
+        "elao/web-profiler-extra-bundle": "dev-master",
+        "knplabs/github-api": "dev-master",
+        "sonata-project/cache-bundle": "2.1.4"
 },
     "require-dev": {
         "liip/functional-test-bundle": "~1.0"

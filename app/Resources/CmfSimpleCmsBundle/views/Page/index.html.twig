@@ -4,12 +4,22 @@
 
 {% block content %}
 
+    {{ sonata_block_render({
+        'name': 'topBlock'
+    }) }}
+
     {% createphp cmfMainContent as="rdf" %}
     {{ rdf|raw }}
     {% endcreatephp %}
 
     {{ sonata_block_render({
-    'name': 'additionalInfoBlock'
+        'name': 'bottomBlock'
     }) }}
 
+{% endblock %}
+
+{% block sidebar %}
+    {{ sonata_block_render({
+    'name': 'sideBlock'
+    }) }}
 {% endblock %}

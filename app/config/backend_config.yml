@@ -10,6 +10,19 @@ sonata_block:
 #            settings:
 #                id: '/cms'
             contexts:   [admin]
+    blocks_by_class:
+#        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock:
+#            cache: cmf.block.cache.js_async
+#        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock:
+#            cache: cmf.block.cache.js_async
+#        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock:
+#            cache: cmf.block.cache.js_async
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock:
+            cache: cmf.block.cache.js_async
+#        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ImagineBlock:
+#            cache: cmf.block.cache.js_async
+#        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock:
+#            cache: cmf.block.cache.ssi
 
 sonata_admin:
     templates:
@@ -22,7 +35,7 @@ sonata_admin:
             content:
                 label: Blocks & Content
                 items:
-                    - cmf_content.admin
+#                    - cmf_content.admin
                     - cmf_block.simple_admin
                     - cmf_block.container_admin
                     - cmf_block.reference_admin
@@ -60,6 +73,8 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ImagineBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock
         Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock:
             valid_children: []
         Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock:
@@ -84,9 +99,18 @@ sonata_doctrine_phpcr_admin:
 #                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
 #                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
 #                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
-        Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:
+#        Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:
+#            valid_children:
+#                - all
+        kaoz5\CmfBundle\Document\Page:
             valid_children:
-                - all
+                - kaoz5\CmfBundle\Document\Page
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ImagineBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock
         Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route:
             valid_children:
                 - Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route

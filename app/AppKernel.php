@@ -51,6 +51,7 @@ class AppKernel extends Kernel
             new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\CacheBundle\SonataCacheBundle(),
             new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
             new Symfony\Cmf\Bundle\TreeBrowserBundle\CmfTreeBrowserBundle(),
             new Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
@@ -58,6 +59,7 @@ class AppKernel extends Kernel
             // and the own bundle
             new kaoz5\UserBundle\kaoz5UserBundle(),
             new kaoz5\CmfBundle\kaoz5CmfBundle(),
+            new digitalkaoz\GithubContributionsBundle\digitalkaozGithubContributionsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

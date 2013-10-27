@@ -1,3 +1,7 @@
+digitalkaoz_github_contributions:
+    resource: "@digitalkaozGithubContributionsBundle/Resources/config/routing.xml"
+    prefix:   /
+
 kaoz5_cmf:
     resource: "@kaoz5CmfBundle/Resources/config/routing.xml"
     prefix:   /
@@ -94,3 +98,7 @@ cmf_media_file:
 
 cmf_media_image:
     resource: "@CmfMediaBundle/Resources/config/routing/image.xml"
+
+block_cache:
+    resource: "@CmfBlockBundle/Resources/config/routing/cache.xml"
+    prefix: /

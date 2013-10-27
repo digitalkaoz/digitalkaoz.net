@@ -29,11 +29,18 @@ cmf_core:
 
 cmf_blog:
     use_sonata_admin:     auto
-    blog_basepath:        /cms/blog
+    blog_basepath:        /cms
 
 cmf_create:
     editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
 
+cmf_block:
+    persistence:
+        phpcr:
+            block_basepath: /cms
+    caches:
+        ssi:
+           token: loremipsum
 cmf_routing:
     chain:
         routers_by_id:
@@ -47,9 +54,13 @@ cmf_routing:
 
 
 cmf_simple_cms:
+    persistence:
+        phpcr:
+            document_class: kaoz5\CmfBundle\Document\Page
     routing:
         templates_by_class:
-            Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:  CmfSimpleCmsBundle:Page:index.html.twig
+#            Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:  CmfSimpleCmsBundle:Page:index.html.twig
+            kaoz5\CmfBundle\Document\Page:  CmfSimpleCmsBundle:Page:index.html.twig
         controllers_by_class:
             Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute:  cmf_routing.redirect_controller:redirectAction
 

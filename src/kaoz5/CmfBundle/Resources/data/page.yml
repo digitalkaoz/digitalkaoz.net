@@ -1,15 +1,17 @@
 static:
     home:
-        name: "home"
+        name: ""
         title:
-            de: "Webdevelopment and me..."
+            en: "Welcome to the CMF Standard Edition"
+            de: "Willkommen zur CMF Standard Edition"
         body: 
-            de: "Lorem Ipsum"
+            en: "This is should get you started with the Symfony CMF."
+            de: "Dies sollte Ihnen einen Einstieg in das Symfony CMF bieten."
 
     about:
         name: "about"
-        label: "About Me"
-        title: "Some information about me"
+        label: "About us"
+        title: "Some information about us"
         body: "The about us page with some content"
 
     contact:

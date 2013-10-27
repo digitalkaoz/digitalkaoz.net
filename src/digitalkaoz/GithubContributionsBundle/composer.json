@@ -1,0 +1,18 @@
+{
+    "name": "digitalkaoz/GithubContributionsBundle",
+    "license": "MIT",
+    "type": "Symfony2 Bundle",
+    "description": "Symfony2 Bundle to show Github Contributions",
+
+    "autoload": {
+        "psr-0": {
+            "digitalkaoz/GithubContributionsBundle": "."
+        }
+    },
+
+    "minimum-stability": "stable",
+    "require": {
+        "symfony/framework-standard-edition": "~2.3",
+        "knplabs/github-api": "dev-master"
+    }
+}

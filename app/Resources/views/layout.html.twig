@@ -50,9 +50,6 @@
         {# header #}
         <div class="page-header col-md-12">
             <h1><a href="{{ path('home') }}">digitalkaoz.net</a> <small>webdevelopment & me</small></h1>
-            <div class="pull-right search">
-                {{ render(url('liip_searchbox')~'?query='~app.request.get('query'), {'_locale': app.request.locale}) }}
-            </div>
         </div>
 
         <nav class="navbar navbar-default" role="navigation" id="navigation">
@@ -69,6 +66,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-main">
                 {{ knp_menu_render('main', {'template' : '::main_menu.html.twig', 'depth': 1}) }}
+                {{ render(url('liip_searchbox')~'?query='~app.request.get('query'), {'_locale': app.request.locale}) }}
             </div>
         </nav>
     </div>
@@ -76,15 +74,15 @@
     <div class="row">
         <div class="col-md-3">
                 {% block sidebar %}
-                    <nav>
-                        {# navigation #}
-                        {% set menu = knp_menu_get('main') %}
-                        {% set topmenuitem = admin_menu_top(menu) %}
-                        {% if topmenuitem and topmenuitem.children %}
-                            {{ knp_menu_render([menu, topmenuitem.name], { 'template': '::side_menu.html.twig'}) }}
-                        {% endif %}
-                    </nav>
                 {% endblock %}
+            <nav>
+                {# navigation #}
+                {% set menu = knp_menu_get('main') %}
+                {% set topmenuitem = admin_menu_top(menu) %}
+                {% if topmenuitem and topmenuitem.children %}
+                    {{ knp_menu_render([menu, topmenuitem.name], { 'template': '::side_menu.html.twig'}) }}
+                {% endif %}
+            </nav>
         </div>
 
         <div class="col-md-9" id="content">

@@ -8,7 +8,7 @@
 
 {% block block %}
 
-    {% set inStage = block.parentDocument.name == "stage" %}
+    {% set inStage = block.parentDocument.name == "Slider" %}
     {% if block.linkUrl is defined and block.linkUrl != '' %}
         <a href="{{ url(block.linkUrl) }}" title="{{ block.label|default('') }}">
     {% endif %}

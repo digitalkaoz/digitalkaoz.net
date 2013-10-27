@@ -1,0 +1,12 @@
+<div class="row">
+{% for contribution in contributions %}
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><a href="{{ contribution.html_url }}" target="_blank">{{ contribution.full_name }}</a></div>
+            <div class="panel-body">
+                {{ contribution.description }}
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
