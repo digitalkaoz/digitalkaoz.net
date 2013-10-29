@@ -60,6 +60,8 @@ liip_doctrine_cache:
             type: file_system
         nodes:
             type: file_system
+        github:
+            type: file_system
 
 fm_elfinder:
     editor: ckeditor
@@ -157,3 +159,8 @@ liip_imagine:
             quality: 85
             filters:
                 thumbnail: { size: [48, 48], mode: inset }
+
+digitalkaoz_github_contributions:
+    api_token: 84bdbc0a50262e7cd53ba1b90fa97540097d6702
+    cache_service: liip_doctrine_cache.ns.github
+    username: digitalkaoz

@@ -1,0 +1,8 @@
+{
+    "name": "digitalkaoz",
+    "version": "1.0.0",
+    "main": "web/js/libs",
+    "dependencies": {
+        "cal-heatmap": "3.3.6"
+    }
+}

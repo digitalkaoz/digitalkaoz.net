@@ -17,8 +17,8 @@ sonata_block:
 #            cache: cmf.block.cache.js_async
 #        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock:
 #            cache: cmf.block.cache.js_async
-        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock:
-            cache: cmf.block.cache.js_async
+#        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock:
+#            cache: cmf.block.cache.js_async
 #        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ImagineBlock:
 #            cache: cmf.block.cache.js_async
 #        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock:

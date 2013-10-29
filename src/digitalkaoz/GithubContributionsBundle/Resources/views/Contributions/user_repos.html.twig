@@ -1,0 +1,12 @@
+<div class="row">
+{% for repo in repos %}
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><a href="{{ repo.html_url }}" target="_blank">{{ repo.full_name }}</a></div>
+            <div class="panel-body">
+                {{ repo.description }}
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>

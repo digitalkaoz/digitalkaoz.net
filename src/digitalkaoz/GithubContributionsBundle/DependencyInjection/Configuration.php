@@ -20,9 +20,21 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('digitalkaoz_github_contributions');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+                ->scalarNode('api_token')->end()
+                ->scalarNode('username')->end()
+                ->scalarNode('cache_service')->end()
+                ->arrayNode('templates')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('contributions')->defaultValue('digitalkaozGithubContributionsBundle:Contributions:contributions.html.twig')->end()
+                        ->scalarNode('activity_stream')->defaultValue('digitalkaozGithubContributionsBundle:Contributions:activity.html.twig')->end()
+                        ->scalarNode('user_repos')->defaultValue('digitalkaozGithubContributionsBundle:Contributions:user_repos.html.twig')->end()
+                    ->end()
+                ->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }
