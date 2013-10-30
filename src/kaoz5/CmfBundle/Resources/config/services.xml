@@ -6,6 +6,8 @@
 
     <parameters>
         <parameter key="kaoz5_cmf.menu_twig.class">kaoz5\CmfBundle\Twig\MenuTwigExtension</parameter>
+        <parameter key="kaoz5_cmf.share_twig.class">kaoz5\CmfBundle\Twig\ShareTwigExtension</parameter>
+
         <parameter key="cmf_block.persistence.phpcr.imagine_admin.class">kaoz5\CmfBundle\Admin\kaozImagineBlockAdmin</parameter>
         <parameter key="cmf_routing.dynamic.persistence.phpcr.content_basepath">/cms</parameter>
         <parameter key="cmf_menu.persistence.phpcr.content_basepath">/cms</parameter>
@@ -13,7 +15,14 @@
     </parameters>
 
     <services>
+
+        <service id="kaoz5.sharer" class="Thujohn\Share\Share" public="false" />
         <service id="kaoz5_cmf.menu_twig" class="%kaoz5_cmf.menu_twig.class%">
+            <tag name="twig.extension" />
+        </service>
+
+        <service id="kaoz5_cmf.share_twig" class="%kaoz5_cmf.share_twig.class%">
+            <argument type="service" id="kaoz5.sharer" />
             <tag name="twig.extension" />
         </service>
     </services>

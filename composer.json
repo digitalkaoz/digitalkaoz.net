@@ -27,7 +27,8 @@
         "helios-ag/fm-elfinder-bundle": "~1.4",
         "elao/web-profiler-extra-bundle": "dev-master",
         "knplabs/github-api": "dev-master",
-        "sonata-project/cache-bundle": "2.1.4"
+        "sonata-project/cache-bundle": "2.1.4",
+        "thujohn/share" : "dev-master"
 },
     "require-dev": {
         "liip/functional-test-bundle": "~1.0"

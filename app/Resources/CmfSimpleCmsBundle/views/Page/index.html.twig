@@ -21,7 +21,15 @@
 {% endblock %}
 
 {% block sidebar %}
+
     {{ sonata_block_render({
     'name': 'sideBlock'
     }) }}
+
+    <div class="shares">
+        {% for name, url in sharer(app.request.uri, cmfMainContent.title|striptags, ['twitter', 'gplus', 'facebook']) %}
+            <a href="{{ url }}" target="_blank">{{ name }}</a>
+        {% endfor %}
+    </div>
+
 {% endblock %}

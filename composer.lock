@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "0a170714722ace498f4f38062f47012e",
+    "hash": "ae2a0941ba4c8e186cd56f4b441efa84",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -1204,6 +1204,57 @@
                 "filemanager"
             ],
             "time": "2013-08-06 17:02:04"
+        },
+        {
+            "name": "illuminate/support",
+            "version": "v4.0.9",
+            "target-dir": "Illuminate/Support",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/support.git",
+                "reference": "bec895ef2331ff2f4afbbe48d1ea3d48c3bd8a9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/bec895ef2331ff2f4afbbe48d1ea3d48c3bd8a9f",
+                "reference": "bec895ef2331ff2f4afbbe48d1ea3d48c3bd8a9f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.7.2",
+                "patchwork/utf8": "1.1.*",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Illuminate\\Support": ""
+                },
+                "files": [
+                    "Illuminate/Support/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com",
+                    "homepage": "https://github.com/taylorotwell",
+                    "role": "Developer"
+                }
+            ],
+            "time": "2013-10-03 18:37:29"
         },
         {
             "name": "imagine/imagine",
@@ -5095,6 +5146,48 @@
             "time": "2013-10-10 13:24:22"
         },
         {
+            "name": "thujohn/share",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thujohn/share-l4.git",
+                "reference": "f644953f8cf2c9d66a31a50f88ca5fea6a146153"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thujohn/share-l4/zipball/f644953f8cf2c9d66a31a50f88ca5fea6a146153",
+                "reference": "f644953f8cf2c9d66a31a50f88ca5fea6a146153",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "4.x",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Thujohn\\Share": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "thujohn",
+                    "email": "jonathan.thuau@gmail.com"
+                }
+            ],
+            "description": "Share links with Laravel 4",
+            "keywords": [
+                "laravel",
+                "laravel4",
+                "share"
+            ],
+            "time": "2013-10-24 18:32:26"
+        },
+        {
             "name": "twbs/bootstrap",
             "version": "v3.0.0",
             "source": {
@@ -5439,7 +5532,8 @@
         "mopa/bootstrap-bundle": 10,
         "wjzijderveld/check-bundles": 20,
         "elao/web-profiler-extra-bundle": 20,
-        "knplabs/github-api": 20
+        "knplabs/github-api": 20,
+        "thujohn/share": 20
     },
     "platform": [
 
