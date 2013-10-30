@@ -62,6 +62,14 @@ class ContributionsController
 
         $repos = $this->factory->getUserRepos($username ?: $this->user);
 
+        usort($repos, function($a, $b) {
+            if (strtotime($a['pushed_at']) == strtotime($b['pushed_at'])) {
+                return 0;
+            }
+
+            return strtotime($a['pushed_at']) > strtotime($b['pushed_at']) ? -1 : 1;
+        });
+
         return new Response($this->templating->render($this->templates['user_repos'], array('repos' => $repos)));
     }
 
@@ -73,11 +81,15 @@ class ContributionsController
 
         $data = $this->factory->getActivityStream($username ?: $this->user);
         $formatted = array();
+        $min = time();
         foreach ($data as $set) {
+            if (strtotime($set[0]) < $min) {
+                $min = strtotime($set[0]);
+            }
             $formatted[strtotime($set[0])] = $set[1];
         }
 
-        return new Response($this->templating->render($this->templates['activity_stream'], array('data' => json_encode($formatted))));
+        return new Response($this->templating->render($this->templates['activity_stream'], array('data' => json_encode($formatted), 'min' => $min)));
     }
 
 }
