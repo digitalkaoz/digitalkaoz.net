@@ -26,78 +26,80 @@
     {% endblock %}
 </head>
 <body>
-<div class="container">
+<div id="wrap">
+    <div class="container">
 
-    <div class="row">
-        {# top line #}
-        <div class="pull-left sr-only col-md-12">
-            <a href="#content" title="Go to main content">Skip to content</a>
-            <a href="#navigation" title="go to navigation">Skip to navigation</a>
-        </div>
-        <div class="col-md-12">
-            <div class="pull-right">
-                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                    <a href="{{ path('fos_user_security_logout') }}">
-                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                    </a>
-                {% else %}
-                    <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-                {% endif %}
+        <div class="row">
+            {# top line #}
+            <div class="pull-left sr-only col-md-12">
+                <a href="#content" title="Go to main content">Skip to content</a>
+                <a href="#navigation" title="go to navigation">Skip to navigation</a>
             </div>
-        </div>
-
-        {# header #}
-        <div class="page-header col-md-12">
-            <h1><a href="{{ path('home') }}">digitalkaoz.net</a> <small>webdevelopment & me</small></h1>
-        </div>
-
-        <nav class="navbar navbar-default" role="navigation" id="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+            <div class="col-md-12">
+                <div class="pull-right">
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                        <a href="{{ path('fos_user_security_logout') }}">
+                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                        </a>
+                    {% else %}
+                        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                    {% endif %}
+                </div>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-main">
-                {{ knp_menu_render('main', {'template' : '::main_menu.html.twig', 'depth': 1}) }}
-                {{ render(url('liip_searchbox')~'?query='~app.request.get('query'), {'_locale': app.request.locale}) }}
+            {# header #}
+            <div class="page-header col-md-12">
+                <h1><a href="{{ path('home') }}">digitalkaoz.net</a> <small>webdevelopment & me</small></h1>
             </div>
-        </nav>
-    </div>
 
-    <div class="row">
-        <div class="col-md-3">
-                {% block sidebar %}
-                {% endblock %}
-            <nav>
-                {# navigation #}
-                {% set menu = knp_menu_get('main') %}
-                {% set topmenuitem = admin_menu_top(menu) %}
-                {% if topmenuitem and topmenuitem.children %}
-                    {{ knp_menu_render([menu, topmenuitem.name], { 'template': '::side_menu.html.twig'}) }}
-                {% endif %}
+            <nav class="navbar navbar-default" role="navigation" id="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-main">
+                    {{ knp_menu_render('main', {'template' : '::main_menu.html.twig', 'depth': 1}) }}
+                    {{ render(url('liip_searchbox')~'?query='~app.request.get('query'), {'_locale': app.request.locale}) }}
+                </div>
             </nav>
         </div>
 
-        <div class="col-md-9" id="content">
-            {# content #}
-            {% block content %}
-            {% endblock %}
-        </div>
+        <div class="row">
+            <div class="col-md-3">
+                    {% block sidebar %}
+                    {% endblock %}
+                <nav>
+                    {# navigation #}
+                    {% set menu = knp_menu_get('main') %}
+                    {% set topmenuitem = admin_menu_top(menu) %}
+                    {% if topmenuitem and topmenuitem.children %}
+                        {{ knp_menu_render([menu, topmenuitem.name], { 'template': '::side_menu.html.twig'}) }}
+                    {% endif %}
+                </nav>
+            </div>
 
-        <footer class="col-md-12">
-            <hr/>
-            {{ knp_menu_render('footer') }}<span class="pull-right">&copy; {{'now'|date('Y')}} - Robert Schönthal</span>
-        </footer>
+            <div class="col-md-9" id="content">
+                {# content #}
+                {% block content %}
+                {% endblock %}
+            </div>
+
+        </div>
     </div>
 </div>
-
+<footer>
+    <div class="container">
+        {{ knp_menu_render('footer') }}<span class="pull-right">&copy; {{'now'|date('Y')}} - Robert Schönthal</span>
+    </div>
+</footer>
 
 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
     {% render controller("cmf_create.jsloader.controller:includeJSFilesAction", {'_locale': app.request.locale}) %}
