@@ -89,7 +89,7 @@ class ContributionsController
             $formatted[strtotime($set[0])] = $set[1];
         }
 
-        return new Response($this->templating->render($this->templates['activity_stream'], array('data' => json_encode($formatted), 'min' => $min)));
+        return new Response($this->templating->render($this->templates['activity_stream'], array('data' => $formatted, 'min' => $min)));
     }
 
 }

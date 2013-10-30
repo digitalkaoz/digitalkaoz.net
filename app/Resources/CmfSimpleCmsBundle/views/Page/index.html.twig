@@ -1,6 +1,8 @@
 {% extends "::layout.html.twig" %}
 
 {% block title %}{{ cmfMainContent.title|striptags }}{% endblock %}
+{% block twitter_title %}{{ cmfMainContent.title|striptags }}{% endblock %}
+{% block twitter_desc %}{{ cmfMainContent.body|truncate(200) }}{% endblock %}
 
 {% block content %}
 

@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content=" minimum-scale=1.0, maximum-scale=1.0, width=device-width; user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@digitalkaoz">
+    <meta name="twitter:creator" content="@digitalkaoz">
+    <meta name="twitter:title" content="{% block twitter_title %}{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_desc %}{% endblock %}">
+
     <title>{% block title %}{% endblock %} - DigitalkaoZ</title>
 
     {% block includes %}
@@ -97,7 +104,7 @@
 </div>
 <footer>
     <div class="container">
-        {{ knp_menu_render('footer') }}<span class="pull-right">&copy; {{'now'|date('Y')}} - Robert Schönthal</span>
+        {{ knp_menu_render('footer') }}<p class="pull-right">&copy; {{'now'|date('Y')}} - Robert Schönthal</p>
     </div>
 </footer>
 

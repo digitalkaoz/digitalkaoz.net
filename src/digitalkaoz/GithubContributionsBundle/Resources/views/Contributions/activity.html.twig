@@ -31,7 +31,7 @@
         legendOrientation: "horizontal",
         domain: "month",
         subDomain: "day",
-        data : {{data|raw}},
+        data : {{ data|json_encode|raw }},
         previousSelector: "#cal-heatmap-prev",
         nextSelector: "#cal-heatmap-next"
     });
