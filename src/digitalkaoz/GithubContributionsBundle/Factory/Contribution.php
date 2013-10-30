@@ -62,7 +62,7 @@ class Contribution
             return $data;
         }
 
-        $repos = $this->client->api('user')->repositories($user);
+        $repos = $this->client->api('user')->setPerPage(100)->repositories($user);
         $contributions = array();
 
         foreach ($repos as $repo) {
@@ -102,7 +102,7 @@ class Contribution
             return $data;
         }
 
-        $repos = $this->client->api('user')->repositories($user);
+        $repos = $this->client->api('user')->setPerPage(100)->repositories($user);
         $contributions = array();
 
         foreach ($repos as $repo) {
