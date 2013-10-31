@@ -65,9 +65,12 @@
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                        <span class="glyphicon glyphicon-th-list"></span>
+                    </button>
+
+                    <button type="button" class="navbar-toggle visible-xs " data-toggle="offcanvas">
+                        <span class="sr-only">Toggle Sidebar</span>
+                        <span class="glyphicon glyphicon-align-left"></span>
                     </button>
                 </div>
 
@@ -79,10 +82,8 @@
             </nav>
         </div>
 
-        <div class="row">
-            <div class="col-md-3">
-                    {% block sidebar %}
-                    {% endblock %}
+        <div class="row row-offcanvas row-offcanvas-left">
+            <div class="col-md-3 sidebar-offcanvas" id="sidebar" role="sidebar">
                 <nav>
                     {# navigation #}
                     {% set menu = knp_menu_get('main') %}
@@ -91,8 +92,9 @@
                         {{ knp_menu_render([menu, topmenuitem.name], { 'template': '::side_menu.html.twig'}) }}
                     {% endif %}
                 </nav>
+                {% block sidebar %}
+                {% endblock %}
 
-                <iframe src="/js/libs/github-cards/card.html?user=digitalkaoz&target=blank" frameborder="0" scrolling="0" width="100%" height="200" allowtransparency></iframe>
             </div>
 
             <div class="col-md-9" id="content">

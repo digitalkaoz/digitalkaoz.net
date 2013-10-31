@@ -11,4 +11,6 @@ app/app.sqlite
 /app/check.php
 /app/SymfonyRequirements.php
 .idea
+.DS_Store
 atlassian-ide-plugin.xml
+web/media
