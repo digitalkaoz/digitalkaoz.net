@@ -21,18 +21,7 @@
 {% endblock %}
 
 {% block sidebar %}
-
     {{ sonata_block_render({
     'name': 'sideBlock'
     }) }}
-
-    <div class="shares">
-        {% for name, url in sharer(app.request.uri, cmfMainContent.title|striptags, ['twitter', 'gplus', 'facebook']) %}
-            <a href="{{ url }}" class="{{ name }}" target="_blank" data-title="{{ name }}"></a>
-        {% endfor %}
-        {#<a href="#" target="_blank" class="rss"></a>#}
-    </div>
-
-    <iframe id="user-card" src="/js/libs/github-cards/card.html?user=digitalkaoz&target=blank" frameborder="0" scrolling="0" width="100%" height="200" allowtransparency></iframe>
-
 {% endblock %}

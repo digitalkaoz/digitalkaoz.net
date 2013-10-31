@@ -29,7 +29,15 @@
 
     <footer>
         <div class="container">
-            {{ knp_menu_render('footer') }}<p class="pull-right">&copy; {{ 'now'|date('Y') }} - Robert Schönthal</p>
+            {{ knp_menu_render('footer') }}
+            <p class="pull-right">&copy; {{ 'now'|date('Y') }} - Robert Schönthal</p>
+            <div class="shares">
+                {% for name, url in sharer(app.request.uri, cmfMainContent.title|striptags, ['twitter', 'gplus', 'facebook']) %}
+                    <a href="{{ url }}" class="{{ name }}" target="_blank" data-title="{{ name }}"></a>
+                {% endfor %}
+                {#<a href="#" target="_blank" class="rss"></a>#}
+            </div>
+
         </div>
     </footer>
 
