@@ -33,6 +33,7 @@ cmf_blog:
 
 cmf_create:
     editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
+    role: IS_AUTHENTICATED_REMEMBERED
 
 cmf_block:
     persistence:
