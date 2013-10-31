@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: caziel
- * Date: 27.10.13
- * Time: 23:08
- */
 
 namespace digitalkaoz\GithubContributionsBundle\Factory;
 
@@ -12,6 +6,11 @@ namespace digitalkaoz\GithubContributionsBundle\Factory;
 use Doctrine\Common\Cache\Cache;
 use Github\Client;
 
+/**
+ * Github Contributions Factory
+ *
+ * @author Robert Schönthal <robert.schoenthal@gmail.com>
+ */
 class Contribution
 {
     const CONTRIBUTIONS_CACHE_KEY = 'github_contributions';
@@ -71,8 +70,8 @@ class Contribution
             }
 
             $details = $this->client->api('repo')->show($user, $repo['name']);
-            $parent = explode('/',$details['parent']['full_name']);
-            $contributors = $this->client->api('repo')->contributors($parent[0],$parent[1]);
+            $parent = explode('/', $details['parent']['full_name']);
+            $contributors = $this->client->api('repo')->contributors($parent[0], $parent[1]);
 
             foreach ($contributors as $contributor) {
                 if ($contributor['login'] == $user) {
@@ -133,8 +132,8 @@ class Contribution
         }
 
         $client = clone $this->client->getHttpClient();
-        $client->setOption('base_url','https://github.com/');
-        $data = $client->get('users/'.$user.'/contributions_calendar_data')->getContent();
+        $client->setOption('base_url', 'https://github.com/');
+        $data = $client->get('users/' . $user . '/contributions_calendar_data')->getContent();
 
         if ($this->cache) {
             $this->cache->save(self::ACTIVITY_CACHE_KEY, $data);
@@ -144,7 +143,7 @@ class Contribution
     }
 
     /**
-     * authenticates the api user if a token is provided (recommend)
+     * authenticates the api user if a token is provided (recommend for avoiding api-rate-limits)
      */
     private function authenticate()
     {

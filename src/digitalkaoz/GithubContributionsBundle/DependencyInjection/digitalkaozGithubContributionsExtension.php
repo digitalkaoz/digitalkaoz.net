@@ -2,12 +2,11 @@
 
 namespace digitalkaoz\GithubContributionsBundle\DependencyInjection;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
-use Symfony\Component\DependencyInjection\Loader;
 
 /**
  * This is the class that loads and manages your bundle configuration
@@ -21,7 +20,7 @@ class digitalkaozGithubContributionsExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.xml');
 
         $config = $this->processConfiguration(new Configuration(), $configs);
@@ -41,10 +40,6 @@ class digitalkaozGithubContributionsExtension extends Extension
 
         //add the cache service if set
         if (isset($config['cache_service'])) {
-//            if (!$container->hasDefinition($config['cache_service'])) {
-//                throw new InvalidConfigurationException('service "' . $config['cache_service'] . '" doesnt exists');
-//            }
-
             $service->addArgument(new Reference($config['cache_service']));
         }
 
@@ -60,8 +55,9 @@ class digitalkaozGithubContributionsExtension extends Extension
 
         $service->addArgument($config['templates']);
 
+        //add the user if set
         if ($config['username']) {
-            $service->addMethodCall('setUser',array($config['username']));
+            $service->addMethodCall('setUser', array($config['username']));
         }
     }
 
