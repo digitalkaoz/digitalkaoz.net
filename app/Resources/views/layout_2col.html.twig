@@ -1,0 +1,25 @@
+{% extends '::layout.html.twig' %}
+
+{% block page_content %}
+    <div class="row row-offcanvas row-offcanvas-left">
+        <aside class="col-md-3 sidebar-offcanvas" id="sidebar" role="sidebar">
+            <nav>
+                {# navigation #}
+                {% set menu = knp_menu_get('main') %}
+                {% set topmenuitem = admin_menu_top(menu) %}
+                {% if topmenuitem and topmenuitem.children %}
+                    {{ knp_menu_render([menu, topmenuitem.name], { 'template': '::side_menu.html.twig'}) }}
+                {% endif %}
+            </nav>
+            {% block sidebar %}
+            {% endblock %}
+
+        </aside>
+
+        <article class="col-md-9" id="content">
+            {# content #}
+            {% block content %}
+            {% endblock %}
+        </article>
+    </div>
+{% endblock %}

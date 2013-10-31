@@ -24,6 +24,8 @@ class Page extends BasePage
      */
     protected $bottomBlock;
 
+    protected $columns;
+
     /**
      * @param \Sonata\BlockBundle\Model\BlockInterface $bottomBlock
      */
@@ -70,5 +72,21 @@ class Page extends BasePage
     public function getTopBlock()
     {
         return $this->topBlock;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getColumns()
+    {
+        return $this->columns;
+    }
+
+    /**
+     * @param mixed $columns
+     */
+    public function setColumns($columns)
+    {
+        $this->columns = $columns;
     }
 } 

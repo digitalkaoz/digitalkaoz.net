@@ -1,4 +1,4 @@
-{% extends "::layout.html.twig" %}
+{% extends "::layout_"~cmfMainContent.columns|default(2)~"col.html.twig" %}
 
 {% block title %}{{ cmfMainContent.title|striptags }}{% endblock %}
 {% block twitter_title %}{{ cmfMainContent.title|striptags }}{% endblock %}

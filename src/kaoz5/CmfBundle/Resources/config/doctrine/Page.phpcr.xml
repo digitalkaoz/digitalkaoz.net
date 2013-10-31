@@ -9,6 +9,8 @@
         name="kaoz5\CmfBundle\Document\Page"
         >
         <node name="node"/>
+        <field name="columns" type="int" translated="true"/>
+
         <child name="sideBlock">
             <cascade><cascade-persist /></cascade>
         </child>

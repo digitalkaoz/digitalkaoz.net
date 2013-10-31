@@ -1,0 +1,16 @@
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+    {% render controller("cmf_create.jsloader.controller:includeJSFilesAction", {'_locale': app.request.locale}) %}
+{% else %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+{% endif %}
+
+{% javascripts
+    '@MopaBootstrapBundle/Resources/public/bootstrap/dist/js/bootstrap.js'
+    '@FMElfinderBundle/Resources/public/js/elfinder.min.js'
+    'js/scripts.js'
+
+    filter="?yui_js"
+    output="js/scripts_combined.js" %}
+
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}

@@ -12,130 +12,29 @@
 
     <title>{% block title %}{% endblock %} - DigitalkaoZ</title>
 
+    {% include '::_stylesheets.html.twig' %}
     {% block includes %}
-        {% stylesheets
-        '@MopaBootstrapBundle/Resources/public/bootstrap/less/bootstrap.less'
-        '@FMElfinderBundle/Resources/public/css/elfinder.min.css'
-        '@FMElfinderBundle/Resources/public/css/theme.css'
-        'less/main.less'
-        filter="less, ?yui_css"
-        output="css/styles_combined.css" %}
-
-        <link href="{{ asset_url }}" rel="stylesheet">
-        {% endstylesheets %}
-
-        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-
-        {% include "CmfCreateBundle::includecssfiles.html.twig" %}
     {% endblock %}
 </head>
+
 <body>
-<div id="wrap">
-    <div class="container">
+    <div id="wrap">
+        <div class="container">
+            {% include '::_header.html.twig' %}
 
-        <div class="row">
-            {# top line #}
-            <div class="pull-left sr-only col-md-12">
-                <a href="#content" title="Go to main content">Skip to content</a>
-                <a href="#navigation" title="go to navigation">Skip to navigation</a>
-            </div>
-            <div class="col-md-12">
-                <div class="pull-right">
-                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                        <a href="{{ path('fos_user_security_logout') }}">
-                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                        </a>
-                    {% else %}
-                        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-                    {% endif %}
-                </div>
-            </div>
-
-            {# header #}
-            <div class="page-header col-md-12">
-                <h1><a href="{{ path('home') }}">digitalkaoz.net</a> <small>webdevelopment & me</small></h1>
-            </div>
-
-            <nav class="navbar navbar-default" role="navigation" id="navigation">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="glyphicon glyphicon-th-list"></span>
-                    </button>
-
-                    <button type="button" class="navbar-toggle visible-xs " data-toggle="offcanvas">
-                        <span class="sr-only">Toggle Sidebar</span>
-                        <span class="glyphicon glyphicon-align-left"></span>
-                    </button>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-main">
-                    {{ knp_menu_render('main', {'template' : '::main_menu.html.twig', 'depth': 1}) }}
-                    {{ render(url('liip_searchbox')~'?query='~app.request.get('query'), {'_locale': app.request.locale}) }}
-                </div>
-            </nav>
-        </div>
-
-        <div class="row row-offcanvas row-offcanvas-left">
-            <div class="col-md-3 sidebar-offcanvas" id="sidebar" role="sidebar">
-                <nav>
-                    {# navigation #}
-                    {% set menu = knp_menu_get('main') %}
-                    {% set topmenuitem = admin_menu_top(menu) %}
-                    {% if topmenuitem and topmenuitem.children %}
-                        {{ knp_menu_render([menu, topmenuitem.name], { 'template': '::side_menu.html.twig'}) }}
-                    {% endif %}
-                </nav>
-                {% block sidebar %}
-                {% endblock %}
-
-            </div>
-
-            <div class="col-md-9" id="content">
-                {# content #}
-                {% block content %}
-                {% endblock %}
-            </div>
-
+            {% block page_content %}
+            {% endblock %}
         </div>
     </div>
-</div>
-<footer>
-    <div class="container">
-        {{ knp_menu_render('footer') }}<p class="pull-right">&copy; {{'now'|date('Y')}} - Robert Schönthal</p>
-    </div>
-</footer>
 
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3></h3>
-    </div>
-    <div class="modal-body">
-    </div>
-</div>
+    <footer>
+        <div class="container">
+            {{ knp_menu_render('footer') }}<p class="pull-right">&copy; {{ 'now'|date('Y') }} - Robert Schönthal</p>
+        </div>
+    </footer>
 
-{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-    {% render controller("cmf_create.jsloader.controller:includeJSFilesAction", {'_locale': app.request.locale}) %}
-{% else %}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-{% endif %}
-
-{% javascripts
-    '@MopaBootstrapBundle/Resources/public/bootstrap/dist/js/bootstrap.js'
-    '@FMElfinderBundle/Resources/public/js/elfinder.min.js'
-    'js/scripts.js'
-    filter="?yui_js"
-    output="js/scripts_combined.js" %}
-    <script type="text/javascript" src="{{ asset_url }}"></script>
-{% endjavascripts %}
-
+    {% include '::_javascripts.html.twig' %}
 
 </body>
+
 </html>
