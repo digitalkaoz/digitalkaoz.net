@@ -35,7 +35,7 @@
                 {% set shareTitle = cmfMainContent is defined ? cmfMainContent.title : (post is defined ? post : null) %}
 
                 {% if shareTitle %}
-                    {% for name, url in sharer(app.request.uri, cmfMainContent.title|striptags, ['twitter', 'gplus', 'facebook']) %}
+                    {% for name, url in sharer(app.request.uri, shareTitle|striptags, ['twitter', 'gplus', 'facebook']) %}
                         <a href="{{ url }}" class="{{ name }}" target="_blank" data-title="{{ name }}"></a>
                     {% endfor %}
                 {% endif %}
