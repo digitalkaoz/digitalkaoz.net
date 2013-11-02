@@ -7,6 +7,7 @@
     <div class="col-md-12">
         <div class="pull-right">
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <a href="{{ path('sonata_admin_dashboard') }}">Backend</a> |
                 {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
                 <a href="{{ path('fos_user_security_logout') }}">
                     {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}

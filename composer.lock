@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "facaf082fc917ab7e63675404150c000",
+    "hash": "0b3f745bfc9ab10656dbb5f48fdba3ab",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -48,6 +48,53 @@
                 "urlizer"
             ],
             "time": "2012-11-15 19:49:27"
+        },
+        {
+            "name": "digitalkaoz/github-contributions-bundle",
+            "version": "dev-master",
+            "target-dir": "digitalkaoz/GithubContributionsBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/digitalkaoz/GithubContributionsBundle.git",
+                "reference": "6b8df94c2a5694e195c1391945be589abae321d5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/digitalkaoz/GithubContributionsBundle/zipball/6b8df94c2a5694e195c1391945be589abae321d5",
+                "reference": "6b8df94c2a5694e195c1391945be589abae321d5",
+                "shasum": ""
+            },
+            "require": {
+                "knplabs/github-api": "dev-master",
+                "symfony/framework-bundle": "~2.3"
+            },
+            "suggest": {
+                "liip/doctrine-cache-bundle": "for caching github responses"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "digitalkaoz\\GithubContributionsBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Schönthal",
+                    "email": "robert.schoenthal@gmail.com",
+                    "homepage": "http://digitalkaoz.net"
+                }
+            ],
+            "description": "Symfony2 Bundle to show Github Contributions",
+            "keywords": [
+                "bundle",
+                "github",
+                "symfony"
+            ],
+            "time": "2013-10-31 21:55:53"
         },
         {
             "name": "doctrine/annotations",
@@ -5540,6 +5587,7 @@
         "elao/web-profiler-extra-bundle": 20,
         "knplabs/github-api": 20,
         "thujohn/share": 20,
+        "digitalkaoz/github-contributions-bundle": 20,
         "kriswallsmith/assetic": 20,
         "symfony/assetic-bundle": 20
     },

@@ -25,6 +25,8 @@ sonata_block:
 #            cache: cmf.block.cache.ssi
 
 sonata_admin:
+    title:      digitalkaoz.net
+    #title_logo: bundles/acmedemo/img/fancy_acme_logo.png
     templates:
         ajax:    SonataAdminBundle::ajax_layout.html.twig
     dashboard:

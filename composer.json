@@ -29,6 +29,7 @@
         "knplabs/github-api": "dev-master",
         "sonata-project/cache-bundle": "2.1.4",
         "thujohn/share" : "dev-master",
+        "digitalkaoz/github-contributions-bundle": "dev-master",
 
         "kriswallsmith/assetic" : "dev-master@dev",
         "symfony/assetic-bundle" : "dev-master as 2.3.x-dev"

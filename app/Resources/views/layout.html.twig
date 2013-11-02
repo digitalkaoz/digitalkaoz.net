@@ -32,9 +32,13 @@
             {{ knp_menu_render('footer') }}
             <p class="pull-right">&copy; {{ 'now'|date('Y') }} - Robert Schönthal</p>
             <div class="shares">
-                {% for name, url in sharer(app.request.uri, cmfMainContent.title|striptags, ['twitter', 'gplus', 'facebook']) %}
-                    <a href="{{ url }}" class="{{ name }}" target="_blank" data-title="{{ name }}"></a>
-                {% endfor %}
+                {% set shareTitle = cmfMainContent is defined ? cmfMainContent.title : (post is defined ? post : null) %}
+
+                {% if shareTitle %}
+                    {% for name, url in sharer(app.request.uri, cmfMainContent.title|striptags, ['twitter', 'gplus', 'facebook']) %}
+                        <a href="{{ url }}" class="{{ name }}" target="_blank" data-title="{{ name }}"></a>
+                    {% endfor %}
+                {% endif %}
                 {#<a href="#" target="_blank" class="rss"></a>#}
             </div>
 

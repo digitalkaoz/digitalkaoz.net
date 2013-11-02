@@ -22,6 +22,9 @@ security:
                 use_forward:    false
                 check_path:     /login_check
                 failure_path:   null
+                always_use_default_target_path: true
+                default_target_path:            /admin/dashboard
+                use_referer:                    true
             logout:       true
             anonymous:    true
 
