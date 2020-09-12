@@ -1,3 +1,0 @@
-[submodule "web/js/libs/github-cards"]
-	path = web/js/libs/github-cards
-	url = https://github.com/lepture/github-cards.git
