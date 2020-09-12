@@ -6,7 +6,9 @@ import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
-import preprocess from 'svelte-preprocess'
+import typescript from '@rollup/plugin-typescript'
+import json from "@rollup/plugin-json";
+import preprocess from "svelte-preprocess";
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -32,13 +34,16 @@ export default {
 				emitCss: true,
 				preprocess: preprocess({
 					postcss: true,
+					typescript: true
 				}),
 			}),
+			typescript({ sourceMap: dev }),
 			resolve({
 				browser: true,
 				dedupe: ['svelte']
 			}),
 			commonjs(),
+			json(),
 
 			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
@@ -74,12 +79,14 @@ export default {
 				'process.browser': false,
 				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),
+			typescript({ sourceMap: dev }),
 			svelte({
 				generate: 'ssr',
 				hydratable: true,
 				dev,
 				preprocess: preprocess({
 					postcss: true,
+					typescript: true
 				}),
 			}),
 			resolve({
@@ -93,7 +100,7 @@ export default {
 		onwarn,
 	},
 
-	serviceworker: {
+	/*serviceworker: {
 		input: config.serviceworker.input(),
 		output: config.serviceworker.output(),
 		plugins: [
@@ -108,5 +115,5 @@ export default {
 
 		preserveEntrySignatures: false,
 		onwarn,
-	}
+	}*/
 };

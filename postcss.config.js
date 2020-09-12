@@ -6,13 +6,8 @@ const tailwindcss = require("tailwindcss");
 module.exports = {
 	plugins: [
 		tailwindcss("./tailwind.config.js"),
+		require('postcss-nested'),
 		require("autoprefixer"),
-		require('postcss-preset-env')({
-			features: {
-				'nesting-rules': true,
-			},
-		}),
-
 		// Minify if prod
 		!dev &&
 		require('cssnano')({

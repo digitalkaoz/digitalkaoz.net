@@ -1,22 +1,31 @@
 <script>
 	import Nav from '../components/Nav.svelte';
-
+	import Tailwind from "../components/Tailwind.svelte";
+	import PageLoadingBar from "sapper-page-loading-bar/PageLoadingBar.svelte"
+	import { fade } from "svelte/transition"
+	import { stores } from "@sapper/app"
 	export let segment;
+	const { preloading } = stores()
 </script>
 
-<style>
+<style global lang="postcss">
 	main {
-		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
-		margin: 0 auto;
-		box-sizing: border-box;
+		@apply m-auto p-8;
+
+		h1 {
+			@apply text-4xl;
+		}
+
 	}
 </style>
 
-<Nav {segment}/>
+<template>
+	<Tailwind/>
+	<Nav {segment}/>
 
-<main>
-	<slot></slot>
-</main>
+	<PageLoadingBar {preloading}/>
+
+	<main class="container" transition:fade>
+		<slot></slot>
+	</main>
+</template>

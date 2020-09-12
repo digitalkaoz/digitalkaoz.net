@@ -1,0 +1,65 @@
+[
+  {
+	"id": 1,
+	"title": "Medical-Data Products for Burda",
+	"company": [
+	  {
+		"name": "Burda",
+		"link": "https://burda.com"
+	  },
+	  {
+		"name": "LSP",
+		"link": "https://lsp.de"
+	  }
+	],
+	"content": "lorem ipsum dolor sit amen",
+	"year": 2009,
+	"categories": ["frontend", "backend", "infrastructure"]
+  },
+  {
+	"id": 2,
+	"title": "AWS Migration @ Otto",
+	"company": [
+	  {
+		"name": "Otto",
+		"link": "https://otto.de"
+	  }
+	],
+	"content": "lorem ipsum dolor sit amen",
+	"year": 2019,
+	"categories": ["infrastructure", "frontend"]
+  },
+  {
+	"id": 3,
+	"title": "Godkings CMS @ Innogames",
+	"company": [
+	  {
+		"name": "Innogames",
+		"link": "https://innogames.de"
+	  }
+	],
+	"content": "lorem ipsum dolor sit amen",
+	"year": 2018,
+	"categories": ["frontend", "backend"]
+  },
+  {
+	"id": 4,
+	"title": "AWS Infrastructure for Noted",
+	"company": [
+	  {
+		"name": "Noted",
+		"link": "https://noted.com"
+	  }
+	],
+	"content": "lorem ipsum dolor sit amen",
+	"year": 2009,
+	"categories": ["infrastructure"]
+  },
+  {
+	"id": 5,
+	"title": "Flutter Timesheet App",
+	"content": "lorem ipsum dolor sit amen",
+	"year": 2019,
+	"categories": ["app"]
+  }
+]
