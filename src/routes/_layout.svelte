@@ -1,11 +1,29 @@
-<script>
+<script context="module">
+	export async function preload() {
+		const response = await this.fetch('/data/professions.json');
+
+		return {
+			professions: await response.json()
+		}
+	}
+</script>
+
+<script lang="ts">
+	// @ts-check
+	import type { ProfessionsSchema } from '../components/ProfessionsSchema'
+
 	import Nav from '../components/Nav.svelte';
 	import Tailwind from "../components/Tailwind.svelte";
 	import PageLoadingBar from "sapper-page-loading-bar/PageLoadingBar.svelte"
-	import { fade } from "svelte/transition"
-	import { stores } from "@sapper/app"
+	import {fade} from "svelte/transition"
+	import {stores} from "@sapper/app"
+
 	export let segment;
-	const { preloading } = stores()
+	export let professions:ProfessionsSchema[] = [];
+
+	const {preloading, page} = stores()
+
+	$: path  = $page.path;
 </script>
 
 <style global lang="postcss">
@@ -21,11 +39,13 @@
 
 <template>
 	<Tailwind/>
-	<Nav {segment}/>
+	<Nav {segment} {professions} {path}/>
 
 	<PageLoadingBar {preloading}/>
 
-	<main class="container" transition:fade>
-		<slot></slot>
-	</main>
+	{#if !$preloading}
+		<main class="container" transition:fade>
+			<slot></slot>
+		</main>
+	{/if}
 </template>

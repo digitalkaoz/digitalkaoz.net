@@ -5,35 +5,47 @@
 	import ProjectFilters from "./ProjectFilters.svelte";
 	import {blur} from 'svelte/transition';
 	import {flip} from 'svelte/animate';
+	import {stores} from "@sapper/app";
 
 	export let references:ReferenceSchema[] = [];
-	const currentFilters: ReferenceFilters = {
-	}
+	const currentFilters: ReferenceFilters = {};
+	const {page} = stores()
 
+	// build filters from reference categories
 	references.forEach(r => {
 		r.categories.forEach(c => {
 			if (!currentFilters.hasOwnProperty(c)) {
-				currentFilters[c] = true;
+				currentFilters[c] = Object.getOwnPropertyNames($page.query).length <= 0;
 			}
 		})
 	})
 
+	// filter by query
+	Object.entries($page.query).forEach((entry) => {
+		if (currentFilters.hasOwnProperty(entry[0])){
+			currentFilters[entry[0]] = entry[1] === "1"
+		}
+	})
+
+	// if we cleared the query filters, disable all filters
+	$: if(Object.getOwnPropertyNames($page.query).length === 0) Object.getOwnPropertyNames(currentFilters).forEach((f) => currentFilters[f] = true)
+
+	// filter the references based on the current filters
 	$: filtered = references.filter(c => filter(currentFilters, c));
 
 	const filter = (filters:ReferenceFilters, ref:ReferenceSchema) => {
+		let ret = false
 		for (const cat in filters) {
-			if (filters[cat] === false) {
+			if (filters[cat] === true) {
 				if (ref.categories.includes(cat)) {
-					return false;
+					ret = true;
 				}
 			}
 		}
-		return true;
+		return ret;
 	}
 
-	const toggleFilter = (e) => {
-		currentFilters[e.detail.cat] = e.detail.state;
-	}
+	const toggleFilter = (e) => currentFilters[e.detail.cat] = e.detail.state;
 
 </script>
 
@@ -41,7 +53,7 @@
 
 <div class="projects">
 	{#each filtered as ref (ref.id)}
-		<div transition:blur animate:flip="{{duration: 200}}">
+		<div transition:blur|local animate:flip="{{duration: 200}}">
 			<Reference reference={ref}/>
 		</div>
 	{/each}

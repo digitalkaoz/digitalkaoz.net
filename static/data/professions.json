@@ -1,0 +1,26 @@
+[
+  {
+	"id": 1,
+	"title": "Infrastructure",
+	"slug": "infrastructure",
+	"content": "Lorem Ipsum Dolor sit amen"
+  },
+  {
+	"id": 2,
+	"title": "Frontend Development",
+	"slug": "frontend",
+	"content": "Lorem Ipsum Dolor sit amen"
+  },
+  {
+	"id": 3,
+	"title": "Backend Development",
+	"slug": "backend",
+	"content": "Lorem Ipsum Dolor sit amen"
+  },
+  {
+	"id": 4,
+	"title": "App Development",
+	"slug": "app",
+	"content": "Lorem Ipsum Dolor sit amen"
+  }
+]

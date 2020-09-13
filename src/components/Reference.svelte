@@ -11,7 +11,7 @@
 	<hr/>
 	<ul>
 	{#each reference.categories as cat}
-		<li>{cat}</li>
+		<li><a href="p/{cat}">{cat}</a></li>
 	{/each}
 	</ul>
 </div>

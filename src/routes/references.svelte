@@ -8,9 +8,13 @@
 	}
 </script>
 
-<script>
-	export let references = [];
+<script lang="ts">
+	// @ts-check
+	import type { ProfessionsSchema } from '../components/ProfessionsSchema'
 	import References from "../components/References.svelte";
+
+	export let references = [];
+	export const professions:ProfessionsSchema[] = [];
 </script>
 
 
@@ -21,5 +25,5 @@
 <template>
 	<h1>References</h1>
 
-	<References references={references}/>
+	<References {references}/>
 </template>
